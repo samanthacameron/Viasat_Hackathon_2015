@@ -29,7 +29,10 @@ class HelloWorld(object):
                 </form>'''
 
     @cherrypy.expose
-    def search(self, miles, category):
+    def search(self, miles=5, category='burgers'):
+
+        # START USING YELP API #
+
         location = 'Bryan, TX'
         meters = float(miles) * 1609.34
         consumer = oauth2.Consumer(CONSUMER_KEY, CONSUMER_SECRET)
@@ -48,13 +51,26 @@ class HelloWorld(object):
         )
         token = oauth2.Token(TOKEN, TOKEN_SECRET)
         oauth_request.sign_request(oauth2.SignatureMethod_HMAC_SHA1(), consumer, token)
-        signed_url = oauth_request.to_url()
-        response = requests.get(signed_url)
-        yield response.text
+        url = oauth_request.to_url()
+
+        # END USING YELP API #
+
+        # USING LOCAL RESULTS
+        # url = 'http://localhost:5588/results'
+
+        response = requests.get(url)
+        restaurants = json.loads(response.text)['businesses']
+        for restaurant in restaurants:
+            name = restaurant['name']
+            address = restaurant['location']['display_address']
+            yield'{}<br>'.format(name)
+            for field in address:
+                yield'{}<br>'.format(field)
+            yield '<br>'
 
     @cherrypy.expose
     def results(self):
-        with open('results.json', encoding='utf-8') as data_file:
+        with open('results.json') as data_file:
             data = json.loads(data_file.read())
         return json.dumps(data)
 
