@@ -11,7 +11,7 @@ TOKEN = 'ugQuBYYmoJBNcnBDpVrVO2HiPpMyahmZ'
 TOKEN_SECRET = 'ljnrQcblPl7yHbuQebRoqhvlRoI'
 
 
-class HelloWorld(object):
+class RestaurantSearch(object):
 
     @cherrypy.expose
     def index(self):
@@ -92,4 +92,4 @@ class HelloWorld(object):
             return json.dumps(data)
 
 cherrypy.config.update({'server.socket_port': 5588})
-cherrypy.quickstart(HelloWorld())
+cherrypy.quickstart(RestaurantSearch())
