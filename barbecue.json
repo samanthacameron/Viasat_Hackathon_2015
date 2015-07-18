@@ -1,0 +1,905 @@
+{
+    "region": {
+        "span": {
+            "latitude_delta": 0.09647087202939986, 
+            "longitude_delta": 0.10598720000001549
+        }, 
+        "center": {
+            "latitude": 30.635671603623, 
+            "longitude": -96.32399000000001
+        }
+    }, 
+    "total": 20, 
+    "businesses": [
+        {
+            "is_claimed": true, 
+            "rating": 4.5, 
+            "mobile_url": "http://m.yelp.com/biz/fargos-pit-bbq-bryan-2", 
+            "rating_img_url": "http://s3-media2.fl.yelpcdn.com/assets/2/www/img/99493c12711e/ico/stars/v1/stars_4_half.png", 
+            "review_count": 91, 
+            "name": "Fargo's Pit BBQ", 
+            "rating_img_url_small": "http://s3-media2.fl.yelpcdn.com/assets/2/www/img/a5221e66bc70/ico/stars/v1/stars_small_4_half.png", 
+            "url": "http://www.yelp.com/biz/fargos-pit-bbq-bryan-2", 
+            "is_closed": false, 
+            "id": "fargos-pit-bbq-bryan-2", 
+            "phone": "9797783662", 
+            "snippet_text": "Love this place.  We always make a point to visit Fargo's when we are in town.  However, be forewarned that you have to call in ahead and order to make sure...", 
+            "image_url": "http://s3-media1.fl.yelpcdn.com/bphoto/soU54B2d5RKH8YU7tnBlvw/ms.jpg", 
+            "categories": [
+                [
+                    "Barbeque", 
+                    "bbq"
+                ], 
+                [
+                    "Soul Food", 
+                    "soulfood"
+                ]
+            ], 
+            "display_phone": "+1-979-778-3662", 
+            "rating_img_url_large": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/9f83790ff7f6/ico/stars/v1/stars_large_4_half.png", 
+            "menu_provider": "single_platform", 
+            "menu_date_updated": 1391223730, 
+            "snippet_image_url": "http://s3-media4.fl.yelpcdn.com/photo/Urp8chqHzi-AuOy9FmFiZQ/ms.jpg", 
+            "location": {
+                "city": "Bryan", 
+                "display_address": [
+                    "720 N Texas Ave", 
+                    "Bryan, TX 77803"
+                ], 
+                "geo_accuracy": 8.0, 
+                "postal_code": "77803", 
+                "country_code": "US", 
+                "address": [
+                    "720 N Texas Ave"
+                ], 
+                "coordinate": {
+                    "latitude": 30.6795215606689, 
+                    "longitude": -96.3696517944336
+                }, 
+                "state_code": "TX"
+            }
+        }, 
+        {
+            "is_claimed": false, 
+            "rating": 4.0, 
+            "mobile_url": "http://m.yelp.com/biz/martins-place-bryan-2", 
+            "rating_img_url": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/c2f3dd9799a5/ico/stars/v1/stars_4.png", 
+            "review_count": 45, 
+            "name": "Martin's Place", 
+            "rating_img_url_small": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/f62a5be2f902/ico/stars/v1/stars_small_4.png", 
+            "url": "http://www.yelp.com/biz/martins-place-bryan-2", 
+            "is_closed": false, 
+            "phone": "9798222031", 
+            "snippet_text": "This place may not look like much, but trust me, you've got to try it. My husband could eat bbq 7 days a week & we have it at least once weekly & often...", 
+            "image_url": "http://s3-media4.fl.yelpcdn.com/bphoto/lDRNTAnlC8EaISqUw-MT1w/ms.jpg", 
+            "categories": [
+                [
+                    "Barbeque", 
+                    "bbq"
+                ]
+            ], 
+            "display_phone": "+1-979-822-2031", 
+            "rating_img_url_large": "http://s3-media2.fl.yelpcdn.com/assets/2/www/img/ccf2b76faa2c/ico/stars/v1/stars_large_4.png", 
+            "id": "martins-place-bryan-2", 
+            "snippet_image_url": "http://s3-media4.fl.yelpcdn.com/assets/srv0/yelp_styleguide/cc4afe21892e/assets/img/default_avatars/user_medium_square.png", 
+            "location": {
+                "city": "Bryan", 
+                "display_address": [
+                    "3403 S College Ave", 
+                    "Bryan, TX 77801"
+                ], 
+                "geo_accuracy": 8.0, 
+                "postal_code": "77801", 
+                "country_code": "US", 
+                "address": [
+                    "3403 S College Ave"
+                ], 
+                "coordinate": {
+                    "latitude": 30.637066, 
+                    "longitude": -96.355965
+                }, 
+                "state_code": "TX"
+            }
+        }, 
+        {
+            "is_claimed": true, 
+            "rating": 4.5, 
+            "mobile_url": "http://m.yelp.com/biz/lews-bbq-college-station", 
+            "rating_img_url": "http://s3-media2.fl.yelpcdn.com/assets/2/www/img/99493c12711e/ico/stars/v1/stars_4_half.png", 
+            "review_count": 10, 
+            "name": "Lew's BBQ", 
+            "rating_img_url_small": "http://s3-media2.fl.yelpcdn.com/assets/2/www/img/a5221e66bc70/ico/stars/v1/stars_small_4_half.png", 
+            "url": "http://www.yelp.com/biz/lews-bbq-college-station", 
+            "is_closed": false, 
+            "phone": "5129256909", 
+            "snippet_text": "Lew's BBQ is a College Station original and unique fun food truck.  Well, it's a trailer but combined with the motivating pick up truck, it's a food truck...", 
+            "image_url": "http://s3-media4.fl.yelpcdn.com/bphoto/-tGB83CyP4kHtA3QdRDn-A/ms.jpg", 
+            "categories": [
+                [
+                    "Barbeque", 
+                    "bbq"
+                ], 
+                [
+                    "Food Trucks", 
+                    "foodtrucks"
+                ]
+            ], 
+            "display_phone": "+1-512-925-6909", 
+            "rating_img_url_large": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/9f83790ff7f6/ico/stars/v1/stars_large_4_half.png", 
+            "id": "lews-bbq-college-station", 
+            "snippet_image_url": "http://s3-media4.fl.yelpcdn.com/photo/sRPn3g51wT9J07JzOrHuLA/ms.jpg", 
+            "location": {
+                "city": "College Station", 
+                "display_address": [
+                    "107 Walton Dr", 
+                    "College Station, TX 77840"
+                ], 
+                "geo_accuracy": 8.0, 
+                "postal_code": "77840", 
+                "country_code": "US", 
+                "address": [
+                    "107 Walton Dr"
+                ], 
+                "coordinate": {
+                    "latitude": 30.624615, 
+                    "longitude": -96.329689
+                }, 
+                "state_code": "TX"
+            }
+        }, 
+        {
+            "is_claimed": true, 
+            "rating": 4.5, 
+            "mobile_url": "http://m.yelp.com/biz/ohana-korean-grill-college-station", 
+            "rating_img_url": "http://s3-media2.fl.yelpcdn.com/assets/2/www/img/99493c12711e/ico/stars/v1/stars_4_half.png", 
+            "review_count": 51, 
+            "name": "Ohana Korean Grill", 
+            "rating_img_url_small": "http://s3-media2.fl.yelpcdn.com/assets/2/www/img/a5221e66bc70/ico/stars/v1/stars_small_4_half.png", 
+            "url": "http://www.yelp.com/biz/ohana-korean-grill-college-station", 
+            "is_closed": false, 
+            "phone": "9796809911", 
+            "snippet_text": "Looked for Korean food in town for lunch, found this place and came along.\n\nFeel very welcomed by people here and it is very home-like indeed.\n\nVery good...", 
+            "image_url": "http://s3-media4.fl.yelpcdn.com/bphoto/IrNi_Bsaoo9FAsImgFPUnQ/ms.jpg", 
+            "categories": [
+                [
+                    "Barbeque", 
+                    "bbq"
+                ], 
+                [
+                    "Korean", 
+                    "korean"
+                ], 
+                [
+                    "Asian Fusion", 
+                    "asianfusion"
+                ]
+            ], 
+            "display_phone": "+1-979-680-9911", 
+            "rating_img_url_large": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/9f83790ff7f6/ico/stars/v1/stars_large_4_half.png", 
+            "id": "ohana-korean-grill-college-station", 
+            "snippet_image_url": "http://s3-media1.fl.yelpcdn.com/photo/qd6LsgsUoy0iyT8eKai66g/ms.jpg", 
+            "location": {
+                "city": "College Station", 
+                "display_address": [
+                    "2501 S Texas Ave", 
+                    "Ste D-102", 
+                    "College Station, TX 77840"
+                ], 
+                "geo_accuracy": 8.0, 
+                "postal_code": "77840", 
+                "country_code": "US", 
+                "address": [
+                    "2501 S Texas Ave", 
+                    "Ste D-102"
+                ], 
+                "coordinate": {
+                    "latitude": 30.607342, 
+                    "longitude": -96.308449
+                }, 
+                "state_code": "TX"
+            }
+        }, 
+        {
+            "is_claimed": true, 
+            "rating": 4.0, 
+            "mobile_url": "http://m.yelp.com/biz/rudys-country-store-and-bar-b-q-college-station", 
+            "rating_img_url": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/c2f3dd9799a5/ico/stars/v1/stars_4.png", 
+            "review_count": 77, 
+            "name": "Rudy's Country Store And Bar-B-Q", 
+            "rating_img_url_small": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/f62a5be2f902/ico/stars/v1/stars_small_4.png", 
+            "url": "http://www.yelp.com/biz/rudys-country-store-and-bar-b-q-college-station", 
+            "is_closed": false, 
+            "id": "rudys-country-store-and-bar-b-q-college-station", 
+            "phone": "9796967383", 
+            "snippet_text": "Yummy BBQ here!  Finger licking good ribs were my favorite. Very clean with friendly staff. Loved the old time country decor. \n\nWill definitely eat here again !", 
+            "image_url": "http://s3-media2.fl.yelpcdn.com/bphoto/rHRoK1DntKvthdbnWIIdww/ms.jpg", 
+            "categories": [
+                [
+                    "Barbeque", 
+                    "bbq"
+                ]
+            ], 
+            "display_phone": "+1-979-696-7383", 
+            "rating_img_url_large": "http://s3-media2.fl.yelpcdn.com/assets/2/www/img/ccf2b76faa2c/ico/stars/v1/stars_large_4.png", 
+            "menu_provider": "single_platform", 
+            "menu_date_updated": 1387916131, 
+            "snippet_image_url": "http://s3-media4.fl.yelpcdn.com/assets/srv0/yelp_styleguide/cc4afe21892e/assets/img/default_avatars/user_medium_square.png", 
+            "location": {
+                "city": "College Station", 
+                "display_address": [
+                    "504 Harvey Rd", 
+                    "College Station, TX 77840"
+                ], 
+                "geo_accuracy": 9.5, 
+                "postal_code": "77840", 
+                "country_code": "US", 
+                "address": [
+                    "504 Harvey Rd"
+                ], 
+                "coordinate": {
+                    "latitude": 30.618371, 
+                    "longitude": -96.314456
+                }, 
+                "state_code": "TX"
+            }
+        }, 
+        {
+            "is_claimed": true, 
+            "rating": 4.0, 
+            "mobile_url": "http://m.yelp.com/biz/c-and-j-barbeque-college-station-3", 
+            "rating_img_url": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/c2f3dd9799a5/ico/stars/v1/stars_4.png", 
+            "review_count": 24, 
+            "name": "C & J Barbeque", 
+            "rating_img_url_small": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/f62a5be2f902/ico/stars/v1/stars_small_4.png", 
+            "url": "http://www.yelp.com/biz/c-and-j-barbeque-college-station-3", 
+            "is_closed": false, 
+            "id": "c-and-j-barbeque-college-station-3", 
+            "phone": "9797768969", 
+            "snippet_text": "Order at the counter and seat yourself. Went on a Monday and got the Aggie Special - Whoop! 1/2#beef, 1/4#sausage, cheese block, onions, pickles, bread for...", 
+            "image_url": "http://s3-media4.fl.yelpcdn.com/bphoto/ljRb2YtIiROYFhCOa_92NA/ms.jpg", 
+            "categories": [
+                [
+                    "Barbeque", 
+                    "bbq"
+                ]
+            ], 
+            "display_phone": "+1-979-776-8969", 
+            "rating_img_url_large": "http://s3-media2.fl.yelpcdn.com/assets/2/www/img/ccf2b76faa2c/ico/stars/v1/stars_large_4.png", 
+            "menu_provider": "single_platform", 
+            "menu_date_updated": 1390445400, 
+            "snippet_image_url": "http://s3-media4.fl.yelpcdn.com/photo/owCXW0BUvzu7YNKgBK9eYw/ms.jpg", 
+            "location": {
+                "city": "College Station", 
+                "display_address": [
+                    "4304 Harvey Rd", 
+                    "College Station, TX 77845"
+                ], 
+                "geo_accuracy": 8.0, 
+                "postal_code": "77845", 
+                "country_code": "US", 
+                "address": [
+                    "4304 Harvey Rd"
+                ], 
+                "coordinate": {
+                    "latitude": 30.653954, 
+                    "longitude": -96.27581
+                }, 
+                "state_code": "TX"
+            }
+        }, 
+        {
+            "is_claimed": true, 
+            "rating": 3.5, 
+            "mobile_url": "http://m.yelp.com/biz/texas-roadhouse-college-station", 
+            "rating_img_url": "http://s3-media1.fl.yelpcdn.com/assets/2/www/img/5ef3eb3cb162/ico/stars/v1/stars_3_half.png", 
+            "review_count": 46, 
+            "name": "Texas Roadhouse", 
+            "rating_img_url_small": "http://s3-media1.fl.yelpcdn.com/assets/2/www/img/2e909d5d3536/ico/stars/v1/stars_small_3_half.png", 
+            "url": "http://www.yelp.com/biz/texas-roadhouse-college-station", 
+            "is_closed": false, 
+            "id": "texas-roadhouse-college-station", 
+            "phone": "9792680558", 
+            "snippet_text": "10 oz rib-eye: really really good steak and very affordable- to students, i ordered medium well, turns out to be perfect, i would say , almost fully cooked,...", 
+            "image_url": "http://s3-media4.fl.yelpcdn.com/bphoto/JMkvBID1_DfZxCib32kiVw/ms.jpg", 
+            "categories": [
+                [
+                    "Barbeque", 
+                    "bbq"
+                ], 
+                [
+                    "Steakhouses", 
+                    "steak"
+                ], 
+                [
+                    "American (Traditional)", 
+                    "tradamerican"
+                ]
+            ], 
+            "display_phone": "+1-979-268-0558", 
+            "rating_img_url_large": "http://s3-media3.fl.yelpcdn.com/assets/2/www/img/bd9b7a815d1b/ico/stars/v1/stars_large_3_half.png", 
+            "menu_provider": "single_platform", 
+            "menu_date_updated": 1437103911, 
+            "snippet_image_url": "http://s3-media4.fl.yelpcdn.com/photo/7-q_BW3azUbqc3aYb9N3OQ/ms.jpg", 
+            "location": {
+                "city": "College Station", 
+                "display_address": [
+                    "1601 University Dr East", 
+                    "College Station, TX 77840"
+                ], 
+                "geo_accuracy": 8.0, 
+                "postal_code": "77840", 
+                "country_code": "US", 
+                "address": [
+                    "1601 University Dr East"
+                ], 
+                "coordinate": {
+                    "latitude": 30.6387901306152, 
+                    "longitude": -96.3145599365234
+                }, 
+                "state_code": "TX"
+            }
+        }, 
+        {
+            "is_claimed": false, 
+            "rating": 3.5, 
+            "mobile_url": "http://m.yelp.com/biz/koppe-bridge-bar-and-grill-college-station-2", 
+            "rating_img_url": "http://s3-media1.fl.yelpcdn.com/assets/2/www/img/5ef3eb3cb162/ico/stars/v1/stars_3_half.png", 
+            "review_count": 17, 
+            "name": "Koppe Bridge Bar & Grill", 
+            "rating_img_url_small": "http://s3-media1.fl.yelpcdn.com/assets/2/www/img/2e909d5d3536/ico/stars/v1/stars_small_3_half.png", 
+            "url": "http://www.yelp.com/biz/koppe-bridge-bar-and-grill-college-station-2", 
+            "is_closed": false, 
+            "phone": "9797762833", 
+            "snippet_text": "We always try to stop at Koppe Bridge for a burger when we are in town! I love the 1/4 lb burger and have always enjoyed the fries. They do not skimp on...", 
+            "image_url": "http://s3-media3.fl.yelpcdn.com/bphoto/JMWjdoo2b-h1O1Ots6DjAw/ms.jpg", 
+            "categories": [
+                [
+                    "Barbeque", 
+                    "bbq"
+                ], 
+                [
+                    "American (Traditional)", 
+                    "tradamerican"
+                ]
+            ], 
+            "display_phone": "+1-979-776-2833", 
+            "rating_img_url_large": "http://s3-media3.fl.yelpcdn.com/assets/2/www/img/bd9b7a815d1b/ico/stars/v1/stars_large_3_half.png", 
+            "id": "koppe-bridge-bar-and-grill-college-station-2", 
+            "snippet_image_url": "http://s3-media2.fl.yelpcdn.com/photo/cWOP5MCIYTNMg02DsMDGuQ/ms.jpg", 
+            "location": {
+                "city": "College Station", 
+                "display_address": [
+                    "3940 Harvey Rd", 
+                    "College Station, TX 77845"
+                ], 
+                "geo_accuracy": 8.0, 
+                "postal_code": "77845", 
+                "country_code": "US", 
+                "address": [
+                    "3940 Harvey Rd"
+                ], 
+                "coordinate": {
+                    "latitude": 30.648973, 
+                    "longitude": -96.282303
+                }, 
+                "state_code": "TX"
+            }
+        }, 
+        {
+            "is_claimed": false, 
+            "rating": 3.5, 
+            "mobile_url": "http://m.yelp.com/biz/buppys-catering-and-bbq-buffet-bryan", 
+            "rating_img_url": "http://s3-media1.fl.yelpcdn.com/assets/2/www/img/5ef3eb3cb162/ico/stars/v1/stars_3_half.png", 
+            "review_count": 10, 
+            "name": "Buppy's Catering & BBQ Buffet", 
+            "rating_img_url_small": "http://s3-media1.fl.yelpcdn.com/assets/2/www/img/2e909d5d3536/ico/stars/v1/stars_small_3_half.png", 
+            "url": "http://www.yelp.com/biz/buppys-catering-and-bbq-buffet-bryan", 
+            "is_closed": false, 
+            "id": "buppys-catering-and-bbq-buffet-bryan", 
+            "phone": "9797796417", 
+            "snippet_text": "Got a chance to try a take out BBQ plate from the buffet here recently and was very happy with it.  For a set price you can cram as many of the meats and...", 
+            "image_url": "http://s3-media4.fl.yelpcdn.com/bphoto/3H8BQWL7Jy0gCdZOyQqNKQ/ms.jpg", 
+            "categories": [
+                [
+                    "Barbeque", 
+                    "bbq"
+                ], 
+                [
+                    "Buffets", 
+                    "buffets"
+                ]
+            ], 
+            "display_phone": "+1-979-779-6417", 
+            "rating_img_url_large": "http://s3-media3.fl.yelpcdn.com/assets/2/www/img/bd9b7a815d1b/ico/stars/v1/stars_large_3_half.png", 
+            "menu_provider": "single_platform", 
+            "menu_date_updated": 1426628849, 
+            "snippet_image_url": "http://s3-media4.fl.yelpcdn.com/photo/sRPn3g51wT9J07JzOrHuLA/ms.jpg", 
+            "location": {
+                "city": "Bryan", 
+                "display_address": [
+                    "506 Sulphur Springs Rd", 
+                    "Bryan, TX 77801"
+                ], 
+                "geo_accuracy": 8.0, 
+                "postal_code": "77801", 
+                "country_code": "US", 
+                "address": [
+                    "506 Sulphur Springs Rd"
+                ], 
+                "coordinate": {
+                    "latitude": 30.640438079834, 
+                    "longitude": -96.3520736694336
+                }, 
+                "state_code": "TX"
+            }
+        }, 
+        {
+            "is_claimed": false, 
+            "rating": 3.5, 
+            "mobile_url": "http://m.yelp.com/biz/j-codys-steaks-and-bbq-bryan", 
+            "rating_img_url": "http://s3-media1.fl.yelpcdn.com/assets/2/www/img/5ef3eb3cb162/ico/stars/v1/stars_3_half.png", 
+            "review_count": 38, 
+            "name": "J Cody's Steaks and BBQ", 
+            "rating_img_url_small": "http://s3-media1.fl.yelpcdn.com/assets/2/www/img/2e909d5d3536/ico/stars/v1/stars_small_3_half.png", 
+            "url": "http://www.yelp.com/biz/j-codys-steaks-and-bbq-bryan", 
+            "is_closed": false, 
+            "id": "j-codys-steaks-and-bbq-bryan", 
+            "phone": "9798462639", 
+            "snippet_text": "Always good, service consistently good, lots of choices of steaks, chicken fry that's done in house, hamburgers are awesome not to mention the ole...", 
+            "image_url": "http://s3-media1.fl.yelpcdn.com/bphoto/vjBQW2OI1CfE7vNA6U5QQg/ms.jpg", 
+            "categories": [
+                [
+                    "Barbeque", 
+                    "bbq"
+                ], 
+                [
+                    "Steakhouses", 
+                    "steak"
+                ]
+            ], 
+            "display_phone": "+1-979-846-2639", 
+            "rating_img_url_large": "http://s3-media3.fl.yelpcdn.com/assets/2/www/img/bd9b7a815d1b/ico/stars/v1/stars_large_3_half.png", 
+            "menu_provider": "single_platform", 
+            "menu_date_updated": 1387572026, 
+            "snippet_image_url": "http://s3-media1.fl.yelpcdn.com/photo/NrbiVdR-XKs74rM4b_hUAA/ms.jpg", 
+            "location": {
+                "city": "Bryan", 
+                "display_address": [
+                    "3610 S College Ave", 
+                    "Bryan, TX 77801"
+                ], 
+                "geo_accuracy": 8.0, 
+                "postal_code": "77801", 
+                "country_code": "US", 
+                "address": [
+                    "3610 S College Ave"
+                ], 
+                "coordinate": {
+                    "latitude": 30.633358, 
+                    "longitude": -96.353729
+                }, 
+                "state_code": "TX"
+            }
+        }, 
+        {
+            "is_claimed": true, 
+            "rating": 3.5, 
+            "mobile_url": "http://m.yelp.com/biz/c-and-j-barbeque-bryan", 
+            "rating_img_url": "http://s3-media1.fl.yelpcdn.com/assets/2/www/img/5ef3eb3cb162/ico/stars/v1/stars_3_half.png", 
+            "review_count": 15, 
+            "name": "C & J Barbeque", 
+            "rating_img_url_small": "http://s3-media1.fl.yelpcdn.com/assets/2/www/img/2e909d5d3536/ico/stars/v1/stars_small_3_half.png", 
+            "url": "http://www.yelp.com/biz/c-and-j-barbeque-bryan", 
+            "is_closed": false, 
+            "id": "c-and-j-barbeque-bryan", 
+            "phone": "9798226033", 
+            "snippet_text": "In College Station for the night, I was told about C&J's as the best place in town for BBQ, so I was all over it!  I got there around 7:45 pm and I was the...", 
+            "image_url": "http://s3-media4.fl.yelpcdn.com/bphoto/GewmqsuYVYrc8jGQ-rBhKw/ms.jpg", 
+            "categories": [
+                [
+                    "Barbeque", 
+                    "bbq"
+                ]
+            ], 
+            "display_phone": "+1-979-822-6033", 
+            "rating_img_url_large": "http://s3-media3.fl.yelpcdn.com/assets/2/www/img/bd9b7a815d1b/ico/stars/v1/stars_large_3_half.png", 
+            "menu_provider": "single_platform", 
+            "menu_date_updated": 1390423922, 
+            "snippet_image_url": "http://s3-media2.fl.yelpcdn.com/photo/zuXEqAdtEqEYJxrJnenrkg/ms.jpg", 
+            "location": {
+                "city": "Bryan", 
+                "display_address": [
+                    "1010 S Texas Ave", 
+                    "Bryan, TX 77803"
+                ], 
+                "geo_accuracy": 8.0, 
+                "postal_code": "77803", 
+                "country_code": "US", 
+                "address": [
+                    "1010 S Texas Ave"
+                ], 
+                "coordinate": {
+                    "latitude": 30.662682, 
+                    "longitude": -96.372169
+                }, 
+                "state_code": "TX"
+            }
+        }, 
+        {
+            "is_claimed": true, 
+            "rating": 3.5, 
+            "mobile_url": "http://m.yelp.com/biz/kreuz-market-bryan", 
+            "rating_img_url": "http://s3-media1.fl.yelpcdn.com/assets/2/www/img/5ef3eb3cb162/ico/stars/v1/stars_3_half.png", 
+            "review_count": 38, 
+            "name": "Kreuz Market", 
+            "rating_img_url_small": "http://s3-media1.fl.yelpcdn.com/assets/2/www/img/2e909d5d3536/ico/stars/v1/stars_small_3_half.png", 
+            "url": "http://www.yelp.com/biz/kreuz-market-bryan", 
+            "is_closed": false, 
+            "phone": "9797046147", 
+            "snippet_text": "Seriously good. Husband, a BBQ buff says it's the best brisket he's ever had. Mac and cheese is great as well. \n\nChicken is extra moist and one beef rib is...", 
+            "image_url": "http://s3-media4.fl.yelpcdn.com/bphoto/xLuIAVeZBEm1kSg7LpNQHg/ms.jpg", 
+            "categories": [
+                [
+                    "Barbeque", 
+                    "bbq"
+                ]
+            ], 
+            "display_phone": "+1-979-704-6147", 
+            "rating_img_url_large": "http://s3-media3.fl.yelpcdn.com/assets/2/www/img/bd9b7a815d1b/ico/stars/v1/stars_large_3_half.png", 
+            "id": "kreuz-market-bryan", 
+            "snippet_image_url": "http://s3-media4.fl.yelpcdn.com/photo/h8VXeSQtbBbQ1Fx_Yn74lQ/ms.jpg", 
+            "location": {
+                "city": "Bryan", 
+                "display_address": [
+                    "768 N Earl Rudder Fwy", 
+                    "Bryan, TX 77802"
+                ], 
+                "geo_accuracy": 9.5, 
+                "postal_code": "77802", 
+                "country_code": "US", 
+                "address": [
+                    "768 N Earl Rudder Fwy"
+                ], 
+                "coordinate": {
+                    "latitude": 30.6698817390188, 
+                    "longitude": -96.3347747779936
+                }, 
+                "state_code": "TX"
+            }
+        }, 
+        {
+            "is_claimed": false, 
+            "rating": 4.5, 
+            "mobile_url": "http://m.yelp.com/biz/lamar-and-nikis-pit-bbq-and-soul-food-bryan", 
+            "rating_img_url": "http://s3-media2.fl.yelpcdn.com/assets/2/www/img/99493c12711e/ico/stars/v1/stars_4_half.png", 
+            "review_count": 6, 
+            "name": "Lamar & Niki's Pit BBQ and Soul Food", 
+            "rating_img_url_small": "http://s3-media2.fl.yelpcdn.com/assets/2/www/img/a5221e66bc70/ico/stars/v1/stars_small_4_half.png", 
+            "url": "http://www.yelp.com/biz/lamar-and-nikis-pit-bbq-and-soul-food-bryan", 
+            "is_closed": false, 
+            "phone": "9797759059", 
+            "snippet_text": "Very good food.  Even nicer owners.  Keep your money local and visit this great place!", 
+            "image_url": "http://s3-media3.fl.yelpcdn.com/bphoto/WdN7UzAD9av-cNeQGIKccQ/ms.jpg", 
+            "categories": [
+                [
+                    "Barbeque", 
+                    "bbq"
+                ], 
+                [
+                    "Soul Food", 
+                    "soulfood"
+                ]
+            ], 
+            "display_phone": "+1-979-775-9059", 
+            "rating_img_url_large": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/9f83790ff7f6/ico/stars/v1/stars_large_4_half.png", 
+            "id": "lamar-and-nikis-pit-bbq-and-soul-food-bryan", 
+            "snippet_image_url": "http://s3-media4.fl.yelpcdn.com/assets/srv0/yelp_styleguide/cc4afe21892e/assets/img/default_avatars/user_medium_square.png", 
+            "location": {
+                "city": "Bryan", 
+                "display_address": [
+                    "2516 S Texas Ave", 
+                    "Bryan, TX 77803"
+                ], 
+                "geo_accuracy": 8.0, 
+                "postal_code": "77803", 
+                "country_code": "US", 
+                "address": [
+                    "2516 S Texas Ave"
+                ], 
+                "coordinate": {
+                    "latitude": 30.64677, 
+                    "longitude": -96.357941
+                }, 
+                "state_code": "TX"
+            }
+        }, 
+        {
+            "is_claimed": true, 
+            "rating": 3.5, 
+            "mobile_url": "http://m.yelp.com/biz/c-and-j-barbeque-college-station", 
+            "rating_img_url": "http://s3-media1.fl.yelpcdn.com/assets/2/www/img/5ef3eb3cb162/ico/stars/v1/stars_3_half.png", 
+            "review_count": 29, 
+            "name": "C & J Barbeque", 
+            "rating_img_url_small": "http://s3-media1.fl.yelpcdn.com/assets/2/www/img/2e909d5d3536/ico/stars/v1/stars_small_3_half.png", 
+            "url": "http://www.yelp.com/biz/c-and-j-barbeque-college-station", 
+            "is_closed": false, 
+            "id": "c-and-j-barbeque-college-station", 
+            "phone": "9796967900", 
+            "snippet_text": "Stopped here for lunch today for no reason other than curiosity to see if C&J has changed with time and competition. It has.\n\nI could tell from one glance...", 
+            "image_url": "http://s3-media1.fl.yelpcdn.com/bphoto/sl4dQ6SXPUvvcPYj_mgFxw/ms.jpg", 
+            "categories": [
+                [
+                    "Barbeque", 
+                    "bbq"
+                ]
+            ], 
+            "display_phone": "+1-979-696-7900", 
+            "rating_img_url_large": "http://s3-media3.fl.yelpcdn.com/assets/2/www/img/bd9b7a815d1b/ico/stars/v1/stars_large_3_half.png", 
+            "menu_provider": "single_platform", 
+            "menu_date_updated": 1390509333, 
+            "snippet_image_url": "http://s3-media2.fl.yelpcdn.com/photo/17VG_4O8L37dH1UHMtiNmQ/ms.jpg", 
+            "location": {
+                "city": "College Station", 
+                "display_address": [
+                    "105 Southwest Pkwy", 
+                    "College Station, TX 77840"
+                ], 
+                "geo_accuracy": 9.5, 
+                "postal_code": "77840", 
+                "country_code": "US", 
+                "address": [
+                    "105 Southwest Pkwy"
+                ], 
+                "coordinate": {
+                    "latitude": 30.591821207246, 
+                    "longitude": -96.330278967578
+                }, 
+                "state_code": "TX"
+            }
+        }, 
+        {
+            "is_claimed": false, 
+            "rating": 4.0, 
+            "mobile_url": "http://m.yelp.com/biz/holy-smokes-bbq-and-catering-bryan", 
+            "rating_img_url": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/c2f3dd9799a5/ico/stars/v1/stars_4.png", 
+            "review_count": 1, 
+            "name": "Holy Smokes Bbq & Catering", 
+            "rating_img_url_small": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/f62a5be2f902/ico/stars/v1/stars_small_4.png", 
+            "url": "http://www.yelp.com/biz/holy-smokes-bbq-and-catering-bryan", 
+            "is_closed": false, 
+            "phone": "9792186937", 
+            "snippet_text": "Well this was fun. Managed to catch this relatively unknown BBQ place at a catering event, and boy howdy are they good. Was able to sample the brisket...", 
+            "categories": [
+                [
+                    "Barbeque", 
+                    "bbq"
+                ]
+            ], 
+            "display_phone": "+1-979-218-6937", 
+            "rating_img_url_large": "http://s3-media2.fl.yelpcdn.com/assets/2/www/img/ccf2b76faa2c/ico/stars/v1/stars_large_4.png", 
+            "id": "holy-smokes-bbq-and-catering-bryan", 
+            "snippet_image_url": "http://s3-media2.fl.yelpcdn.com/photo/17VG_4O8L37dH1UHMtiNmQ/ms.jpg", 
+            "location": {
+                "city": "Bryan", 
+                "display_address": [
+                    "Bryan, TX"
+                ], 
+                "geo_accuracy": 5.0, 
+                "country_code": "US", 
+                "address": [], 
+                "coordinate": {
+                    "latitude": 30.67099, 
+                    "longitude": -96.37043
+                }, 
+                "state_code": "TX"
+            }
+        }, 
+        {
+            "is_claimed": false, 
+            "rating": 4.0, 
+            "mobile_url": "http://m.yelp.com/biz/wrecking-crew-bbq-college-station", 
+            "rating_img_url": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/c2f3dd9799a5/ico/stars/v1/stars_4.png", 
+            "review_count": 1, 
+            "name": "Wrecking Crew BBQ", 
+            "rating_img_url_small": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/f62a5be2f902/ico/stars/v1/stars_small_4.png", 
+            "url": "http://www.yelp.com/biz/wrecking-crew-bbq-college-station", 
+            "is_closed": false, 
+            "snippet_text": "Did you know that Kyle Field now has restaurants in the sky?  Yep, look up.  You know those new square sections where G Rollie White and Read Volleyball...", 
+            "image_url": "http://s3-media3.fl.yelpcdn.com/bphoto/LgUaL7s1jHX7U8r5rY4vWA/ms.jpg", 
+            "categories": [
+                [
+                    "Barbeque", 
+                    "bbq"
+                ]
+            ], 
+            "rating_img_url_large": "http://s3-media2.fl.yelpcdn.com/assets/2/www/img/ccf2b76faa2c/ico/stars/v1/stars_large_4.png", 
+            "id": "wrecking-crew-bbq-college-station", 
+            "snippet_image_url": "http://s3-media4.fl.yelpcdn.com/photo/sRPn3g51wT9J07JzOrHuLA/ms.jpg", 
+            "location": {
+                "city": "College Station", 
+                "display_address": [
+                    "Kyle Field", 
+                    "198 Joe Routt Blvd", 
+                    "College Station, TX 77840"
+                ], 
+                "geo_accuracy": 9.5, 
+                "postal_code": "77840", 
+                "country_code": "US", 
+                "address": [
+                    "Kyle Field", 
+                    "198 Joe Routt Blvd"
+                ], 
+                "coordinate": {
+                    "latitude": 30.616559, 
+                    "longitude": -96.3119743
+                }, 
+                "state_code": "TX"
+            }
+        }, 
+        {
+            "is_claimed": false, 
+            "rating": 3.0, 
+            "mobile_url": "http://m.yelp.com/biz/smokin-college-station-2", 
+            "rating_img_url": "http://s3-media3.fl.yelpcdn.com/assets/2/www/img/34bc8086841c/ico/stars/v1/stars_3.png", 
+            "review_count": 1, 
+            "name": "Smokin'", 
+            "rating_img_url_small": "http://s3-media3.fl.yelpcdn.com/assets/2/www/img/902abeed0983/ico/stars/v1/stars_small_3.png", 
+            "url": "http://www.yelp.com/biz/smokin-college-station-2", 
+            "is_closed": false, 
+            "snippet_text": "Some BBQ on the MSC lower level.   Heck yeah.     The lunch plate I picked up did not taste as if smoked on site.", 
+            "image_url": "http://s3-media2.fl.yelpcdn.com/bphoto/wuB_YXe9aoEo6_jmdQC6rQ/ms.jpg", 
+            "categories": [
+                [
+                    "Barbeque", 
+                    "bbq"
+                ]
+            ], 
+            "rating_img_url_large": "http://s3-media1.fl.yelpcdn.com/assets/2/www/img/e8b5b79d37ed/ico/stars/v1/stars_large_3.png", 
+            "id": "smokin-college-station-2", 
+            "snippet_image_url": "http://s3-media4.fl.yelpcdn.com/photo/sRPn3g51wT9J07JzOrHuLA/ms.jpg", 
+            "location": {
+                "city": "College Station", 
+                "display_address": [
+                    "Texas A&M University -Memorial Student Ctr", 
+                    "College Station, TX 77843"
+                ], 
+                "geo_accuracy": 9.5, 
+                "postal_code": "77843", 
+                "country_code": "US", 
+                "address": [
+                    "Texas A&M University -Memorial Student Ctr"
+                ], 
+                "coordinate": {
+                    "latitude": 30.611056, 
+                    "longitude": -96.349128
+                }, 
+                "state_code": "TX"
+            }
+        }, 
+        {
+            "is_claimed": false, 
+            "rating": 3.0, 
+            "mobile_url": "http://m.yelp.com/biz/bbqs-college-station", 
+            "rating_img_url": "http://s3-media3.fl.yelpcdn.com/assets/2/www/img/34bc8086841c/ico/stars/v1/stars_3.png", 
+            "review_count": 1, 
+            "name": "BBQ's", 
+            "rating_img_url_small": "http://s3-media3.fl.yelpcdn.com/assets/2/www/img/902abeed0983/ico/stars/v1/stars_small_3.png", 
+            "url": "http://www.yelp.com/biz/bbqs-college-station", 
+            "is_closed": false, 
+            "snippet_text": "Good bbq that tasted like it was smoked somewhere else and then brought here and heated.", 
+            "image_url": "http://s3-media2.fl.yelpcdn.com/bphoto/OzZuZvC8HLUVUNxSYS9ZKg/ms.jpg", 
+            "categories": [
+                [
+                    "Barbeque", 
+                    "bbq"
+                ]
+            ], 
+            "rating_img_url_large": "http://s3-media1.fl.yelpcdn.com/assets/2/www/img/e8b5b79d37ed/ico/stars/v1/stars_large_3.png", 
+            "id": "bbqs-college-station", 
+            "snippet_image_url": "http://s3-media4.fl.yelpcdn.com/photo/sRPn3g51wT9J07JzOrHuLA/ms.jpg", 
+            "location": {
+                "city": "College Station", 
+                "display_address": [
+                    "The Underground Food Court - Sbisa Basement", 
+                    "Texas A&M University Campus", 
+                    "College Station, TX 77843"
+                ], 
+                "geo_accuracy": 9.5, 
+                "postal_code": "77843", 
+                "country_code": "US", 
+                "address": [
+                    "The Underground Food Court - Sbisa Basement", 
+                    "Texas A&M University Campus"
+                ], 
+                "coordinate": {
+                    "latitude": 30.61, 
+                    "longitude": -96.34
+                }, 
+                "state_code": "TX"
+            }
+        }, 
+        {
+            "is_claimed": false, 
+            "rating": 3.0, 
+            "mobile_url": "http://m.yelp.com/biz/bbqs-college-station-2", 
+            "rating_img_url": "http://s3-media3.fl.yelpcdn.com/assets/2/www/img/34bc8086841c/ico/stars/v1/stars_3.png", 
+            "review_count": 1, 
+            "name": "BBQ's", 
+            "rating_img_url_small": "http://s3-media3.fl.yelpcdn.com/assets/2/www/img/902abeed0983/ico/stars/v1/stars_small_3.png", 
+            "url": "http://www.yelp.com/biz/bbqs-college-station-2", 
+            "is_closed": false, 
+            "snippet_text": "As with trying at the Underground, here it also tastes as if it were smoked somewhere else then brought here.", 
+            "categories": [
+                [
+                    "Barbeque", 
+                    "bbq"
+                ]
+            ], 
+            "rating_img_url_large": "http://s3-media1.fl.yelpcdn.com/assets/2/www/img/e8b5b79d37ed/ico/stars/v1/stars_large_3.png", 
+            "id": "bbqs-college-station-2", 
+            "snippet_image_url": "http://s3-media4.fl.yelpcdn.com/photo/sRPn3g51wT9J07JzOrHuLA/ms.jpg", 
+            "location": {
+                "city": "College Station", 
+                "display_address": [
+                    "Memorial Student Center", 
+                    "Lower Level", 
+                    "College Station, TX 77843"
+                ], 
+                "geo_accuracy": 9.5, 
+                "postal_code": "77843", 
+                "country_code": "US", 
+                "address": [
+                    "Memorial Student Center", 
+                    "Lower Level"
+                ], 
+                "coordinate": {
+                    "latitude": 30.611056, 
+                    "longitude": -96.349128
+                }, 
+                "state_code": "TX"
+            }
+        }, 
+        {
+            "is_claimed": true, 
+            "rating": 2.0, 
+            "mobile_url": "http://m.yelp.com/biz/dickeys-barbecue-pit-college-station", 
+            "rating_img_url": "http://s3-media2.fl.yelpcdn.com/assets/2/www/img/b561c24f8341/ico/stars/v1/stars_2.png", 
+            "review_count": 8, 
+            "name": "Dickey's Barbecue Pit", 
+            "rating_img_url_small": "http://s3-media2.fl.yelpcdn.com/assets/2/www/img/a6210baec261/ico/stars/v1/stars_small_2.png", 
+            "url": "http://www.yelp.com/biz/dickeys-barbecue-pit-college-station", 
+            "is_closed": false, 
+            "phone": "9796965400", 
+            "snippet_text": "WHAT TO EXPECT:  Free vanilla ice cream when dining in.  Not the best kind, but it is free.\n\nFOOD:\n     Westerner:  Got the westerner w/ sausage & pulled...", 
+            "image_url": "http://s3-media3.fl.yelpcdn.com/bphoto/XzQCmJslWXIVCXv9oFTVtg/ms.jpg", 
+            "categories": [
+                [
+                    "Barbeque", 
+                    "bbq"
+                ]
+            ], 
+            "display_phone": "+1-979-696-5400", 
+            "rating_img_url_large": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/c00926ee5dcb/ico/stars/v1/stars_large_2.png", 
+            "id": "dickeys-barbecue-pit-college-station", 
+            "snippet_image_url": "http://s3-media4.fl.yelpcdn.com/assets/srv0/yelp_styleguide/cc4afe21892e/assets/img/default_avatars/user_medium_square.png", 
+            "location": {
+                "city": "College Station", 
+                "display_address": [
+                    "2297 Earl Rudder Frwy. S.", 
+                    "College Station, TX 77845"
+                ], 
+                "geo_accuracy": 8.0, 
+                "postal_code": "77845", 
+                "country_code": "US", 
+                "address": [
+                    "2297 Earl Rudder Frwy. S."
+                ], 
+                "coordinate": {
+                    "latitude": 30.624517, 
+                    "longitude": -96.297646
+                }, 
+                "state_code": "TX"
+            }
+        }
+    ]
+}

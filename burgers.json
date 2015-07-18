@@ -1,0 +1,1002 @@
+{
+    "region": {
+        "span": {
+            "latitude_delta": 0.12436349571239447, 
+            "longitude_delta": 0.16619173999998793
+        }, 
+        "center": {
+            "latitude": 30.63849263831255, 
+            "longitude": -96.37969770000001
+        }
+    }, 
+    "total": 40, 
+    "businesses": [
+        {
+            "is_claimed": true, 
+            "rating": 4.5, 
+            "mobile_url": "http://m.yelp.com/biz/burger-house-bryan", 
+            "rating_img_url": "http://s3-media2.fl.yelpcdn.com/assets/2/www/img/99493c12711e/ico/stars/v1/stars_4_half.png", 
+            "review_count": 38, 
+            "name": "Burger House", 
+            "rating_img_url_small": "http://s3-media2.fl.yelpcdn.com/assets/2/www/img/a5221e66bc70/ico/stars/v1/stars_small_4_half.png", 
+            "url": "http://www.yelp.com/biz/burger-house-bryan", 
+            "is_closed": false, 
+            "id": "burger-house-bryan", 
+            "phone": "9797752924", 
+            "snippet_text": "Simple but Amazing burger! I got the bul-go-gi, Korean style sweet and mildly spicy barbecued beef, in soft bun made in-store, mouthwateringly awesome. You...", 
+            "image_url": "http://s3-media2.fl.yelpcdn.com/bphoto/qI7fTd2qQDQsn5IMFKDVIQ/ms.jpg", 
+            "categories": [
+                [
+                    "Burgers", 
+                    "burgers"
+                ]
+            ], 
+            "display_phone": "+1-979-775-2924", 
+            "rating_img_url_large": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/9f83790ff7f6/ico/stars/v1/stars_large_4_half.png", 
+            "menu_provider": "single_platform", 
+            "menu_date_updated": 1394275681, 
+            "snippet_image_url": "http://s3-media1.fl.yelpcdn.com/photo/uRQtBkbicDnuCDXAKlAifg/ms.jpg", 
+            "location": {
+                "city": "Bryan", 
+                "display_address": [
+                    "3310 S College Ave", 
+                    "Bryan, TX 77801"
+                ], 
+                "geo_accuracy": 8.0, 
+                "postal_code": "77801", 
+                "country_code": "US", 
+                "address": [
+                    "3310 S College Ave"
+                ], 
+                "coordinate": {
+                    "latitude": 30.637812, 
+                    "longitude": -96.357262
+                }, 
+                "state_code": "TX"
+            }
+        }, 
+        {
+            "is_claimed": true, 
+            "rating": 4.5, 
+            "mobile_url": "http://m.yelp.com/biz/stover-bros-cafe-bryan", 
+            "rating_img_url": "http://s3-media2.fl.yelpcdn.com/assets/2/www/img/99493c12711e/ico/stars/v1/stars_4_half.png", 
+            "review_count": 26, 
+            "name": "Stover Bros Cafe", 
+            "rating_img_url_small": "http://s3-media2.fl.yelpcdn.com/assets/2/www/img/a5221e66bc70/ico/stars/v1/stars_small_4_half.png", 
+            "url": "http://www.yelp.com/biz/stover-bros-cafe-bryan", 
+            "is_closed": false, 
+            "phone": "9798469600", 
+            "snippet_text": "Probably the best burger I have ever had.  Hand formed patties, thick sliced, freshly cooked bacon, thick sliced deli style pickles, a nice thick slide of...", 
+            "image_url": "http://s3-media2.fl.yelpcdn.com/bphoto/-id6KVbH58OgcPPTOteORw/ms.jpg", 
+            "categories": [
+                [
+                    "Burgers", 
+                    "burgers"
+                ], 
+                [
+                    "American (New)", 
+                    "newamerican"
+                ], 
+                [
+                    "Cafes", 
+                    "cafes"
+                ]
+            ], 
+            "display_phone": "+1-979-846-9600", 
+            "rating_img_url_large": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/9f83790ff7f6/ico/stars/v1/stars_large_4_half.png", 
+            "id": "stover-bros-cafe-bryan", 
+            "snippet_image_url": "http://s3-media4.fl.yelpcdn.com/photo/h8VXeSQtbBbQ1Fx_Yn74lQ/ms.jpg", 
+            "location": {
+                "city": "Bryan", 
+                "display_address": [
+                    "1760 Briarcrest Dr", 
+                    "Bryan, TX 77802"
+                ], 
+                "geo_accuracy": 8.0, 
+                "postal_code": "77802", 
+                "country_code": "US", 
+                "address": [
+                    "1760 Briarcrest Dr"
+                ], 
+                "coordinate": {
+                    "latitude": 30.653444, 
+                    "longitude": -96.337082
+                }, 
+                "state_code": "TX"
+            }
+        }, 
+        {
+            "is_claimed": true, 
+            "rating": 4.0, 
+            "mobile_url": "http://m.yelp.com/biz/grub-burger-bar-college-station", 
+            "rating_img_url": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/c2f3dd9799a5/ico/stars/v1/stars_4.png", 
+            "review_count": 187, 
+            "name": "Grub Burger Bar", 
+            "rating_img_url_small": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/f62a5be2f902/ico/stars/v1/stars_small_4.png", 
+            "url": "http://www.yelp.com/biz/grub-burger-bar-college-station", 
+            "is_closed": false, 
+            "id": "grub-burger-bar-college-station", 
+            "phone": "9792681041", 
+            "snippet_text": "I love grub burger! I'm here with friends, and we all got a different type of burger. I got swimmin' upstream, and someone else at my table got the chickpea...", 
+            "image_url": "http://s3-media4.fl.yelpcdn.com/bphoto/GBMcJ-tQqgr2PhCnldz6lQ/ms.jpg", 
+            "categories": [
+                [
+                    "Burgers", 
+                    "burgers"
+                ], 
+                [
+                    "Bars", 
+                    "bars"
+                ]
+            ], 
+            "display_phone": "+1-979-268-1041", 
+            "rating_img_url_large": "http://s3-media2.fl.yelpcdn.com/assets/2/www/img/ccf2b76faa2c/ico/stars/v1/stars_large_4.png", 
+            "menu_provider": "single_platform", 
+            "menu_date_updated": 1433048315, 
+            "snippet_image_url": "http://s3-media2.fl.yelpcdn.com/photo/6ZbQYnu3W5LEUGAcF_1d3Q/ms.jpg", 
+            "location": {
+                "city": "College Station", 
+                "display_address": [
+                    "980 University Dr E", 
+                    "Ste 400", 
+                    "College Station, TX 77840"
+                ], 
+                "geo_accuracy": 9.5, 
+                "postal_code": "77840", 
+                "country_code": "US", 
+                "address": [
+                    "980 University Dr E", 
+                    "Ste 400"
+                ], 
+                "coordinate": {
+                    "latitude": 30.635133, 
+                    "longitude": -96.323098
+                }, 
+                "state_code": "TX"
+            }
+        }, 
+        {
+            "is_claimed": false, 
+            "rating": 4.5, 
+            "mobile_url": "http://m.yelp.com/biz/butlers-soul-food-bryan", 
+            "rating_img_url": "http://s3-media2.fl.yelpcdn.com/assets/2/www/img/99493c12711e/ico/stars/v1/stars_4_half.png", 
+            "review_count": 10, 
+            "name": "Butler's Soul Food", 
+            "rating_img_url_small": "http://s3-media2.fl.yelpcdn.com/assets/2/www/img/a5221e66bc70/ico/stars/v1/stars_small_4_half.png", 
+            "url": "http://www.yelp.com/biz/butlers-soul-food-bryan", 
+            "is_closed": false, 
+            "id": "butlers-soul-food-bryan", 
+            "phone": "9797036278", 
+            "snippet_text": "I had limited understanding of what soul food was about, but eating at Butler's definitely broadened that. \n\nSome friends and I went to their lunch buffet...", 
+            "image_url": "http://s3-media4.fl.yelpcdn.com/bphoto/ZfMK47Db4EATcJC0vqpukQ/ms.jpg", 
+            "categories": [
+                [
+                    "Burgers", 
+                    "burgers"
+                ], 
+                [
+                    "American (Traditional)", 
+                    "tradamerican"
+                ], 
+                [
+                    "Soul Food", 
+                    "soulfood"
+                ]
+            ], 
+            "display_phone": "+1-979-703-6278", 
+            "rating_img_url_large": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/9f83790ff7f6/ico/stars/v1/stars_large_4_half.png", 
+            "menu_provider": "single_platform", 
+            "menu_date_updated": 1426225673, 
+            "snippet_image_url": "http://s3-media4.fl.yelpcdn.com/photo/gDjYIHvan_TV1mfgUytJPg/ms.jpg", 
+            "location": {
+                "city": "Bryan", 
+                "display_address": [
+                    "1416 Groesbeck", 
+                    "Bryan, TX 77803"
+                ], 
+                "geo_accuracy": 9.5, 
+                "postal_code": "77803", 
+                "country_code": "US", 
+                "address": [
+                    "1416 Groesbeck"
+                ], 
+                "coordinate": {
+                    "latitude": 30.6596042, 
+                    "longitude": -96.3784489
+                }, 
+                "state_code": "TX"
+            }
+        }, 
+        {
+            "is_claimed": true, 
+            "rating": 4.0, 
+            "mobile_url": "http://m.yelp.com/biz/flip-and-peel-burgers-and-fries-college-station", 
+            "rating_img_url": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/c2f3dd9799a5/ico/stars/v1/stars_4.png", 
+            "review_count": 21, 
+            "name": "Flip and Peel Burgers and Fries", 
+            "rating_img_url_small": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/f62a5be2f902/ico/stars/v1/stars_small_4.png", 
+            "url": "http://www.yelp.com/biz/flip-and-peel-burgers-and-fries-college-station", 
+            "is_closed": false, 
+            "phone": "9797037885", 
+            "snippet_text": "First time trying Flip & Peel and I've been missing out!! Their burger was awesome. The bacon was crispy, the veggies were fresh and the right amount and...", 
+            "image_url": "http://s3-media4.fl.yelpcdn.com/bphoto/t5sQerrbdLD2l3Tp8jzl_w/ms.jpg", 
+            "categories": [
+                [
+                    "Burgers", 
+                    "burgers"
+                ]
+            ], 
+            "display_phone": "+1-979-703-7885", 
+            "rating_img_url_large": "http://s3-media2.fl.yelpcdn.com/assets/2/www/img/ccf2b76faa2c/ico/stars/v1/stars_large_4.png", 
+            "id": "flip-and-peel-burgers-and-fries-college-station", 
+            "snippet_image_url": "http://s3-media2.fl.yelpcdn.com/photo/h8HoYRVE7WaNPDZWStpIWw/ms.jpg", 
+            "location": {
+                "city": "College Station", 
+                "display_address": [
+                    "Post Oak Mall Food Ct", 
+                    "1500 Harvey Rd, Ste 1042", 
+                    "College Station, TX 77840"
+                ], 
+                "geo_accuracy": 8.0, 
+                "postal_code": "77840", 
+                "country_code": "US", 
+                "address": [
+                    "Post Oak Mall Food Ct", 
+                    "1500 Harvey Rd, Ste 1042"
+                ], 
+                "coordinate": {
+                    "latitude": 30.62397, 
+                    "longitude": -96.304153
+                }, 
+                "state_code": "TX"
+            }
+        }, 
+        {
+            "is_claimed": false, 
+            "rating": 4.0, 
+            "mobile_url": "http://m.yelp.com/biz/koppe-bridge-bar-and-grill-college-station", 
+            "rating_img_url": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/c2f3dd9799a5/ico/stars/v1/stars_4.png", 
+            "review_count": 81, 
+            "name": "Koppe Bridge Bar & Grill", 
+            "rating_img_url_small": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/f62a5be2f902/ico/stars/v1/stars_small_4.png", 
+            "url": "http://www.yelp.com/biz/koppe-bridge-bar-and-grill-college-station", 
+            "is_closed": false, 
+            "phone": "9797642933", 
+            "snippet_text": "I've read that there is a beauty in simplicity, and when you eat a burger in Koppe Bridge Bar & Grill you get to realize this is true. Don't expect anything...", 
+            "image_url": "http://s3-media1.fl.yelpcdn.com/bphoto/7G-ENa1509leScV_hFZvgA/ms.jpg", 
+            "categories": [
+                [
+                    "Burgers", 
+                    "burgers"
+                ], 
+                [
+                    "American (New)", 
+                    "newamerican"
+                ], 
+                [
+                    "Bars", 
+                    "bars"
+                ]
+            ], 
+            "display_phone": "+1-979-764-2933", 
+            "rating_img_url_large": "http://s3-media2.fl.yelpcdn.com/assets/2/www/img/ccf2b76faa2c/ico/stars/v1/stars_large_4.png", 
+            "id": "koppe-bridge-bar-and-grill-college-station", 
+            "snippet_image_url": "http://s3-media2.fl.yelpcdn.com/photo/aLSGuLivrARLMcFqkeRjuA/ms.jpg", 
+            "location": {
+                "city": "College Station", 
+                "display_address": [
+                    "11777 Fm 2154 Rd", 
+                    "College Station, TX 77845"
+                ], 
+                "geo_accuracy": 9.5, 
+                "postal_code": "77845", 
+                "country_code": "US", 
+                "address": [
+                    "11777 Fm 2154 Rd"
+                ], 
+                "coordinate": {
+                    "latitude": 30.5819637766251, 
+                    "longitude": -96.3221356893769
+                }, 
+                "state_code": "TX"
+            }
+        }, 
+        {
+            "is_claimed": true, 
+            "rating": 4.0, 
+            "mobile_url": "http://m.yelp.com/biz/boneheads-college-station-2", 
+            "rating_img_url": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/c2f3dd9799a5/ico/stars/v1/stars_4.png", 
+            "review_count": 52, 
+            "name": "Boneheads", 
+            "rating_img_url_small": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/f62a5be2f902/ico/stars/v1/stars_small_4.png", 
+            "url": "http://www.yelp.com/biz/boneheads-college-station-2", 
+            "is_closed": false, 
+            "id": "boneheads-college-station-2", 
+            "deals": [
+                {
+                    "is_popular": true, 
+                    "what_you_get": "You get a voucher redeemable for $15 at Boneheads.\nPrint out your voucher, or redeem on your phone with the <a href=\"http://www.yelp.com/yelpmobile?source=deal_marketing\">Yelp app</a>.", 
+                    "time_start": 1416016691, 
+                    "title": "$7 for $15", 
+                    "url": "http://www.yelp.com/deals/boneheads-college-station-2", 
+                    "additional_restrictions": "Promotion lasts for 1 year from date of purchase. After that period, your voucher is redeemable for the amount you paid, less any value you may have received. Not valid with other vouchers, certificates, or offers. Only 1 voucher(s) can be purchased and redeemed per person. Up to 3 can be purchased as gifts for others. Subject to the <a target=\"_blank\" href=\"http://www.yelp.com/tos/general_b2c_us_20120911\">General Terms</a>.", 
+                    "id": "1SNQyu5E7rR8mXbOpvP_7w", 
+                    "important_restrictions": "Limit 1 voucher(s) per table.", 
+                    "image_url": "http://s3-media2.fl.yelpcdn.com/dphoto/ejPF8OaHjo8PwrdAMoKrDg/m.jpg", 
+                    "options": [
+                        {
+                            "original_price": 1500, 
+                            "title": "$7 for $15", 
+                            "price": 700, 
+                            "purchase_url": "https://www.yelp.com/checkout/deal/ZFBVIV-UNcj0HdjsxVWRCw", 
+                            "formatted_original_price": "$15", 
+                            "formatted_price": "$7", 
+                            "is_quantity_limited": false
+                        }
+                    ], 
+                    "currency_code": "USD"
+                }
+            ], 
+            "phone": "9795876868", 
+            "snippet_text": "I had the best experience at Boneheads last Friday.  Everyone was super nice, the food was fresh and got to my table SUPER fast, they had great music...", 
+            "image_url": "http://s3-media4.fl.yelpcdn.com/bphoto/2Pvu3XKd-Uzhy0WdQVz8Lg/ms.jpg", 
+            "categories": [
+                [
+                    "Burgers", 
+                    "burgers"
+                ], 
+                [
+                    "American (New)", 
+                    "newamerican"
+                ], 
+                [
+                    "Seafood", 
+                    "seafood"
+                ]
+            ], 
+            "display_phone": "+1-979-587-6868", 
+            "rating_img_url_large": "http://s3-media2.fl.yelpcdn.com/assets/2/www/img/ccf2b76faa2c/ico/stars/v1/stars_large_4.png", 
+            "menu_provider": "single_platform", 
+            "menu_date_updated": 1433050054, 
+            "snippet_image_url": "http://s3-media4.fl.yelpcdn.com/photo/h8VXeSQtbBbQ1Fx_Yn74lQ/ms.jpg", 
+            "location": {
+                "city": "College Station", 
+                "display_address": [
+                    "830 University Dr E", 
+                    "Ste 100", 
+                    "College Station, TX 77840"
+                ], 
+                "geo_accuracy": 8.0, 
+                "postal_code": "77840", 
+                "country_code": "US", 
+                "address": [
+                    "830 University Dr E", 
+                    "Ste 100"
+                ], 
+                "coordinate": {
+                    "latitude": 30.6346309930086, 
+                    "longitude": -96.3263326138258
+                }, 
+                "state_code": "TX"
+            }
+        }, 
+        {
+            "is_claimed": false, 
+            "rating": 4.0, 
+            "mobile_url": "http://m.yelp.com/biz/the-remnant-from-nawlins-college-station", 
+            "rating_img_url": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/c2f3dd9799a5/ico/stars/v1/stars_4.png", 
+            "review_count": 14, 
+            "name": "The Remnant From Nawlins", 
+            "rating_img_url_small": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/f62a5be2f902/ico/stars/v1/stars_small_4.png", 
+            "url": "http://www.yelp.com/biz/the-remnant-from-nawlins-college-station", 
+            "is_closed": false, 
+            "id": "the-remnant-from-nawlins-college-station", 
+            "phone": "9797397606", 
+            "snippet_text": "I visited Nawlins yesterday and I enjoyed not only the food but my experience! I heard from my friends about this place so I thought to give it try before...", 
+            "image_url": "http://s3-media1.fl.yelpcdn.com/bphoto/kkFKR8CJEC3LAwYvKGEBhg/ms.jpg", 
+            "categories": [
+                [
+                    "Burgers", 
+                    "burgers"
+                ], 
+                [
+                    "Cajun/Creole", 
+                    "cajun"
+                ], 
+                [
+                    "Soul Food", 
+                    "soulfood"
+                ]
+            ], 
+            "display_phone": "+1-979-739-7606", 
+            "rating_img_url_large": "http://s3-media2.fl.yelpcdn.com/assets/2/www/img/ccf2b76faa2c/ico/stars/v1/stars_large_4.png", 
+            "menu_provider": "single_platform", 
+            "menu_date_updated": 1403865302, 
+            "snippet_image_url": "http://s3-media3.fl.yelpcdn.com/photo/DE4gOAARfkAOw6hpgMq0Mw/ms.jpg", 
+            "location": {
+                "city": "College Station", 
+                "display_address": [
+                    "604 Holleman Dr", 
+                    "College Station, TX 77840"
+                ], 
+                "geo_accuracy": 9.5, 
+                "postal_code": "77840", 
+                "country_code": "US", 
+                "address": [
+                    "604 Holleman Dr"
+                ], 
+                "coordinate": {
+                    "latitude": 30.600569, 
+                    "longitude": -96.327569
+                }, 
+                "state_code": "TX"
+            }
+        }, 
+        {
+            "is_claimed": false, 
+            "rating": 5.0, 
+            "mobile_url": "http://m.yelp.com/biz/mickeys-slider-truck-college-station", 
+            "rating_img_url": "http://s3-media1.fl.yelpcdn.com/assets/2/www/img/f1def11e4e79/ico/stars/v1/stars_5.png", 
+            "review_count": 4, 
+            "name": "Mickey's Slider Truck", 
+            "rating_img_url_small": "http://s3-media1.fl.yelpcdn.com/assets/2/www/img/c7623205d5cd/ico/stars/v1/stars_small_5.png", 
+            "url": "http://www.yelp.com/biz/mickeys-slider-truck-college-station", 
+            "is_closed": false, 
+            "phone": "9798464488", 
+            "snippet_text": "Great sliders in store and out on the truck. Both Mickey and Miller are wonderful to work with. We've had them cater two events this year and will...", 
+            "image_url": "http://s3-media1.fl.yelpcdn.com/bphoto/hR1ObxmOz5PEniHaWjfC1A/ms.jpg", 
+            "categories": [
+                [
+                    "Burgers", 
+                    "burgers"
+                ], 
+                [
+                    "Food Trucks", 
+                    "foodtrucks"
+                ], 
+                [
+                    "American (New)", 
+                    "newamerican"
+                ]
+            ], 
+            "display_phone": "+1-979-846-4488", 
+            "rating_img_url_large": "http://s3-media3.fl.yelpcdn.com/assets/2/www/img/22affc4e6c38/ico/stars/v1/stars_large_5.png", 
+            "id": "mickeys-slider-truck-college-station", 
+            "snippet_image_url": "http://s3-media2.fl.yelpcdn.com/photo/h8HoYRVE7WaNPDZWStpIWw/ms.jpg", 
+            "location": {
+                "city": "College Station", 
+                "display_address": [
+                    "700 University Dr E", 
+                    "Ste C", 
+                    "College Station, TX 77840"
+                ], 
+                "geo_accuracy": 9.5, 
+                "postal_code": "77840", 
+                "country_code": "US", 
+                "address": [
+                    "700 University Dr E", 
+                    "Ste C"
+                ], 
+                "coordinate": {
+                    "latitude": 30.616559, 
+                    "longitude": -96.3119743
+                }, 
+                "state_code": "TX"
+            }
+        }, 
+        {
+            "is_claimed": true, 
+            "rating": 4.0, 
+            "mobile_url": "http://m.yelp.com/biz/bryan-fat-burger-bryan", 
+            "rating_img_url": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/c2f3dd9799a5/ico/stars/v1/stars_4.png", 
+            "review_count": 8, 
+            "name": "Bryan Fat Burger", 
+            "rating_img_url_small": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/f62a5be2f902/ico/stars/v1/stars_small_4.png", 
+            "url": "http://www.yelp.com/biz/bryan-fat-burger-bryan", 
+            "is_closed": false, 
+            "id": "bryan-fat-burger-bryan", 
+            "phone": "9798222492", 
+            "snippet_text": "HELLO BEAUTIFUL WORLD!!! Love,  LOVE this place what makes it really good is the Grill it's been here Forever!!!!! \n      Back in The Day Baby :)...", 
+            "image_url": "http://s3-media4.fl.yelpcdn.com/bphoto/eNvELV0D6g4OV1NRQGAWyw/ms.jpg", 
+            "categories": [
+                [
+                    "Burgers", 
+                    "burgers"
+                ]
+            ], 
+            "display_phone": "+1-979-822-2492", 
+            "rating_img_url_large": "http://s3-media2.fl.yelpcdn.com/assets/2/www/img/ccf2b76faa2c/ico/stars/v1/stars_large_4.png", 
+            "menu_provider": "single_platform", 
+            "menu_date_updated": 1426628576, 
+            "snippet_image_url": "http://s3-media4.fl.yelpcdn.com/photo/WPRGBmO4WuAZKa_hYd0Mng/ms.jpg", 
+            "location": {
+                "city": "Bryan", 
+                "display_address": [
+                    "1801 S Texas Ave", 
+                    "Bryan, TX 77802"
+                ], 
+                "geo_accuracy": 8.0, 
+                "postal_code": "77802", 
+                "country_code": "US", 
+                "address": [
+                    "1801 S Texas Ave"
+                ], 
+                "coordinate": {
+                    "latitude": 30.653079226613, 
+                    "longitude": -96.3635435700417
+                }, 
+                "state_code": "TX"
+            }
+        }, 
+        {
+            "is_claimed": false, 
+            "rating": 4.5, 
+            "mobile_url": "http://m.yelp.com/biz/flip-and-peel-burgers-and-ritas-bryan", 
+            "rating_img_url": "http://s3-media2.fl.yelpcdn.com/assets/2/www/img/99493c12711e/ico/stars/v1/stars_4_half.png", 
+            "review_count": 8, 
+            "name": "Flip & Peel Burgers & Ritas", 
+            "rating_img_url_small": "http://s3-media2.fl.yelpcdn.com/assets/2/www/img/a5221e66bc70/ico/stars/v1/stars_small_4_half.png", 
+            "url": "http://www.yelp.com/biz/flip-and-peel-burgers-and-ritas-bryan", 
+            "is_closed": false, 
+            "phone": "9794024439", 
+            "snippet_text": "I like their burgers. I had the one with carnitas today. \nThe burgers are indeed rather unusual. And the price of $4.99 for a large tasty burger is not that...", 
+            "image_url": "http://s3-media1.fl.yelpcdn.com/bphoto/YertRKgA16Ss6VYo85iZuQ/ms.jpg", 
+            "categories": [
+                [
+                    "Burgers", 
+                    "burgers"
+                ]
+            ], 
+            "display_phone": "+1-979-402-4439", 
+            "rating_img_url_large": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/9f83790ff7f6/ico/stars/v1/stars_large_4_half.png", 
+            "id": "flip-and-peel-burgers-and-ritas-bryan", 
+            "snippet_image_url": "http://s3-media1.fl.yelpcdn.com/photo/pts9jWoLXHKWMiNnOfTmYQ/ms.jpg", 
+            "location": {
+                "city": "Bryan", 
+                "display_address": [
+                    "3203 Freedom Blvd", 
+                    "Bryan, TX 77802"
+                ], 
+                "geo_accuracy": 8.0, 
+                "postal_code": "77802", 
+                "country_code": "US", 
+                "address": [
+                    "3203 Freedom Blvd"
+                ], 
+                "coordinate": {
+                    "latitude": 30.6598052978516, 
+                    "longitude": -96.329345703125
+                }, 
+                "state_code": "TX"
+            }
+        }, 
+        {
+            "is_claimed": true, 
+            "rating": 4.0, 
+            "mobile_url": "http://m.yelp.com/biz/harvey-washbangers-college-station", 
+            "rating_img_url": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/c2f3dd9799a5/ico/stars/v1/stars_4.png", 
+            "review_count": 57, 
+            "name": "Harvey Washbangers", 
+            "rating_img_url_small": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/f62a5be2f902/ico/stars/v1/stars_small_4.png", 
+            "url": "http://www.yelp.com/biz/harvey-washbangers-college-station", 
+            "is_closed": false, 
+            "phone": "9796966756", 
+            "snippet_text": "I am from Houston, but came here with my parents while they did laundry. My parents could not stop raving about this place since they first moved here and I...", 
+            "image_url": "http://s3-media1.fl.yelpcdn.com/bphoto/fE5XBv2aE2x2ZEQ1LwlnSg/ms.jpg", 
+            "categories": [
+                [
+                    "Burgers", 
+                    "burgers"
+                ], 
+                [
+                    "Dry Cleaning & Laundry", 
+                    "drycleaninglaundry"
+                ], 
+                [
+                    "Bars", 
+                    "bars"
+                ]
+            ], 
+            "display_phone": "+1-979-696-6756", 
+            "rating_img_url_large": "http://s3-media2.fl.yelpcdn.com/assets/2/www/img/ccf2b76faa2c/ico/stars/v1/stars_large_4.png", 
+            "id": "harvey-washbangers-college-station", 
+            "snippet_image_url": "http://s3-media1.fl.yelpcdn.com/photo/GgPTcnrHIirxyEAJH47kig/ms.jpg", 
+            "location": {
+                "city": "College Station", 
+                "display_address": [
+                    "1802 Texas Ave S", 
+                    "College Station, TX 77840"
+                ], 
+                "geo_accuracy": 8.0, 
+                "postal_code": "77840", 
+                "country_code": "US", 
+                "address": [
+                    "1802 Texas Ave S"
+                ], 
+                "coordinate": {
+                    "latitude": 30.6145399063826, 
+                    "longitude": -96.3184482604265
+                }, 
+                "state_code": "TX"
+            }
+        }, 
+        {
+            "is_claimed": true, 
+            "rating": 4.5, 
+            "mobile_url": "http://m.yelp.com/biz/mickeys-sliders-college-station", 
+            "rating_img_url": "http://s3-media2.fl.yelpcdn.com/assets/2/www/img/99493c12711e/ico/stars/v1/stars_4_half.png", 
+            "review_count": 139, 
+            "name": "Mickey's Sliders", 
+            "rating_img_url_small": "http://s3-media2.fl.yelpcdn.com/assets/2/www/img/a5221e66bc70/ico/stars/v1/stars_small_4_half.png", 
+            "url": "http://www.yelp.com/biz/mickeys-sliders-college-station", 
+            "is_closed": false, 
+            "id": "mickeys-sliders-college-station", 
+            "phone": "9798464488", 
+            "snippet_text": "Loved the food and the service was great! What a find. We had the LoneStar - pulled pork\nKim Jong - Korean BBq with Kim Chi & picked carrots/cucumber\nThe...", 
+            "image_url": "http://s3-media4.fl.yelpcdn.com/bphoto/95HxwNmf72MrC4yA3w1-aw/ms.jpg", 
+            "categories": [
+                [
+                    "Burgers", 
+                    "burgers"
+                ], 
+                [
+                    "American (Traditional)", 
+                    "tradamerican"
+                ]
+            ], 
+            "display_phone": "+1-979-846-4488", 
+            "rating_img_url_large": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/9f83790ff7f6/ico/stars/v1/stars_large_4_half.png", 
+            "menu_provider": "single_platform", 
+            "menu_date_updated": 1416918765, 
+            "snippet_image_url": "http://s3-media4.fl.yelpcdn.com/photo/R5vY3bP5fEY9mlAsyOmB5Q/ms.jpg", 
+            "location": {
+                "city": "College Station", 
+                "display_address": [
+                    "700 University Dr E", 
+                    "Ste C", 
+                    "College Station, TX 77840"
+                ], 
+                "geo_accuracy": 9.5, 
+                "postal_code": "77840", 
+                "country_code": "US", 
+                "address": [
+                    "700 University Dr E", 
+                    "Ste C"
+                ], 
+                "coordinate": {
+                    "latitude": 30.633489, 
+                    "longitude": -96.327707
+                }, 
+                "state_code": "TX"
+            }
+        }, 
+        {
+            "is_claimed": false, 
+            "rating": 4.0, 
+            "mobile_url": "http://m.yelp.com/biz/the-grill-at-the-pavilion-college-station", 
+            "rating_img_url": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/c2f3dd9799a5/ico/stars/v1/stars_4.png", 
+            "review_count": 6, 
+            "name": "The Grill at The Pavilion", 
+            "rating_img_url_small": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/f62a5be2f902/ico/stars/v1/stars_small_4.png", 
+            "url": "http://www.yelp.com/biz/the-grill-at-the-pavilion-college-station", 
+            "is_closed": false, 
+            "snippet_text": "Hands down the Grill at the Pavilion is the best spot to eat on campus if you're in the mood for a good burger. Every time I come here, I order my favorite,...", 
+            "image_url": "http://s3-media2.fl.yelpcdn.com/bphoto/khxENOJyqc_WZs-bB2CDSA/ms.jpg", 
+            "categories": [
+                [
+                    "Burgers", 
+                    "burgers"
+                ], 
+                [
+                    "Breakfast & Brunch", 
+                    "breakfast_brunch"
+                ], 
+                [
+                    "Vegetarian", 
+                    "vegetarian"
+                ]
+            ], 
+            "rating_img_url_large": "http://s3-media2.fl.yelpcdn.com/assets/2/www/img/ccf2b76faa2c/ico/stars/v1/stars_large_4.png", 
+            "id": "the-grill-at-the-pavilion-college-station", 
+            "snippet_image_url": "http://s3-media1.fl.yelpcdn.com/photo/EAOQa2RENhI00PpiAXJPzg/ms.jpg", 
+            "location": {
+                "city": "College Station", 
+                "display_address": [
+                    "Texas A&M University Campus - The Pavilion", 
+                    "1050 Tamu", 
+                    "College Station, TX 77845"
+                ], 
+                "geo_accuracy": 9.5, 
+                "postal_code": "77845", 
+                "country_code": "US", 
+                "address": [
+                    "Texas A&M University Campus - The Pavilion", 
+                    "1050 Tamu"
+                ], 
+                "coordinate": {
+                    "latitude": 30.6167131920834, 
+                    "longitude": -96.3380331465881
+                }, 
+                "state_code": "TX"
+            }
+        }, 
+        {
+            "is_claimed": false, 
+            "rating": 3.5, 
+            "mobile_url": "http://m.yelp.com/biz/carters-burger-bryan-11", 
+            "rating_img_url": "http://s3-media1.fl.yelpcdn.com/assets/2/www/img/5ef3eb3cb162/ico/stars/v1/stars_3_half.png", 
+            "review_count": 16, 
+            "name": "Carter's Burger", 
+            "rating_img_url_small": "http://s3-media1.fl.yelpcdn.com/assets/2/www/img/2e909d5d3536/ico/stars/v1/stars_small_3_half.png", 
+            "url": "http://www.yelp.com/biz/carters-burger-bryan-11", 
+            "is_closed": false, 
+            "id": "carters-burger-bryan-11", 
+            "phone": "9797797000", 
+            "snippet_text": "And the turkey burger is back! That makes two places in BCS that make these now, Grub Burger Bar and Carter's.\n\nStopped by after hitting Gold's and tried it...", 
+            "image_url": "http://s3-media1.fl.yelpcdn.com/bphoto/P2xJPyWZjVOefvNJ8S2wQA/ms.jpg", 
+            "categories": [
+                [
+                    "Burgers", 
+                    "burgers"
+                ]
+            ], 
+            "display_phone": "+1-979-779-7000", 
+            "rating_img_url_large": "http://s3-media3.fl.yelpcdn.com/assets/2/www/img/bd9b7a815d1b/ico/stars/v1/stars_large_3_half.png", 
+            "menu_provider": "single_platform", 
+            "menu_date_updated": 1437103910, 
+            "snippet_image_url": "http://s3-media2.fl.yelpcdn.com/photo/17VG_4O8L37dH1UHMtiNmQ/ms.jpg", 
+            "location": {
+                "city": "Bryan", 
+                "display_address": [
+                    "3105 Texas Ave", 
+                    "Bryan, TX 77802"
+                ], 
+                "geo_accuracy": 8.0, 
+                "postal_code": "77802", 
+                "country_code": "US", 
+                "address": [
+                    "3105 Texas Ave"
+                ], 
+                "coordinate": {
+                    "latitude": 30.6426163, 
+                    "longitude": -96.3521118
+                }, 
+                "state_code": "TX"
+            }
+        }, 
+        {
+            "is_claimed": true, 
+            "rating": 3.5, 
+            "mobile_url": "http://m.yelp.com/biz/chicken-oil-co-bryan", 
+            "rating_img_url": "http://s3-media1.fl.yelpcdn.com/assets/2/www/img/5ef3eb3cb162/ico/stars/v1/stars_3_half.png", 
+            "review_count": 41, 
+            "name": "Chicken Oil Co", 
+            "rating_img_url_small": "http://s3-media1.fl.yelpcdn.com/assets/2/www/img/2e909d5d3536/ico/stars/v1/stars_small_3_half.png", 
+            "url": "http://www.yelp.com/biz/chicken-oil-co-bryan", 
+            "is_closed": false, 
+            "phone": "9798463306", 
+            "snippet_text": "Chicken fried chicken was simply amazing. Atmosphere was fun. Good place to take a large group. Order at the counter & dig in.", 
+            "image_url": "http://s3-media2.fl.yelpcdn.com/bphoto/jqzU35AGZtunEUbXj5hCkA/ms.jpg", 
+            "categories": [
+                [
+                    "Burgers", 
+                    "burgers"
+                ], 
+                [
+                    "American (Traditional)", 
+                    "tradamerican"
+                ]
+            ], 
+            "display_phone": "+1-979-846-3306", 
+            "rating_img_url_large": "http://s3-media3.fl.yelpcdn.com/assets/2/www/img/bd9b7a815d1b/ico/stars/v1/stars_large_3_half.png", 
+            "id": "chicken-oil-co-bryan", 
+            "snippet_image_url": "http://s3-media1.fl.yelpcdn.com/photo/7We5FoWpeiOwqUNqMzIcmw/ms.jpg", 
+            "location": {
+                "city": "Bryan", 
+                "display_address": [
+                    "3600 S College Ave", 
+                    "Bryan, TX 77801"
+                ], 
+                "geo_accuracy": 8.0, 
+                "postal_code": "77801", 
+                "country_code": "US", 
+                "address": [
+                    "3600 S College Ave"
+                ], 
+                "coordinate": {
+                    "latitude": 30.6344833374023, 
+                    "longitude": -96.3543319702148
+                }, 
+                "state_code": "TX"
+            }
+        }, 
+        {
+            "is_claimed": false, 
+            "rating": 4.0, 
+            "mobile_url": "http://m.yelp.com/biz/margies-bar-and-grill-bryan", 
+            "rating_img_url": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/c2f3dd9799a5/ico/stars/v1/stars_4.png", 
+            "review_count": 6, 
+            "name": "Margie's Bar & Grill", 
+            "rating_img_url_small": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/f62a5be2f902/ico/stars/v1/stars_small_4.png", 
+            "url": "http://www.yelp.com/biz/margies-bar-and-grill-bryan", 
+            "is_closed": false, 
+            "phone": "9798228422", 
+            "snippet_text": "Simple menu, but what they do, they do well! I had the in-between burger and the cheese tots, and they were great! Just what I wanted. Thin-style burgers....", 
+            "image_url": "http://s3-media1.fl.yelpcdn.com/bphoto/WjnVZJGErM83clX9lEqqsw/ms.jpg", 
+            "categories": [
+                [
+                    "Burgers", 
+                    "burgers"
+                ], 
+                [
+                    "Bars", 
+                    "bars"
+                ]
+            ], 
+            "display_phone": "+1-979-822-8422", 
+            "rating_img_url_large": "http://s3-media2.fl.yelpcdn.com/assets/2/www/img/ccf2b76faa2c/ico/stars/v1/stars_large_4.png", 
+            "id": "margies-bar-and-grill-bryan", 
+            "snippet_image_url": "http://s3-media4.fl.yelpcdn.com/assets/srv0/yelp_styleguide/cc4afe21892e/assets/img/default_avatars/user_medium_square.png", 
+            "location": {
+                "city": "Bryan", 
+                "display_address": [
+                    "320 N Main St", 
+                    "Bryan, TX 77803"
+                ], 
+                "geo_accuracy": 8.0, 
+                "postal_code": "77803", 
+                "country_code": "US", 
+                "address": [
+                    "320 N Main St"
+                ], 
+                "coordinate": {
+                    "latitude": 30.676290512085, 
+                    "longitude": -96.3733825683594
+                }, 
+                "state_code": "TX"
+            }
+        }, 
+        {
+            "is_claimed": true, 
+            "rating": 4.0, 
+            "mobile_url": "http://m.yelp.com/biz/freddys-frozen-custard-and-steakburgers-college-station", 
+            "rating_img_url": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/c2f3dd9799a5/ico/stars/v1/stars_4.png", 
+            "review_count": 21, 
+            "name": "Freddy's Frozen Custard & Steakburgers", 
+            "rating_img_url_small": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/f62a5be2f902/ico/stars/v1/stars_small_4.png", 
+            "url": "http://www.yelp.com/biz/freddys-frozen-custard-and-steakburgers-college-station", 
+            "is_closed": false, 
+            "phone": "9797763549", 
+            "snippet_text": "Best place for fries there not soggy or to salty there just right...And don't even get me started on there delicious seasoning...Oh its is GREAT!!! I love...", 
+            "image_url": "http://s3-media2.fl.yelpcdn.com/bphoto/1hmLDc7FBb7eeP0xBFB_HA/ms.jpg", 
+            "categories": [
+                [
+                    "Burgers", 
+                    "burgers"
+                ], 
+                [
+                    "Ice Cream & Frozen Yogurt", 
+                    "icecream"
+                ]
+            ], 
+            "display_phone": "+1-979-776-3549", 
+            "rating_img_url_large": "http://s3-media2.fl.yelpcdn.com/assets/2/www/img/ccf2b76faa2c/ico/stars/v1/stars_large_4.png", 
+            "id": "freddys-frozen-custard-and-steakburgers-college-station", 
+            "snippet_image_url": "http://s3-media2.fl.yelpcdn.com/photo/xhcxfHWBFgk_SxmZX6-Zbw/ms.jpg", 
+            "location": {
+                "city": "College Station", 
+                "display_address": [
+                    "930 N Earl Rudder Frwy", 
+                    "College Station, TX 77840"
+                ], 
+                "geo_accuracy": 9.5, 
+                "postal_code": "77840", 
+                "country_code": "US", 
+                "address": [
+                    "930 N Earl Rudder Frwy"
+                ], 
+                "coordinate": {
+                    "latitude": 30.674583861534, 
+                    "longitude": -96.338605569776
+                }, 
+                "state_code": "TX"
+            }
+        }, 
+        {
+            "is_claimed": false, 
+            "rating": 4.0, 
+            "mobile_url": "http://m.yelp.com/biz/mcdonalds-bryan-2", 
+            "rating_img_url": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/c2f3dd9799a5/ico/stars/v1/stars_4.png", 
+            "review_count": 2, 
+            "name": "McDonald's", 
+            "rating_img_url_small": "http://s3-media4.fl.yelpcdn.com/assets/2/www/img/f62a5be2f902/ico/stars/v1/stars_small_4.png", 
+            "url": "http://www.yelp.com/biz/mcdonalds-bryan-2", 
+            "is_closed": false, 
+            "id": "mcdonalds-bryan-2", 
+            "phone": "9797787281", 
+            "snippet_text": "Great staff! Great service! Hot and fresh food! You walk in a receive a friendly greeting. There drive thru moves fast. Appropriately staffed for a fast...", 
+            "image_url": "http://s3-media1.fl.yelpcdn.com/bphoto/F2Hsdo6JgOFmCeS1RCnuvg/ms.jpg", 
+            "categories": [
+                [
+                    "Burgers", 
+                    "burgers"
+                ], 
+                [
+                    "Fast Food", 
+                    "hotdogs"
+                ]
+            ], 
+            "display_phone": "+1-979-778-7281", 
+            "rating_img_url_large": "http://s3-media2.fl.yelpcdn.com/assets/2/www/img/ccf2b76faa2c/ico/stars/v1/stars_large_4.png", 
+            "menu_provider": "single_platform", 
+            "menu_date_updated": 1387741772, 
+            "snippet_image_url": "http://s3-media2.fl.yelpcdn.com/photo/yBd2U45ZLG3moThjl0LWhQ/ms.jpg", 
+            "location": {
+                "city": "Bryan", 
+                "display_address": [
+                    "2930 Hwy 21 E", 
+                    "Bryan, TX 77803"
+                ], 
+                "geo_accuracy": 8.0, 
+                "postal_code": "77803", 
+                "country_code": "US", 
+                "address": [
+                    "2930 Hwy 21 E"
+                ], 
+                "coordinate": {
+                    "latitude": 30.6951650977135, 
+                    "longitude": -96.3611329346895
+                }, 
+                "state_code": "TX"
+            }
+        }, 
+        {
+            "is_claimed": false, 
+            "rating": 5.0, 
+            "mobile_url": "http://m.yelp.com/biz/smetana-cafe-and-taqueria-bryan", 
+            "rating_img_url": "http://s3-media1.fl.yelpcdn.com/assets/2/www/img/f1def11e4e79/ico/stars/v1/stars_5.png", 
+            "review_count": 1, 
+            "name": "Smetana Cafe & Taqueria", 
+            "rating_img_url_small": "http://s3-media1.fl.yelpcdn.com/assets/2/www/img/c7623205d5cd/ico/stars/v1/stars_small_5.png", 
+            "url": "http://www.yelp.com/biz/smetana-cafe-and-taqueria-bryan", 
+            "is_closed": false, 
+            "snippet_text": "Smetana Cafe & Taqueria is a hidden gem in the two story octagonal shopping center by Exxon at Hwy 21 and Smetana Road.   The only indication of there being...", 
+            "image_url": "http://s3-media1.fl.yelpcdn.com/bphoto/Swf3vX79XS8_onXZTQf4xg/ms.jpg", 
+            "categories": [
+                [
+                    "Burgers", 
+                    "burgers"
+                ], 
+                [
+                    "Tex-Mex", 
+                    "tex-mex"
+                ], 
+                [
+                    "Comfort Food", 
+                    "comfortfood"
+                ]
+            ], 
+            "rating_img_url_large": "http://s3-media3.fl.yelpcdn.com/assets/2/www/img/22affc4e6c38/ico/stars/v1/stars_large_5.png", 
+            "id": "smetana-cafe-and-taqueria-bryan", 
+            "snippet_image_url": "http://s3-media4.fl.yelpcdn.com/photo/sRPn3g51wT9J07JzOrHuLA/ms.jpg", 
+            "location": {
+                "city": "Bryan", 
+                "display_address": [
+                    "7700 W State Hwy 21", 
+                    "Bryan, TX 77807"
+                ], 
+                "geo_accuracy": 9.5, 
+                "postal_code": "77807", 
+                "country_code": "US", 
+                "address": [
+                    "7700 W State Hwy 21"
+                ], 
+                "coordinate": {
+                    "latitude": 30.6531001, 
+                    "longitude": -96.4552394
+                }, 
+                "state_code": "TX"
+            }
+        }
+    ]
+}
