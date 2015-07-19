@@ -29,14 +29,13 @@ class RestaurantSearch(object):
             <link href="/static/css/style.css" rel="stylesheet">
           </head>
         '''
-        yield '''<a href="http://localhost:5588/search_entry">
-                Search for restaurants to add to the poll<a><br>'''
-        yield '''<a href="http://localhost:5588/invite">
-                Invite Members<a><br>'''
-        yield '''<a href="http://localhost:5588/poll">
-                Join current poll<a><br>'''
-        yield '''<a href="http://localhost:5588/poll/results">
-            View current poll results<a><br>'''
+        yield '''
+        <h1>POLLING APP</h1>
+        <h2>Choose an option below</h2>
+        <div id="c"><form action = search_entry><button id="sel" type="submit" >Search for restaurants to add to the poll</button></form></br>'''
+        yield '''<form action = "invite"><button id="sel" type="submit" >Invite members</button></form></br>'''
+        yield '''<form action = "poll"><button id="sel" type="submit" >Join current poll</button></form></br>'''
+        yield '''<form action = "poll/results"><button id="sel" type="submit" >View current poll results</button></form></br></div>'''
 
         if('message' in cherrypy.session):
             message = cherrypy.session['message']
