@@ -2,8 +2,11 @@ import cherrypy
 import os
 import os.path
 from database import *
+from svg.charts.pie import Pie
+import requests
 
-abbrevs = {'bbq': 'Barbecue', 'burgers': 'Burgers', 'pizza': 'Pizza'}
+abbrevs = {'bbq': 'Barbecue', 'pizza': 'Pizza', 'burgers': 'Burgers', 'cajun': 'Cajun',
+           'mexican': 'Mexican', 'italian': 'Italian', 'japanese': 'Japanese'}
 
 
 class Poll(object):
@@ -148,7 +151,7 @@ class Poll(object):
                     yield'''
                         <legend>What is your Restaurant of choice?</legend>
 
-                        <form action="results">'''
+                        <form action="submit">'''
                     for row in session.query(Restaurant):
 
                         yield'''<label for="restId">
@@ -169,33 +172,50 @@ class Poll(object):
         yield '''CLEARED'''
 
     @cherrypy.expose
-    def results(self, restId):
-
-        yield '''
-        <table border="1" style="width:100%">'''
+    def submit(self, restId):
         restobjects = session.query(Restaurant)
         restobjects = restobjects.filter(Restaurant.id == int(restId))
         for o in restobjects:
             o.votes = o.votes + 1
-        for row in session.query(Restaurant):
-            percent = int(int(row.votes) / int(self.voteCount) * 100)
-            yield '''<tr> <td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s Percent</td></tr>
-            ''' % (row.name, row.address, abbrevs[row.category], str(row.votes), str(percent))
-        yield '</table>'
         userobjects = session.query(User)
         userobjects = userobjects.filter(User.username == self.uname)
-        if self.voteCount == 1:
-            yield '''</br>%s Person Has Voted''' % str(self.voteCount)
-            yield '''</br>%s Person Is Going''' % str(self.going)
-        elif self.voteCount > 1:
-            yield '''</br>%s People Have Voted''' % str(self.voteCount)
-            yield '''</br>%s People Are Going''' % str(self.going)
         for o in userobjects:
             for t in restobjects:
                 restaurantId = t.id
             o.rest_id = restaurantId
             o.voted = 1
-            session.commit()
+        session.commit()
+        yield requests.get('http://localhost:5588/results').text
+
+    @cherrypy.expose
+    def results(self):
+        yield '''
+        <table border="1" style="width:100%"> <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Category</th>
+            <th>Votes</th>
+        </tr>
+'''
+        totalVotes = 0
+        for restaurant in session.query(Restaurant):
+            totalVotes += restaurant.votes
+        for restaurant in session.query(Restaurant):
+            yield '''<tr> <td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>
+            ''' % (restaurant.name, restaurant.address, abbrevs[restaurant.category], str(restaurant.votes))
+        yield '</table>'
+        fields = []
+        votes = []
+        for restaurant in session.query(Restaurant):
+            fields.append(restaurant.name)
+            votes.append(restaurant.votes)
+        try:
+            graph = Pie(dict(
+                height=500, width=500, fields=fields))
+            graph.add_data({"data": votes, "title": "Lunch Votes"})
+            yield graph.burn()
+        except:
+            yield '</br>There is no data yet.'
 
 if __name__ == '__main__':
     conf = {
