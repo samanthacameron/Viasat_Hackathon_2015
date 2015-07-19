@@ -57,6 +57,8 @@ class RestaurantSearch(object):
                 <form action="search">
                 <fieldset>
                 <legend>Polling:</legend>
+                Name (Optional):<br>
+                <input type="text" name="name" value=""> <br>
                 Location:<br>
                 <input type="text" name="location" value="Bryan, TX"> <br>
                 Radius in Miles:<br>
@@ -69,7 +71,7 @@ class RestaurantSearch(object):
                 </form></body>'''
 
     @cherrypy.expose
-    def search(self, location='Bryan, TX', miles=5, category='bbq'):
+    def search(self, name=None, location='Bryan, TX', miles=5, category=None):
         yield '''<html>
         <head>
             <link href="/static/css/style.css" rel="stylesheet">
@@ -90,10 +92,13 @@ class RestaurantSearch(object):
                 'oauth_token': TOKEN,
                 'oauth_consumer_key': CONSUMER_KEY,
                 'location': location,
-                'category_filter': category,
                 'radius_filter': meters
             }
         )
+        if category is not None:
+            oauth_request['category_filter'] = category
+        if name is not None:
+            oauth_request['term'] = name
         token = oauth2.Token(TOKEN, TOKEN_SECRET)
         oauth_request.sign_request(oauth2.SignatureMethod_HMAC_SHA1(), consumer, token)
         url = oauth_request.to_url()
@@ -123,7 +128,7 @@ class RestaurantSearch(object):
             full_address = restaurant['location']['display_address']
             address = ""
             rating = restaurant['rating_img_url']
-            yield'<div id=name>{}</div>'.format(name)
+            yield'<div id=name>{}</div>'.format(name.encode('utf-8'))
 
             yield '<div id=address>'
             for field in full_address:
@@ -131,7 +136,7 @@ class RestaurantSearch(object):
                 address += field + ' '
             yield '</div>'
 
-            yield '<a href="http://localhost:5588/add?name={}&address={}&category={}" class="addpoll">Add to Poll</a>'.format(name, address, category)
+            yield '<a href="http://localhost:5588/add?name={}&address={}&category={}" class="addpoll">Add to Poll</a>'.format(name.encode('utf-8'), address, category)
             yield '<br>'
             yield '<img src="{}"></img></br>'.format(rating)
             yield '<br>'
