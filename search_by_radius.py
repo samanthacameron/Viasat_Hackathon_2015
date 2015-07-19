@@ -2,6 +2,7 @@ import cherrypy
 import requests
 import json
 import oauth2
+import os
 
 # API_KEY = 'AIzaSyCY0yYTShIG54l8rUPNUOsl3Jm7NdWtXBQ'
 API_HOST = 'http://api.yelp.com/v2/search/?'
@@ -15,7 +16,13 @@ class RestaurantSearch(object):
 
     @cherrypy.expose
     def index(self):
-        yield '''<form action="search">
+        yield '''<html>
+                <head>
+                    <link href="/static/css/stylesearch.css" rel="stylesheet">
+                </head>
+                '''
+        yield '''<body>
+                <form action="search">
                 <fieldset>
                 <legend>Polling:</legend>
                 Location:<br>
@@ -28,11 +35,15 @@ class RestaurantSearch(object):
                 <input type="radio" name="category" value="burgers">Burgers<br>
                 <br><br>
                 <input type="submit" value="Submit"></fieldset>
-                </form>'''
+                </form></body>'''
 
     @cherrypy.expose
     def search(self, location='Bryan, TX', miles=5, category='bbq'):
-
+        yield '''<html>
+        <head>
+            <link href="/static/css/stylesearch.css" rel="stylesheet">
+          </head>
+        '''
         # START USING YELP API
 
         meters = float(miles) * 1609.34
@@ -94,5 +105,15 @@ class RestaurantSearch(object):
                 data = json.loads(data_file.read())
             return json.dumps(data)
 
+conf = {
+    '/': {
+        'tools.sessions.on': True,
+        'tools.staticdir.root': os.path.abspath(os.getcwd())
+    },
+    '/static': {
+        'tools.staticdir.on': True,
+        'tools.staticdir.dir': './public'
+    }
+}
 cherrypy.config.update({'server.socket_port': 5588})
-cherrypy.quickstart(RestaurantSearch())
+cherrypy.quickstart(RestaurantSearch(), '/', conf)
