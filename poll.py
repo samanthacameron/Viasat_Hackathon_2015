@@ -21,6 +21,10 @@ import random
 import string
 
 class Poll(object):
+    def __init__(self):
+        self.uname = ""
+        self.voteCount = 0
+
     @cherrypy.expose
     def index(self):
         yield '''<html>
@@ -54,7 +58,8 @@ class Poll(object):
             yield '''USERNAME NOT RECOGNIZED'''
             opt = "0"
             yield '</br> <a href = "/">Return To Login</a>'
-            
+        self.uname = uname
+
         if opt == "3":
             yield '''
             <form action="search">
@@ -83,22 +88,29 @@ class Poll(object):
 
     @cherrypy.expose
     def search(self, zip, radius):
-        yield'''
-            <legend>What is your Restaurant of choice?</legend>
-            
-            <form action="results">'''
-        for row in session.query(Restaurant):
-            
-            yield'''<label for="restId">
-                <input type="radio" name="restId" value="%s" id="Poll_0" />
-                %s
-             </label></br>'''%(str(row.id),row.name)
-        yield '''<button type="submit">Vote</button>'''
+        objects = session.query(User)
+        objects = objects.filter(User.username == self.uname)
+        for o in objects:
+            if o.voted == 1:
+                yield '''YOU HAVE ALREADY VOTED XD'''
+            else:
+                yield'''
+                    <legend>What is your Restaurant of choice?</legend>
+                    
+                    <form action="results">'''
+                for row in session.query(Restaurant):
+                    
+                    yield'''<label for="restId">
+                        <input type="radio" name="restId" value="%s" id="Poll_0" />
+                        %s
+                     </label></br>'''%(str(row.id),row.name)
+                yield '''<button type="submit">Vote</button>'''
         
         
         
     @cherrypy.expose
     def results(self,restId):
+
         objects = session.query(Restaurant)
         objects = objects.filter(Restaurant.id == int(restId))
         for o in objects:
@@ -106,7 +118,10 @@ class Poll(object):
         for row in session.query(Restaurant):
             yield '''<body>%s    %s      %s        %s     </body></br>
             ''' %(row.name, row.address, row.category, str(row.votes))
-
+        objects = session.query(User)
+        objects = objects.filter(User.username == self.uname)
+        for o in objects:
+            o.voted = 1
 
 if __name__ == '__main__':
     conf = {
