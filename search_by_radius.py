@@ -76,6 +76,7 @@ class RestaurantSearch(object):
             <link href="/static/css/style.css" rel="stylesheet">
           </head>
         '''
+        yield '<body>'
         # START USING YELP API
 
         meters = float(miles) * 1609.34
@@ -137,6 +138,7 @@ class RestaurantSearch(object):
             yield '<br>'
 
             yield '</div>'
+        yield '</body>'
 
 
     @cherrypy.expose

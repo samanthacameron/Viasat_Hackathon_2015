@@ -42,6 +42,12 @@ class Poll(object):
 
     @cherrypy.expose
     def search(self, uname, opt):
+        yield '''<html>
+        <head>
+            <link href="/static/css/style.css" rel="stylesheet">
+          </head>
+        '''
+        yield '<body>'
         match = 0
         for row in session.query(User):
             if uname == row.username:
@@ -108,12 +114,14 @@ class Poll(object):
                         <legend>What is your Restaurant of choice?</legend>
 
                         <form action="submit">'''
+                    yield '<div id=polllist>'
                     for row in session.query(Restaurant):
 
                         yield'''<label for="restId">
                             <input type="radio" name="restId" value="%s" id="Poll_0" />
                             %s
                          </label></br>''' % (str(row.id), row.name)
+                    yield '</div>'
                     yield '''<button type="submit">Vote</button>'''
                     self.going = self.going + 1
         # option 4 is changed
@@ -122,6 +130,7 @@ class Poll(object):
                 <legend>What is your Restaurant of choice?</legend>
 
                 <form action="submit">'''
+            yield '<div id=polllist>'
             previouslySelected = session.query(User)
             previouslySelected = previouslySelected.filter(User.username == uname)
             for o in previouslySelected:
@@ -139,7 +148,10 @@ class Poll(object):
                         %s
                      </label></br>''' % (str(row.id), row.name)
                     self.going = self.going + 1
+            yield '</div>'
             yield '''<button type="submit">Vote</button>'''
+            
+        yield '</body>'
 
     @cherrypy.expose
     def reset(self):
