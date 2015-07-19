@@ -211,8 +211,8 @@ class Poll(object):
 
     @cherrypy.expose
     def results(self):
-        #yield '''Number of People Going: %s</br>''' % str(self.going)
-        #yield '''Number of Votes: %s</br>''' % str(self.voteCount)
+        # yield '''Number of People Going: %s</br>''' % str(self.going)
+        # yield '''Number of Votes: %s</br>''' % str(self.voteCount)
         yield '''
         <table border="1" style="width:100%"> <tr>
             <th>Name</th>
