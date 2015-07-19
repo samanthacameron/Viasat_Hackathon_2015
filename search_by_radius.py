@@ -64,26 +64,26 @@ class RestaurantSearch(object):
         )
         token = oauth2.Token(TOKEN, TOKEN_SECRET)
         oauth_request.sign_request(oauth2.SignatureMethod_HMAC_SHA1(), consumer, token)
-        url = oauth_request.to_url()
+        # url = oauth_request.to_url()
 
         # END USING YELP API
 
         # USING LOCAL RESULTS
 
-        # if category == 'bbq':
-        #     url = 'http://localhost:5588/results?category=barbecue'
-        # elif category == 'pizza':
-        #     url = 'http://localhost:5588/results?category=burgers'
-        # elif category == 'burgers':
-        #     url = 'http://localhost:5588/results?category=burgers'
-        # else:
-        #     yield 'Please input a valid category'
+        if category == 'bbq':
+            url = 'http://localhost:5588/results?category=barbecue'
+        elif category == 'pizza':
+            url = 'http://localhost:5588/results?category=burgers'
+        elif category == 'burgers':
+            url = 'http://localhost:5588/results?category=burgers'
+        else:
+            yield 'Please input a valid category'
 
         response = requests.get(url)
         restaurants = json.loads(response.text)['businesses']
         for restaurant in restaurants:
             name = restaurant['name']
-            name.replace("'","")
+            name.replace("'", "")
             full_address = restaurant['location']['display_address']
             address = ""
             rating = restaurant['rating_img_url']
@@ -92,18 +92,18 @@ class RestaurantSearch(object):
                 yield'{}<br>'.format(field)
                 address += field + ' '
 
-            yield '<a href="localhost:5588/add?name={}&address={}&category={}">Add</a>'.format(name,address, category)
+            yield '<a href="http://localhost:5588/add?name={}&address={}&category={}">Add</a>'.format(name, address, category)
 
             yield '<br>'
             yield '<img src="{}"></img></br>'.format(rating)
             yield '<br>'
 
-
     @cherrypy.expose
     def add(self, name, address, category):
-        new_rest = Restaurant(name=name,address=address, category=category)
+        new_rest = Restaurant(name=name, address=address, category=category, votes=0)
         session.add(new_rest)
         session.commit()
+        yield 'Restaurant Added'
 
     @cherrypy.expose
     def results(self, category):
