@@ -4,6 +4,7 @@ import os.path
 from database import *
 from svg.charts.pie import Pie
 import requests
+import datetime
 
 abbrevs = {'bbq': 'Barbecue', 'pizza': 'Pizza', 'burgers': 'Burgers', 'cajun': 'Cajun',
            'mexican': 'Mexican', 'italian': 'Italian', 'japanese': 'Japanese'}
@@ -40,6 +41,14 @@ class Poll(object):
         </label></div></br>'''
 
         yield '''<button id="login" type="submit" >Login</button></form>'''
+        
+    @cherrypy.expose
+    def timer(self,time):
+        time = int(time)
+        yield 'Current time: {}</br>'.format(str(datetime.datetime.now()))
+        newtime = datetime.datetime.now() + datetime.timedelta(minutes=time)
+        newtime = newtime.strftime('%I:%M')
+        yield 'End Time: {}'.format(str(newtime))
 
     @cherrypy.expose
     def search(self, uname, opt):
@@ -171,7 +180,6 @@ class Poll(object):
         session.commit()
         cherrypy.session['message'] = "Database cleared"
 
-        raise cherrypy.HTTPRedirect('/')
     @cherrypy.expose
     def submit(self, restId):
         yield '<head><title>Results</title></head>'

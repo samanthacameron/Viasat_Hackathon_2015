@@ -37,7 +37,8 @@ class RestaurantSearch(object):
         yield '''<form action = "invite"><button id="sel" type="submit" >Invite members</button></form></br>'''
         yield '''<form action = "poll"><button id="sel" type="submit" >Join current poll</button></form></br>'''
         yield '''<form action = "poll/results"><button id="sel" type="submit" >View current poll results</button></form></br>'''
-        yield '''<form action = "poll/reset"><button id="sel" type="submit" >Done with the poll, reset it</button></form></br></div>'''
+        yield '''<form action = "poll/reset"><button id="sel" type="submit" >Done with the poll, reset it</button></form></br>'''
+        yield '''<form action = "poll/timer">Minutes: <input id="un" type="number" name="time"><button type="submit">Start Timer</button></form></div>'''
 
 
         if('message' in cherrypy.session):
@@ -77,6 +78,7 @@ class RestaurantSearch(object):
         yield '''<br><br>
                 <input type="submit" value="Submit"></fieldset>
                 </form></body>'''
+        yield '</br> <a href = "/">Home</a>'
 
     @cherrypy.expose
     def search(self, name=None, location='Bryan, TX', miles=5, category=None):
