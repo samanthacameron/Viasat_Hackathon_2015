@@ -9,6 +9,7 @@ class Poll(object):
     def __init__(self):
         self.uname = ""
         self.voteCount = 0
+        self.going = 0
 
     @cherrypy.expose
     def index(self):
@@ -55,7 +56,6 @@ class Poll(object):
 
     @cherrypy.expose
     def search(self, uname, opt):
-
         match = 0
         for row in session.query(User):
             if uname == row.username:
@@ -64,14 +64,50 @@ class Poll(object):
             yield '''USERNAME NOT RECOGNIZED'''
             opt = "0"
             yield '</br> <a href = "/">Return To Login</a>'
+        #no vote but going
         if opt == "2":
-            yield '''don't vote'''
-            self.voteCount = self.voteCount + 1
+            self.going = self.going + 1
+            userobject = session.query(User)
 
+            userobject = userobject.filter(User.username == uname)
+            for o in userobject:
+                
+                if o.voted == 1:
+                    self.voteCount = self.voteCount - 1
+                    o.voted = 0 
+                    
+                    restobject = session.query(Restaurant)
+                    restobject = restobject.filter(Restaurant.id == o.rest_id)
+                    for p in restobject:
+                        p.votes = p.votes - 1
+                        session.commit()
+                    o.rest_id = None
+                    session.commit()
+            yield '''Vote is Not Counted But {} Is Going'''.format(uname)
+            yield '</br> <a href = "/">Return To Login</a>'
+            
+        # not going
         elif opt == "1":
+            userobject = session.query(User)
+            userobject = userobject.filter(User.username == uname)
+            for o in userobject:
+                if o.voted == 1:
+                    self.voteCount = self.voteCount - 1
+                    self.going = self.going - 1
+                    o.voted = 0 
+                    restobject = session.query(Restaurant)
+                    restobject = restobject.filter(Restaurant.id == o.rest_id)
+                    for p in restobject:
+                        p.votes = p.votes - 1
+                        session.commit()
+                    o.rest_id = None
+                    session.commit()
+
             objects = session.query(User)
             objects = objects.filter(User.username == uname)
-            yield '{} is not going'.format(uname)
+            yield '{} is not going to lunch'.format(uname)
+            yield '</br> <a href = "/">Return To Login</a>'
+        #option 4 is changed
         elif opt == "4":
             yield'''
                 <legend>What is your Restaurant of choice?</legend>
@@ -93,8 +129,10 @@ class Poll(object):
                         <input type="radio" name="restId" value="%s" id="Poll_0" />
                         %s
                      </label></br>''' % (str(row.id), row.name)
+                    self.going = self.going+1
             yield '''<button type="submit">Vote</button>'''
-
+            
+        # option 3 is new person going
         elif opt == "3":
             self.uname = uname
             objects = session.query(User)
@@ -116,6 +154,7 @@ class Poll(object):
                             %s
                          </label></br>''' % (str(row.id), row.name)
                     yield '''<button type="submit">Vote</button>'''
+                    self.going = self.going + 1
 
     @cherrypy.expose
     def reset(self):
@@ -141,8 +180,10 @@ class Poll(object):
         userobjects = userobjects.filter(User.username == self.uname)
         if self.voteCount == 1:
             yield '''</br>%s Person Has Voted''' % str(self.voteCount)
+            yield '''</br>%s Person Is Going''' % str(self.going)
         elif self.voteCount > 1:
             yield '''</br>%s People Have Voted''' % str(self.voteCount)
+            yield '''</br>%s People Are Going''' % str(self.going)
         for o in userobjects:
             for t in restobjects:
                 restaurantId = t.id
