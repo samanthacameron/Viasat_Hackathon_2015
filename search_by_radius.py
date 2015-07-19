@@ -101,6 +101,10 @@ class RestaurantSearch(object):
         for restaurant in restaurants:
             name = restaurant['name']
             name = sanitize(name)
+
+            if(session.query(Blacklist).get(name) is not None):
+                continue
+
             full_address = restaurant['location']['display_address']
             address = ""
             rating = restaurant['rating_img_url']

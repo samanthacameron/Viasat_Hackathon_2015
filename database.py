@@ -28,6 +28,9 @@ class UserList(Base):
     __tablename__ = 'userlist'
     username = Column(String(50), primary_key=True)
 
+class Blacklist(Base):
+    __tablename__ = 'blacklist'
+    name = Column(String(50), primary_key=True)
 
 # Create an engine that stores data in the local directory's
 # sqlalchemy_example.db file.
