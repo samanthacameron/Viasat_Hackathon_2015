@@ -43,7 +43,9 @@ class RestaurantSearch(object):
         yield '''<body>
                 <form action="search">
                 <fieldset>
-                <legend>Polling:</legend>
+                <legend>Search for restaurants:</legend>
+                Name (Optional):<br>
+                <input type="text" name="name" value=""> <br>
                 Location:<br>
                 <input type="text" name="location" value="Bryan, TX"> <br>
                 Radius in Miles:<br>
@@ -53,10 +55,10 @@ class RestaurantSearch(object):
             yield '<input type="radio" name="category" value="%s">%s<br>' % (key, category_names[key])
         yield '''<br><br>
                 <input type="submit" value="Submit"></fieldset>
-                </form></body>'''
+                </form></br><a href="/">Return to Homepage</a></body>'''
 
     @cherrypy.expose
-    def search(self, location='Bryan, TX', miles=5, category='bbq'):
+    def search(self, name=None, location='Bryan, TX', miles=5, category=None):
         yield '''<html>
         <head>
             <link href="/static/css/style.css" rel="stylesheet">
@@ -75,10 +77,13 @@ class RestaurantSearch(object):
                 'oauth_token': TOKEN,
                 'oauth_consumer_key': CONSUMER_KEY,
                 'location': location,
-                'category_filter': category,
                 'radius_filter': meters
             }
         )
+        if category is not None:
+            oauth_request['category_filter'] = category
+        if name is not None:
+            oauth_request['term'] = name
         token = oauth2.Token(TOKEN, TOKEN_SECRET)
         oauth_request.sign_request(oauth2.SignatureMethod_HMAC_SHA1(), consumer, token)
         url = oauth_request.to_url()
@@ -108,7 +113,7 @@ class RestaurantSearch(object):
             full_address = restaurant['location']['display_address']
             address = ""
             rating = restaurant['rating_img_url']
-            yield'<div id=name>{}</div>'.format(name)
+            yield'<div id=name>{}</div>'.format(name.encode('utf-8'))
 
             yield '<div id=address>'
             for field in full_address:
@@ -116,12 +121,14 @@ class RestaurantSearch(object):
                 address += field + ' '
             yield '</div>'
 
-            yield '<a href="http://localhost:5588/add?name={}&address={}&category={}" class="addpoll">Add to Poll</a>'.format(name, address, category)
+            yield '<a href="http://localhost:5588/add?name={}&address={}&category={}">Add to poll</a>'.format(name.encode('utf-8'), address, category)
+
             yield '<br>'
             yield '<img src="{}"></img></br>'.format(rating)
             yield '<br>'
 
             yield '</div>'
+        yield '</br><a href="/">Return to Homepage</a>'
 
     @cherrypy.expose
     def add(self, name, address, category):
@@ -161,7 +168,7 @@ class RestaurantSearch(object):
         yield 'Other:<br><input type ="field", name="new_person" value><br><br>'
         yield '<input type="submit" value="Submit">'
         yield '</form>'
-        yield '<a href = http://localhost:5588/poll/reset>Clear the votes.</a></html>'
+        yield '<a href = http://localhost:5588/poll/reset>Clear the votes</a></html>'
 
     @cherrypy.expose
     def invited(self, **args):
