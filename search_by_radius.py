@@ -100,10 +100,14 @@ class RestaurantSearch(object):
 
     @cherrypy.expose
     def add(self, name, address, category):
-        new_rest = Restaurant(name=name, address=address, category=category, votes=0)
-        session.add(new_rest)
-        session.commit()
-        yield 'Restaurant Added'
+        restaurantmatch = session.query(Restaurant).filter(Restaurant.name == name).first()
+        if restaurantmatch is None:
+            new_rest = Restaurant(name=name, address=address, category=category, votes=0)
+            session.add(new_rest)
+            session.commit()
+            yield 'Restaurant Added'
+        else:
+            yield 'This restaurant is already in the poll'
 
     @cherrypy.expose
     def results(self, category):
