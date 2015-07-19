@@ -24,14 +24,17 @@ class RestaurantSearch(object):
 
     @cherrypy.expose
     def index(self):
-        yield '''<a href="http://localhost:5588/search_entry">
+        yield '''<head>
+            <link href="/static/css/style.css" rel="stylesheet">
+          </head>'''
+        yield '''<body><a href="http://localhost:5588/search_entry">
                 Search for restaurants to add to the poll<a><br>'''
         yield '''<a href="http://localhost:5588/invite">
                 Invite Members<a><br>'''
         yield '''<a href="http://localhost:5588/poll">
                 Join current poll<a><br>'''
         yield '''<a href="http://localhost:5588/poll/results">
-            View current poll results<a><br>'''
+            View current poll results<a><br></body>'''
 
 
     @cherrypy.expose
@@ -154,16 +157,25 @@ class RestaurantSearch(object):
 
     @cherrypy.expose
     def invite(self):
+        yield '''<head>
+            <link href="/static/css/style.css" rel="stylesheet">
+          </head><body>'''
         yield '<form action="invited">'
+
         for person in session.query(UserList):
+            yield '<div id=user>'
             name = person.username
             yield '''   
              <input type="checkbox" name="person" value="%s">%s<br>
             ''' % (name, name)
             yield '<br>'
+            yield '</div>'
+
+
         yield 'Other:<br><input type ="field", name="new_person" value><br><br>'
         yield '<input type="submit" value="Submit">'
         yield '</form>'
+        yield '</body>'
 
     @cherrypy.expose
     def invited(self, **args):
