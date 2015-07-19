@@ -2,12 +2,18 @@ import cherrypy
 import os, os.path
 from database import session
 from sqlalchemy_declarative import Restaurant, User
+from search_by_radius import RestaurantSearch
 
 class Admin(object):
 
     @cherrypy.expose
     def index(self):
-        yield 'This is the admin view'
+        yield 'This is the admin view<br><br>'
+        yield 'Create new poll<br><br>'
+        yield 'Search for and add new restaurants<br>'
+        yield 'View or delete all restaurants<br>'
+        yield 'View or delete favorites<br>'
+        yield 'View or delete blacklisted restaurants<br>'
 
     @cherrypy.expose
     def restaurants(self):
