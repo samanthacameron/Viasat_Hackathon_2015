@@ -60,7 +60,7 @@ class Poll(object):
             yield '</br> <a href = "/">Return To Login</a>'
         # no vote but going
         if opt == "2":
-            self.going = self.going + 1
+            
             userobject = session.query(User)
 
             userobject = userobject.filter(User.username == uname)
@@ -77,6 +77,8 @@ class Poll(object):
                         session.commit()
                     o.rest_id = None
                     session.commit()
+                else:
+                    self.going = self.going + 1
             yield '''Vote is Not Counted But {} Is Going'''.format(uname)
             yield '</br> <a href = "/poll">Return To Login</a>'
 
@@ -196,6 +198,8 @@ class Poll(object):
 
     @cherrypy.expose
     def results(self):
+        yield '''Number of People Going: %s</br>'''%str(self.going)
+        yield '''Number of Votes: %s</br>'''%str(self.voteCount)
         yield '''
         <table border="1" style="width:100%"> <tr>
             <th>Name</th>
