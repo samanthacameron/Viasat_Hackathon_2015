@@ -105,19 +105,26 @@ class RestaurantSearch(object):
             if(session.query(Blacklist).get(name) is not None):
                 continue
 
+            yield '<div id=rest>'
+
             full_address = restaurant['location']['display_address']
             address = ""
             rating = restaurant['rating_img_url']
-            yield'{}<br>'.format(name)
+            yield'<div id=name>{}</div>'.format(name)
+
+            yield '<div id=address>'
             for field in full_address:
                 yield'{}<br>'.format(field)
                 address += field + ' '
+            yield '</div>'
 
             yield '<a href="http://localhost:5588/add?name={}&address={}&category={}">Add</a>'.format(name, address, category)
 
             yield '<br>'
             yield '<img src="{}"></img></br>'.format(rating)
             yield '<br>'
+
+            yield '</div>'
 
 
     @cherrypy.expose
