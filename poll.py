@@ -23,21 +23,23 @@ class Poll(object):
             <link href="/static/css/style.css" rel="stylesheet">
           </head>
         '''
-        yield '''<p>Congratulations! You have been invited to lunch!</br>Please enter a username and an option.</p></br>'''
+        yield '''<h1>YOU HAVE BEEN INVITED TO LUNCH!</h1> '''
+        yield '''<h2>Please Enter Your Username and Choose an Option</h2></br>'''
         yield '''
         <form action="search">
-        User Name: <input type="text" name="uname" value="%s"></br>''' % username
-        yield '''<label for="optout">
-                <input type="radio" name="opt" value="1"/>I don't want to go
-             </label></br>'''
-        yield '''<label for="optout">
-                <input type="radio" name="opt" value="2"/>I want to go but don't want to vote.
-             </label></br>'''
-        yield '''<label for="optout" >
-                <input type="radio" name="opt" value="3" checked="checked"/>Take me to submit my vote.
-             </label></br>'''
-        yield '''<button type="submit">Login</button></form>'''
-        yield '<a href = http://localhost:5588/poll/reset>Clear the poll.</a></html>'
+        <div id="s">User Name: <input type="text" name="uname" value="%s"></br>''' % username
+        yield '''</div><div id="o"><label for="optout" >
+        <input type="radio" name="opt" value="3" checked="checked"/>Take me to submit my vote.
+        </label></br>
+        <label for="optout">
+        <input type="radio" name="opt" value="1"/>I don't want to go
+        </label></br>
+        
+        <label for="optout">
+        <input type="radio" name="opt" value="2"/>I want to go but don't want to vote.
+        </label></div></br>'''
+        
+        yield '''<button type="submit" >Login</button></form>'''
 
 
     @cherrypy.expose
