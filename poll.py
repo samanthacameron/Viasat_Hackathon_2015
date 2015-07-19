@@ -1,25 +1,11 @@
 import cherrypy
-import os, os.path
-import random
-import string
-from sqlalchemy import *
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy_declarative import Restaurant, User
+import os
+import os.path
+from database import *
 
-Base = declarative_base()
-
-user = 'texas'
-password = 'texas'
-database_host = 'hacksql.viasat.io'
-engine = create_engine(
-    'mysql+mysqlconnector://{}:{}@{}/texas'.format(user, password, database_host))
-Base.metadata.bind = engine
-DBSession = sessionmaker(bind=engine)
-session = DBSession()
-metadata = MetaData()
 
 class Poll(object):
+
     def __init__(self):
         self.uname = ""
         self.voteCount = 0
@@ -46,7 +32,6 @@ class Poll(object):
              </label></br>'''
         yield '''<button type="submit">Login</button></form></html>'''
 
-        
     @cherrypy.expose
     def poll(self, uname, opt):
         match = 0
@@ -73,18 +58,16 @@ class Poll(object):
             <button type="submit">Search</button>
             </form>
             '''
-        elif opt=="2":
+        elif opt == "2":
             yield '''don't vote'''
             self.voteCount = self.voteCount + 1
 
-
-        elif opt=="1":
+        elif opt == "1":
             objects = session.query(User)
             objects = objects.filter(User.username == uname)
-            
+
             yield '{} is not going'.format(uname)
             session.commit()
-            
 
     @cherrypy.expose
     def search(self, zip, radius):
@@ -96,35 +79,33 @@ class Poll(object):
             else:
                 yield'''
                     <legend>What is your Restaurant of choice?</legend>
-                    
+
                     <form action="results">'''
                 for row in session.query(Restaurant):
-                    
+
                     yield'''<label for="restId">
                         <input type="radio" name="restId" value="%s" id="Poll_0" />
                         %s
-                     </label></br>'''%(str(row.id),row.name)
+                     </label></br>''' % (str(row.id), row.name)
                 yield '''<button type="submit">Vote</button>'''
-        
-        
-        
+
     @cherrypy.expose
-    def results(self,restId):
+    def results(self, restId):
 
         objects = session.query(Restaurant)
         objects = objects.filter(Restaurant.id == int(restId))
         for o in objects:
             o.votes = o.votes + 1
         for row in session.query(Restaurant):
-            percent = int(int(row.votes)/int(self.voteCount)*100)
+            percent = int(int(row.votes) / int(self.voteCount) * 100)
             yield '''<body>%s    %s      %s        %s     %s Percent </body></br>
-            ''' %(row.name, row.address, row.category, str(row.votes),str(percent))
+            ''' % (row.name, row.address, row.category, str(row.votes), str(percent))
         objects = session.query(User)
         objects = objects.filter(User.username == self.uname)
-        if self.voteCount==1:
-            yield '''</br>%s Person Has Voted'''%str(self.voteCount)
-        elif self.voteCount>1:
-            yield '''</br>%s People Have Voted'''%str(self.voteCount)
+        if self.voteCount == 1:
+            yield '''</br>%s Person Has Voted''' % str(self.voteCount)
+        elif self.voteCount > 1:
+            yield '''</br>%s People Have Voted''' % str(self.voteCount)
         for o in objects:
             o.voted = 1
 
@@ -137,12 +118,7 @@ if __name__ == '__main__':
         '/static': {
             'tools.staticdir.on': True,
             'tools.staticdir.dir': './public'
-            }
+        }
     }
     cherrypy.config.update({'server.socket_port': 5588})
-    cherrypy.quickstart(Poll(),"/",conf)
-
-
-
-
-
+    cherrypy.quickstart(Poll(), "/", conf)
