@@ -36,7 +36,9 @@ class RestaurantSearch(object):
         <div id="c"><form action = search_entry><button id="sel" type="submit" >Search for restaurants to add to the poll</button></form></br>'''
         yield '''<form action = "invite"><button id="sel" type="submit" >Invite members</button></form></br>'''
         yield '''<form action = "poll"><button id="sel" type="submit" >Join current poll</button></form></br>'''
-        yield '''<form action = "poll/results"><button id="sel" type="submit" >View current poll results</button></form></br></div>'''
+        yield '''<form action = "poll/results"><button id="sel" type="submit" >View current poll results</button></form></br>'''
+        yield '''<form action = "poll/reset"><button id="sel" type="submit" >Done with the poll, reset it</button></form></br></div>'''
+
 
         if('message' in cherrypy.session):
             message = cherrypy.session['message']
