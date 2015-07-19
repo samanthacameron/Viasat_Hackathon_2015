@@ -40,7 +40,7 @@ class Poll(object):
                 <input type="radio" name="opt" value="4"/>Change my vote.
              </label></br>'''
         yield '''<button type="submit">Login</button></form>'''
-        yield '<a href = http://localhost:5588/reset>Clear the poll.</a></html>'
+        yield '<a href = http://localhost:5588/poll/reset>Clear the poll.</a></html>'
 
     # needed for colin's management
     @cherrypy.expose
@@ -185,7 +185,7 @@ class Poll(object):
             o.rest_id = restaurantId
             o.voted = 1
         session.commit()
-        yield requests.get('http://localhost:5588/results').text
+        yield requests.get('http://localhost:5588/poll/results').text
 
     @cherrypy.expose
     def results(self):
