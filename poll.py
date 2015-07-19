@@ -3,6 +3,7 @@ import os
 import os.path
 from database import *
 
+abbrevs = {'bbq': 'Barbecue', 'burgers': 'Burgers', 'pizza': 'Pizza'}
 
 class Poll(object):
 
@@ -28,8 +29,8 @@ class Poll(object):
         yield '''<label for="optout">
                 <input type="radio" name="opt" value="2"/>I Want to Go but Don't Want to Vote.
              </label></br>'''
-        yield '''<label for="optout">
-                <input type="radio" name="opt" value="3"/>Take me to Submit My Vote!
+        yield '''<label for="optout" >
+                <input type="radio" name="opt" value="3" checked="checked"/>Take me to Submit My Vote!
              </label></br>'''
         yield '''<label for="optout">
                 <input type="radio" name="opt" value="4"/>Change My Vote
@@ -64,18 +65,18 @@ class Poll(object):
             yield '''USERNAME NOT RECOGNIZED'''
             opt = "0"
             yield '</br> <a href = "/">Return To Login</a>'
-        #no vote but going
+        # no vote but going
         if opt == "2":
             self.going = self.going + 1
             userobject = session.query(User)
 
             userobject = userobject.filter(User.username == uname)
             for o in userobject:
-                
+
                 if o.voted == 1:
                     self.voteCount = self.voteCount - 1
-                    o.voted = 0 
-                    
+                    o.voted = 0
+
                     restobject = session.query(Restaurant)
                     restobject = restobject.filter(Restaurant.id == o.rest_id)
                     for p in restobject:
@@ -85,7 +86,7 @@ class Poll(object):
                     session.commit()
             yield '''Vote is Not Counted But {} Is Going'''.format(uname)
             yield '</br> <a href = "/">Return To Login</a>'
-            
+
         # not going
         elif opt == "1":
             userobject = session.query(User)
@@ -94,7 +95,7 @@ class Poll(object):
                 if o.voted == 1:
                     self.voteCount = self.voteCount - 1
                     self.going = self.going - 1
-                    o.voted = 0 
+                    o.voted = 0
                     restobject = session.query(Restaurant)
                     restobject = restobject.filter(Restaurant.id == o.rest_id)
                     for p in restobject:
@@ -107,7 +108,7 @@ class Poll(object):
             objects = objects.filter(User.username == uname)
             yield '{} is not going to lunch'.format(uname)
             yield '</br> <a href = "/">Return To Login</a>'
-        #option 4 is changed
+        # option 4 is changed
         elif opt == "4":
             yield'''
                 <legend>What is your Restaurant of choice?</legend>
@@ -129,9 +130,9 @@ class Poll(object):
                         <input type="radio" name="restId" value="%s" id="Poll_0" />
                         %s
                      </label></br>''' % (str(row.id), row.name)
-                    self.going = self.going+1
+                    self.going = self.going + 1
             yield '''<button type="submit">Vote</button>'''
-            
+
         # option 3 is new person going
         elif opt == "3":
             self.uname = uname
@@ -168,14 +169,18 @@ class Poll(object):
 
     @cherrypy.expose
     def results(self, restId):
+
+        yield '''
+        <table border="1" style="width:100%">'''
         restobjects = session.query(Restaurant)
         restobjects = restobjects.filter(Restaurant.id == int(restId))
         for o in restobjects:
             o.votes = o.votes + 1
         for row in session.query(Restaurant):
             percent = int(int(row.votes) / int(self.voteCount) * 100)
-            yield '''<body>%s    %s      %s        %s     %s Percent </body></br>
-            ''' % (row.name, row.address, row.category, str(row.votes), str(percent))
+            yield '''<tr> <td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s Percent</td></tr>
+            ''' % (row.name, row.address, abbrevs[row.category], str(row.votes), str(percent))
+        yield '</table>'
         userobjects = session.query(User)
         userobjects = userobjects.filter(User.username == self.uname)
         if self.voteCount == 1:
