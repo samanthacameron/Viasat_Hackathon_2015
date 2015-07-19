@@ -17,7 +17,7 @@ class Poll(object):
         self.going = 0
 
     @cherrypy.expose
-    def index(self):
+    def index(self, username=""):
         yield '''<html>
         <head>
             <link href="/static/css/style.css" rel="stylesheet">
@@ -26,7 +26,7 @@ class Poll(object):
         yield '''<p>Congratulations! You have been invited to lunch!</br>Please enter a username and an option.</p></br>'''
         yield '''
         <form action="search">
-        User Name: <input type="text" name="uname"></br>'''
+        User Name: <input type="text" name="uname" value="%s"></br>''' % username
         yield '''<label for="optout">
                 <input type="radio" name="opt" value="1"/>I don't want to go
              </label></br>'''
