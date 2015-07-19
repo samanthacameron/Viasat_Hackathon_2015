@@ -28,3 +28,51 @@ body {
 #the-string {
   display: none;
 }
+
+.addpoll {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+    -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+    box-shadow:inset 0px 1px 0px 0px #ffffff;
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dbd8db), color-stop(1, #baabba) );
+    background:-moz-linear-gradient( center top, #dbd8db 5%, #baabba 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dbd8db', endColorstr='#baabba');
+    background-color:#dbd8db;
+    -webkit-border-top-left-radius:6px;
+    -moz-border-radius-topleft:6px;
+    border-top-left-radius:6px;
+    -webkit-border-top-right-radius:6px;
+    -moz-border-radius-topright:6px;
+    border-top-right-radius:6px;
+    -webkit-border-bottom-right-radius:6px;
+    -moz-border-radius-bottomright:6px;
+    border-bottom-right-radius:6px;
+    -webkit-border-bottom-left-radius:6px;
+    -moz-border-radius-bottomleft:6px;
+    border-bottom-left-radius:6px;
+    text-indent:0px;
+    border:1px solid #d1c1d1;
+    display:inline-block;
+    color:#4d3f4d;
+    font-family:Trebuchet MS;
+    font-size:13px;
+    font-weight:bold;
+    font-style:normal;
+    height:22px;
+    line-height:22px;
+    width:107px;
+    text-decoration:none;
+    text-align:center;
+    text-shadow:1px 0px 0px #ffffff;
+}
+.addpoll:hover {
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #baabba), color-stop(1, #dbd8db) );
+    background:-moz-linear-gradient( center top, #baabba 5%, #dbd8db 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#baabba', endColorstr='#dbd8db');
+    background-color:#baabba;
+}.addpoll:active {
+    position:relative;
+    top:1px;
+}
