@@ -53,6 +53,12 @@ class RestaurantSearch(object):
                     <title>Search for a restaurant</title>
                 </head>
                 '''
+        if('message' in cherrypy.session):
+            message = cherrypy.session['message']
+            yield '<div id= flash>'
+            yield message
+            yield '<div>'
+            del cherrypy.session['message']
         yield '''<body>
                 <form action="search">
                 <fieldset>
@@ -155,7 +161,7 @@ class RestaurantSearch(object):
             cherrypy.session['message'] = 'Restaurant Added'
         else:
             cherrypy.session['message'] = 'This restaurant is already in the poll'
-        raise cherrypy.HTTPRedirect('/')
+        raise cherrypy.HTTPRedirect('/search_entry')
 
     # @cherrypy.expose
     # def results(self, category):
@@ -212,7 +218,7 @@ class RestaurantSearch(object):
                     session.commit()
                 yield new_name
                 message += new_name + ", "
-                #yield '<br>'
+                # yield '<br>'
 
         if 'person' in args:
             names = args['person']
@@ -224,9 +230,9 @@ class RestaurantSearch(object):
                     new_user = User(username=name, voted=0)
                     session.add(new_user)
                     session.commit()
-                #yield '<br>'
+                # yield '<br>'
                 message += name + ", "
-            #yield 'Invited'
+            # yield 'Invited'
         message += "Invited"
         cherrypy.session['message'] = message
 

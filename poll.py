@@ -60,7 +60,7 @@ class Poll(object):
             yield '</br> <a href = "/">Return To Login</a>'
         # no vote but going
         if opt == "2":
-            
+
             userobject = session.query(User)
 
             userobject = userobject.filter(User.username == uname)
@@ -164,6 +164,10 @@ class Poll(object):
         for user in session.query(User):
             user.voted = 0
             user.rest_id = None
+        for row in session.query(Restaurant):
+            session.delete(row)
+        for row in session.query(User):
+            session.delete(row)
         session.commit()
         yield '''CLEARED'''
 
@@ -198,8 +202,8 @@ class Poll(object):
 
     @cherrypy.expose
     def results(self):
-        yield '''Number of People Going: %s</br>'''%str(self.going)
-        yield '''Number of Votes: %s</br>'''%str(self.voteCount)
+        yield '''Number of People Going: %s</br>''' % str(self.going)
+        yield '''Number of Votes: %s</br>''' % str(self.voteCount)
         yield '''
         <table border="1" style="width:100%"> <tr>
             <th>Name</th>
