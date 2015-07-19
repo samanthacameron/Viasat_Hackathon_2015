@@ -162,6 +162,11 @@ a:hover {
     background-color: thistle;
 
 }
+#e{
+  text-align:center;
+  font-weight:bold;
+  font-family:"Georgia";
+}
 
 #l{
     border-radius: 25px;

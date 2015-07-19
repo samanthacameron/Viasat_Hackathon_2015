@@ -42,7 +42,7 @@ class RestaurantSearch(object):
         yield '''<form action = "poll"><button id="sel" type="submit" >Join current poll</button></form></br>'''
         yield '''<form action = "poll/results"><button id="sel" type="submit" >View current poll results</button></form></br>'''
         yield '''<form action = "poll/reset"><button id="sel" type="submit" >Done with the poll, reset it</button></form></br>'''
-        yield '''<form action = "timer">Minutes: <input id="un" type="number" name="minutes"><button type="submit">Start Timer</button></br>End Time: {}</form></div>'''.format(str(self.ENDTIME))
+        yield '''<form action = "timer">Minutes: <input id="un" type="number" name="minutes"><button type="submit">Start Timer</button></div><div id = "e"></br>End Time: {}</form></div>'''.format(str(self.ENDTIME))
 
         if('message' in cherrypy.session):
             message = cherrypy.session['message']
