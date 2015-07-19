@@ -38,7 +38,7 @@ class RestaurantSearch(object):
     def search_entry(self):
         yield '''<html>
                 <head>
-                    <link href="/static/css/stylesearch.css" rel="stylesheet">
+                    <link href="/static/css/style.css" rel="stylesheet">
                 </head>
                 '''
         yield '''<body>
@@ -60,7 +60,7 @@ class RestaurantSearch(object):
     def search(self, location='Bryan, TX', miles=5, category='bbq'):
         yield '''<html>
         <head>
-            <link href="/static/css/stylesearch.css" rel="stylesheet">
+            <link href="/static/css/style.css" rel="stylesheet">
           </head>
         '''
         # START USING YELP API
