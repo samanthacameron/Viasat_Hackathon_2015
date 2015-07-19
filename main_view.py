@@ -1,19 +1,17 @@
 import cherrypy
 import os, os.path
-from database import session
-from sqlalchemy_declarative import Restaurant, User
+from database import *
 from search_by_radius import RestaurantSearch
 
-class Admin(object):
+class MainView(object):
 
     @cherrypy.expose
     def index(self):
-        yield 'This is the admin view<br><br>'
         yield 'Create new poll<br><br>'
         yield 'Search for and add new restaurants<br>'
-        yield 'View or delete all restaurants<br>'
-        yield 'View or delete favorites<br>'
-        yield 'View or delete blacklisted restaurants<br>'
+        yield 'View or delete existing restaurants<br>'
+        """yield 'View or delete favorites<br>'
+        yield 'View or delete blacklisted restaurants<br>'"""
 
     @cherrypy.expose
     def restaurants(self):
@@ -48,4 +46,4 @@ if __name__ == '__main__':
             }
     }
     cherrypy.config.update({'server.socket_port': 5588})
-    cherrypy.quickstart(Admin(), '/', conf)
+    cherrypy.quickstart(MainView(), '/', conf)
