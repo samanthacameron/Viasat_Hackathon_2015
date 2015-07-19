@@ -21,6 +21,7 @@ class Poll(object):
         yield '''<html>
         <head>
             <link href="/static/css/style.css" rel="stylesheet">
+            <title>Polling App</title>
           </head>
         '''
         yield '''<h1>YOU HAVE BEEN INVITED TO LUNCH!</h1> '''
@@ -45,6 +46,7 @@ class Poll(object):
         yield '''<html>
         <head>
             <link href="/static/css/style.css" rel="stylesheet">
+            <title>Poll</title>
           </head>
         '''
         yield '<body>'
@@ -150,11 +152,11 @@ class Poll(object):
                     self.going = self.going + 1
             yield '</div>'
             yield '''<button type="submit">Vote</button>'''
-            
         yield '</body>'
 
     @cherrypy.expose
     def reset(self):
+        yield '<head><title>Votes Reset</title></head>'
         for restaurant in session.query(Restaurant):
             restaurant.votes = 0
         for user in session.query(User):
@@ -165,10 +167,23 @@ class Poll(object):
 
     @cherrypy.expose
     def submit(self, restId):
+        yield '<head><title>Results</title></head>'
         restobjects = session.query(Restaurant)
         restobjects = restobjects.filter(Restaurant.id == int(restId))
-        for o in restobjects:
-            o.votes = o.votes + 1
+        rvoteCount = 0
+        for restaurant in session.query(Restaurant):
+            rvoteCount += restaurant.votes
+        uvoteCount = 0
+        for user in session.query(User):
+            uvoteCount += int(user.voted)
+        if rvoteCount == 0:
+            if uvoteCount - 1 != rvoteCount:
+                for o in restobjects:
+                    o.votes = o.votes + 1
+        else:
+            if uvoteCount != rvoteCount:
+                for o in restobjects:
+                    o.votes = o.votes + 1
         userobjects = session.query(User)
         userobjects = userobjects.filter(User.username == self.uname)
         for o in userobjects:

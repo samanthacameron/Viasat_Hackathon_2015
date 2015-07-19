@@ -13,13 +13,13 @@ CONSUMER_SECRET = 'B-Br6RdJJpyMZAwYAmoKPisv-Cw'
 TOKEN = 'ugQuBYYmoJBNcnBDpVrVO2HiPpMyahmZ'
 TOKEN_SECRET = 'ljnrQcblPl7yHbuQebRoqhvlRoI'
 
-category_names = {'bbq':'Barbecue', 'pizza':'Pizza', 'burgers':'Burgers', 'cajun':'Cajun',
-            'mexican':'Mexican','italian':'Italian', 'japanese':'Japanese'}
+category_names = {'bbq': 'Barbecue', 'pizza': 'Pizza', 'burgers': 'Burgers', 'cajun': 'Cajun',
+                  'mexican': 'Mexican', 'italian': 'Italian', 'japanese': 'Japanese'}
 
 
 class RestaurantSearch(object):
 
-    def  __init__(self):
+    def __init__(self):
         self.poll = Poll()
 
     @cherrypy.expose
@@ -27,16 +27,16 @@ class RestaurantSearch(object):
         yield '''<html>
         <head>
             <link href="/static/css/style.css" rel="stylesheet">
+            <title>Polling App</title>
           </head>
         '''
-        yield '''<a href="http://localhost:5588/search_entry">
-                Search for restaurants to add to the poll<a><br>'''
-        yield '''<a href="http://localhost:5588/invite">
-                Invite Members<a><br>'''
-        yield '''<a href="http://localhost:5588/poll">
-                Join current poll<a><br>'''
-        yield '''<a href="http://localhost:5588/poll/results">
-            View current poll results<a><br>'''
+        yield '''
+        <h1>POLLING APP</h1>
+        <h2>Choose an option below</h2>
+        <div id="c"><form action = search_entry><button id="sel" type="submit" >Search for restaurants to add to the poll</button></form></br>'''
+        yield '''<form action = "invite"><button id="sel" type="submit" >Invite members</button></form></br>'''
+        yield '''<form action = "poll"><button id="sel" type="submit" >Join current poll</button></form></br>'''
+        yield '''<form action = "poll/results"><button id="sel" type="submit" >View current poll results</button></form></br></div>'''
 
         if('message' in cherrypy.session):
             message = cherrypy.session['message']
@@ -45,13 +45,12 @@ class RestaurantSearch(object):
             yield '<div>'
             del cherrypy.session['message']
 
-
-
     @cherrypy.expose
     def search_entry(self):
         yield '''<html>
                 <head>
                     <link href="/static/css/style.css" rel="stylesheet">
+                    <title>Search for a restaurant</title>
                 </head>
                 '''
         yield '''<body>
@@ -74,6 +73,7 @@ class RestaurantSearch(object):
         yield '''<html>
         <head>
             <link href="/static/css/style.css" rel="stylesheet">
+            <title>Search Results</title>
           </head>
         '''
         yield '<body>'
@@ -100,7 +100,7 @@ class RestaurantSearch(object):
 
         # END USING YELP API
 
-        # # USING LOCAL RESULTS
+        # USING LOCAL RESULTS
 
         # if category == 'bbq':
         #     url = 'http://localhost:5588/results?category=barbecue'
@@ -108,7 +108,6 @@ class RestaurantSearch(object):
         #     url = 'http://localhost:5588/results?category=burgers'
         # elif category == 'burgers':
         #     url = 'http://localhost:5588/results?category=burgers'
-            
 
         response = requests.get(url)
         restaurants = json.loads(response.text)['businesses']
@@ -140,9 +139,9 @@ class RestaurantSearch(object):
             yield '</div>'
         yield '</body>'
 
-
     @cherrypy.expose
     def add(self, name, address, category):
+        yield '<head><title>Restaurant Added</title></head>'
         restaurantmatch = session.query(Restaurant).filter(Restaurant.name == name).first()
         if restaurantmatch is None:
             new_rest = Restaurant(name=name, address=address, category=category, votes=0)
@@ -172,6 +171,7 @@ class RestaurantSearch(object):
         yield '''<html>
         <head>
             <link href="/static/css/style.css" rel="stylesheet">
+            <title>Invite a colleague</title>
           </head>
         '''
         yield '<body>'
@@ -179,7 +179,7 @@ class RestaurantSearch(object):
         for person in session.query(UserList):
             name = person.username
             yield '<div id=user>'
-            yield '''   
+            yield '''
              <input type="checkbox" name="person" value="%s">%s
             ''' % (name, name)
             yield '<br>'
@@ -191,6 +191,7 @@ class RestaurantSearch(object):
 
     @cherrypy.expose
     def invited(self, **args):
+        yield '<head><title>Invited</title></head>'
         message = ""
         if 'new_person' in args:
             new_name = args['new_person']
@@ -200,13 +201,12 @@ class RestaurantSearch(object):
                     session.add(new_person)
                     session.commit
                 if(session.query(User).get(new_name) is None):
-                        new_user = User(username=new_name, voted=0)
-                        session.add(new_user)
-                        session.commit()
+                    new_user = User(username=new_name, voted=0)
+                    session.add(new_user)
+                    session.commit()
                 yield new_name
                 message += new_name + ", "
                 yield '<br>'
-
 
         if 'person' in args:
             names = args['person']
@@ -225,12 +225,11 @@ class RestaurantSearch(object):
         cherrypy.session['message'] = message
 
 
-
 def sanitize(s):
-    s = s.replace("'","")
-    s = s.replace("&","and")
-    s = s.replace("?","")
-    s = s.replace("%","")
+    s = s.replace("'", "")
+    s = s.replace("&", "and")
+    s = s.replace("?", "")
+    s = s.replace("%", "")
     return s
 
 conf = {
