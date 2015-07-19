@@ -1,5 +1,5 @@
 import cherrypy
-from table import session
+from database import session
 import os, os.path
 import random
 import string

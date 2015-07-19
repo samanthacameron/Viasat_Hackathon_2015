@@ -9,8 +9,24 @@ class Admin(object):
         yield 'This is the admin view'
 
     @cherrypy.expose
-    def restraunts:
-    	yield ''
+    def restaurants(self):
+        restaurants = session.query("SELECT * FROM restaurants;")
+        for rest in restaurants:
+            yield rest
+        yield ''
+
+    @cherrypy.expose
+    def createpoll(self):
+        yield ''
+
+    @cherrypy.expose
+    def blacklist(self):
+        yield ''
+
+    @cherrypy.expose
+    def favorites(self):
+        yield ''
+
 
 if __name__ == '__main__':
     conf = {
