@@ -122,6 +122,9 @@ h2{
 
 #s{
   font-family: "Arial";
+  text-align:center;
+  margin-left:auto;
+  margin-right:auto;
    
 }
 form{
@@ -160,6 +163,19 @@ a:hover {
 
 }
 
+#l{
+    border-radius: 25px;
+    border: 2px solid black;
+    padding: 20px; 
+    width: 300px;
+    height: 70px; 
+    margin-left:auto;
+    margin-right:auto;
+    text-align:left;
+    background-color: thistle;
+
+}
+
 
 #sel{
   width:275px;
@@ -182,8 +198,12 @@ a:hover {
   background-color: khaki;
   border: 1px solid crimson;
 }
+#b{
+  text-align: center;
+}
 
 button:hover{
   color:red;
+  background:white;
 
 }

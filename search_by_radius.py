@@ -5,6 +5,7 @@ import oauth2
 import os
 from database import *
 from poll import Poll
+import datetime
 
 # API_KEY = 'AIzaSyCY0yYTShIG54l8rUPNUOsl3Jm7NdWtXBQ'
 API_HOST = 'http://api.yelp.com/v2/search/?'
@@ -13,7 +14,7 @@ CONSUMER_SECRET = 'B-Br6RdJJpyMZAwYAmoKPisv-Cw'
 TOKEN = 'ugQuBYYmoJBNcnBDpVrVO2HiPpMyahmZ'
 TOKEN_SECRET = 'ljnrQcblPl7yHbuQebRoqhvlRoI'
 
-category_names = {'None': 'None','bbq': 'Barbecue', 'pizza': 'Pizza', 'burgers': 'Burgers', 'cajun': 'Cajun',
+category_names = {'None': 'None', 'bbq': 'Barbecue', 'pizza': 'Pizza', 'burgers': 'Burgers', 'cajun': 'Cajun',
                   'mexican': 'Mexican', 'italian': 'Italian', 'japanese': 'Japanese'}
 
 
@@ -21,6 +22,9 @@ class RestaurantSearch(object):
 
     def __init__(self):
         self.poll = Poll()
+        self.STARTIME = datetime.datetime.now()
+        self.T = 0
+        self.ENDTIME = (datetime.datetime.now() + datetime.timedelta(minutes=self.T)).strftime('%I:%M:%S %p')
 
     @cherrypy.expose
     def index(self):
@@ -38,8 +42,7 @@ class RestaurantSearch(object):
         yield '''<form action = "poll"><button id="sel" type="submit" >Join current poll</button></form></br>'''
         yield '''<form action = "poll/results"><button id="sel" type="submit" >View current poll results</button></form></br>'''
         yield '''<form action = "poll/reset"><button id="sel" type="submit" >Done with the poll, reset it</button></form></br>'''
-        yield '''<form action = "poll/timer">Minutes: <input id="un" type="number" name="time"><button type="submit">Start Timer</button></form></div>'''
-
+        yield '''<form action = "timer">Minutes: <input id="un" type="number" name="minutes"><button type="submit">Start Timer</button></br>End Time: {}</form></div>'''.format(str(self.ENDTIME))
 
         if('message' in cherrypy.session):
             message = cherrypy.session['message']
@@ -47,6 +50,18 @@ class RestaurantSearch(object):
             yield message
             yield '<div>'
             del cherrypy.session['message']
+
+    @cherrypy.expose
+    def timer(self, minutes):
+        self.T = int(minutes)
+        self.ENDTIME = (datetime.datetime.now() + datetime.timedelta(minutes=self.T)).strftime('%I:%M:%S %p')
+
+        # currentTime = datetime.datetime.now().strftime('%I:%M:%S %p')
+        # yield 'Current time: {}</br>'.format(str(currentTime))
+        # newtime = datetime.datetime.now() + datetime.timedelta(minutes=time)
+        # newtime = newtime.strftime('%I:%M:%S %p')
+        # yield 'End Time: {}'.format(str(newtime))
+        raise cherrypy.HTTPRedirect('/')
 
     @cherrypy.expose
     def search_entry(self):
