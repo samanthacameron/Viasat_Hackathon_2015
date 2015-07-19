@@ -86,14 +86,14 @@ class RestaurantSearch(object):
 
         # END USING YELP API
 
-        # USING LOCAL RESULTS
+        # # USING LOCAL RESULTS
 
-        if category == 'bbq':
-            url = 'http://localhost:5588/results?category=barbecue'
-        elif category == 'pizza':
-            url = 'http://localhost:5588/results?category=burgers'
-        elif category == 'burgers':
-            url = 'http://localhost:5588/results?category=burgers'
+        # if category == 'bbq':
+        #     url = 'http://localhost:5588/results?category=barbecue'
+        # elif category == 'pizza':
+        #     url = 'http://localhost:5588/results?category=burgers'
+        # elif category == 'burgers':
+        #     url = 'http://localhost:5588/results?category=burgers'
             
 
         response = requests.get(url)
