@@ -1,11 +1,16 @@
 import cherrypy
 import os, os.path
+from database import session
 
 class Admin(object):
 
     @cherrypy.expose
     def index(self):
         yield 'This is the admin view'
+
+    @cherrypy.expose
+    def restraunts:
+    	yield ''
 
 if __name__ == '__main__':
     conf = {
