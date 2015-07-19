@@ -4,6 +4,7 @@ import json
 import oauth2
 import os
 from database import *
+from poll import Poll
 
 # API_KEY = 'AIzaSyCY0yYTShIG54l8rUPNUOsl3Jm7NdWtXBQ'
 API_HOST = 'http://api.yelp.com/v2/search/?'
@@ -18,13 +19,17 @@ category_names = {'bbq':'Barbecue', 'pizza':'Pizza', 'burgers':'Burgers', 'cajun
 
 class RestaurantSearch(object):
 
+    def  __init__(self):
+        self.poll = Poll()
+
     @cherrypy.expose
     def index(self):
         yield '''<a href="http://localhost:5588/search_entry">
                 Search for restaurants to add to the poll<a><br>'''
         yield '''<a href="http://localhost:5588/invite">
                 Invite Members<a><br>'''
-        yield '''View current poll results<br>'''
+        yield '''<a href="http://localhost:5588/poll/results">
+            View current poll results<a><br>'''
 
 
     @cherrypy.expose
@@ -120,20 +125,20 @@ class RestaurantSearch(object):
         else:
             yield 'This restaurant is already in the poll'
 
-    @cherrypy.expose
-    def results(self, category):
-        if category == 'burgers':
-            with open('burgers.json') as data_file:
-                data = json.loads(data_file.read())
-            return json.dumps(data)
-        elif category == 'barbecue':
-            with open('barbecue.json') as data_file:
-                data = json.loads(data_file.read())
-            return json.dumps(data)
-        elif category == 'pizza':
-            with open('pizza.json') as data_file:
-                data = json.loads(data_file.read())
-            return json.dumps(data)
+    # @cherrypy.expose
+    # def results(self, category):
+    #     if category == 'burgers':
+    #         with open('burgers.json') as data_file:
+    #             data = json.loads(data_file.read())
+    #         return json.dumps(data)
+    #     elif category == 'barbecue':
+    #         with open('barbecue.json') as data_file:
+    #             data = json.loads(data_file.read())
+    #         return json.dumps(data)
+    #     elif category == 'pizza':
+    #         with open('pizza.json') as data_file:
+    #             data = json.loads(data_file.read())
+    #         return json.dumps(data)
 
     @cherrypy.expose
     def invite(self):
@@ -144,22 +149,38 @@ class RestaurantSearch(object):
              <input type="checkbox" name="person" value="%s">%s<br>
             ''' % (name, name)
             yield '<br>'
+        yield 'Other:<br><input type ="field", name="new_person" value><br><br>'
         yield '<input type="submit" value="Submit">'
         yield '</form>'
 
     @cherrypy.expose
     def invited(self, **args):
-        names = args['person']
-        if not isinstance(names, list):
-            names = [names]
-        for name in names:
-            yield name
-            if(session.query(User).get(name) is None):
-                new_user = User(username=name, voted=0)
-                session.add(new_user)
-                session.commit()
+        if 'new_person' in args:
+            new_name = args['new_person']
+            if(session.query(UserList).get(new_name) is None):
+                new_person = UserList(username=new_name)
+                session.add(new_person)
+                session.commit
+            if(session.query(User).get(new_name) is None):
+                    new_user = User(username=new_name, voted=0)
+                    session.add(new_user)
+                    session.commit()
+            yield new_name
             yield '<br>'
-        yield 'Invited'
+
+
+        if 'person' in args:
+            names = args['person']
+            if not isinstance(names, list):
+                names = [names]
+            for name in names:
+                yield name
+                if(session.query(User).get(name) is None):
+                    new_user = User(username=name, voted=0)
+                    session.add(new_user)
+                    session.commit()
+                yield '<br>'
+            yield 'Invited'
 
 
 
