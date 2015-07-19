@@ -76,6 +76,12 @@ body {
     position:relative;
     top:1px;
 }
+
+#user{
+  background-color: silver;
+  margin-bottom: 3px;
+  margin-right: 999px;
+}
 button{
   width:67px;
   height:35px;
