@@ -17,6 +17,13 @@ class RestaurantSearch(object):
 
     @cherrypy.expose
     def index(self):
+        yield '''<a href="http://localhost:5588/search_entry">Search for restaurants to add to the poll<a>'''
+        yield '''<br>Invite Members<br>'''
+        yield '''View current poll results<br>'''
+
+
+    @cherrypy.expose
+    def search_entry(self):
         yield '''<html>
                 <head>
                     <link href="/static/css/stylesearch.css" rel="stylesheet">
