@@ -6,7 +6,7 @@ from svg.charts.pie import Pie
 import requests
 import datetime
 
-abbrevs = {'bbq': 'Barbecue', 'pizza': 'Pizza', 'burgers': 'Burgers', 'cajun': 'Cajun',
+abbrevs = {'None': 'None', 'bbq': 'Barbecue', 'pizza': 'Pizza', 'burgers': 'Burgers', 'cajun': 'Cajun',
            'mexican': 'Mexican', 'italian': 'Italian', 'japanese': 'Japanese'}
 
 
@@ -41,9 +41,9 @@ class Poll(object):
         </label></div></br>'''
 
         yield '''<button id="login" type="submit" >Login</button></form>'''
-        
+
     @cherrypy.expose
-    def timer(self,time):
+    def timer(self, time):
         time = int(time)
         yield 'Current time: {}</br>'.format(str(datetime.datetime.now()))
         newtime = datetime.datetime.now() + datetime.timedelta(minutes=time)

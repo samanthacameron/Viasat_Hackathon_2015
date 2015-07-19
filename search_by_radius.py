@@ -13,7 +13,7 @@ CONSUMER_SECRET = 'B-Br6RdJJpyMZAwYAmoKPisv-Cw'
 TOKEN = 'ugQuBYYmoJBNcnBDpVrVO2HiPpMyahmZ'
 TOKEN_SECRET = 'ljnrQcblPl7yHbuQebRoqhvlRoI'
 
-category_names = {'bbq': 'Barbecue', 'pizza': 'Pizza', 'burgers': 'Burgers', 'cajun': 'Cajun',
+category_names = {'None': 'None','bbq': 'Barbecue', 'pizza': 'Pizza', 'burgers': 'Burgers', 'cajun': 'Cajun',
                   'mexican': 'Mexican', 'italian': 'Italian', 'japanese': 'Japanese'}
 
 
