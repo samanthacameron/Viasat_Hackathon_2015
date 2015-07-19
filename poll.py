@@ -70,7 +70,7 @@ class Poll(object):
                     o.rest_id = None
                     session.commit()
             yield '''Vote is Not Counted But {} Is Going'''.format(uname)
-            yield '</br> <a href = "/">Return To Login</a>'
+            yield '</br> <a href = "/poll">Return To Login</a>'
 
         # not going
         elif opt == "1":
@@ -92,7 +92,7 @@ class Poll(object):
             objects = session.query(User)
             objects = objects.filter(User.username == uname)
             yield '{} is not going to lunch'.format(uname)
-            yield '</br> <a href = "/">Return To Login</a>'
+            yield '</br> <a href = "/poll">Return To Login</a>'
         # option 3 is new person going
         elif opt == "3":
             self.uname = uname
