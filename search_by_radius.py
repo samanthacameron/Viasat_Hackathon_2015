@@ -38,6 +38,14 @@ class RestaurantSearch(object):
         yield '''<a href="http://localhost:5588/poll/results">
             View current poll results<a><br>'''
 
+        if('message' in cherrypy.session):
+            message = cherrypy.session['message']
+            yield '<div id= flash>'
+            yield message
+            yield '<div>'
+            del cherrypy.session['message']
+
+
 
     @cherrypy.expose
     def search_entry(self):
@@ -181,6 +189,7 @@ class RestaurantSearch(object):
 
     @cherrypy.expose
     def invited(self, **args):
+        message = ""
         if 'new_person' in args:
             new_name = args['new_person']
             if(new_name != ""):
@@ -193,6 +202,7 @@ class RestaurantSearch(object):
                         session.add(new_user)
                         session.commit()
                 yield new_name
+                message += new_name + ", "
                 yield '<br>'
 
 
@@ -207,7 +217,10 @@ class RestaurantSearch(object):
                     session.add(new_user)
                     session.commit()
                 yield '<br>'
+                message += name + ", "
             yield 'Invited'
+        message += "Invited"
+        cherrypy.session['message'] = message
 
 
 
