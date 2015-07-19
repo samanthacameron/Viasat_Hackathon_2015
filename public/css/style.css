@@ -121,9 +121,56 @@ h2{
 }
 
 #s{
-  font-family: "Georgia";
+  font-family: "Arial";
    
 }
 form{
+  font-family:"Arial";
+}
+a{
   font-family:"Georgia";
+}
+
+/* unvisited link */
+a:link {
+    color: black;
+
+}
+
+/* visited link */
+a:visited {
+    color: purple;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00FF;
+}
+
+#c{
+    border-radius: 25px;
+    border: 2px solid black;
+    padding: 20px; 
+    width: 300px;
+    height: 250px; 
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+
+}
+
+
+#sel{
+  width:250px;
+  height:35px;
+  background-color:white;
+  moz-border-radius:15px;
+  -webkit-border-radius:15px;
+  border: 2px solid black;
+  padding:5px;
+}
+
+button:hover{
+  color:red;
+
 }
