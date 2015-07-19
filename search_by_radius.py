@@ -155,7 +155,7 @@ class RestaurantSearch(object):
             cherrypy.session['message'] = 'Restaurant Added'
         else:
             cherrypy.session['message'] = 'This restaurant is already in the poll'
-        raise cherrypy.HTTPRedirect("/")
+        raise cherrypy.HTTPRedirect('/')
 
     # @cherrypy.expose
     # def results(self, category):
@@ -230,7 +230,7 @@ class RestaurantSearch(object):
         message += "Invited"
         cherrypy.session['message'] = message
 
-        raise cherrypy.HTTPRedirect("/")
+        raise cherrypy.HTTPRedirect('/')
 
 
 def sanitize(s):
