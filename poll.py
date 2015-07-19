@@ -36,12 +36,10 @@ class Poll(object):
         yield '''<button type="submit">Login</button></form>'''
         yield '<a href = http://localhost:5588/reset>Clear Out Votes and Voted</a></html>'
 
-    #needed for colin's management
+    # needed for colin's management
     @cherrypy.expose
     def poll(self, uname, opt):
-        
-        
-        
+
         yield '''
         <form action="search">
         ZipCode: <input type="text" name="zip">
@@ -54,7 +52,6 @@ class Poll(object):
         <button type="submit">Search</button>
         </form>
             '''
-        
 
     @cherrypy.expose
     def search(self, uname, opt):
@@ -90,7 +87,7 @@ class Poll(object):
                     <input type="radio" name="restId" value="%s" id="Poll_0" checked="checked" />
                     %s
                     </label></br>''' % (str(row.id), row.name)
-                    row.votes = row.votes-1
+                    row.votes = row.votes - 1
                 else:
                     yield'''<label for="restId">
                         <input type="radio" name="restId" value="%s" id="Poll_0" />
@@ -119,15 +116,16 @@ class Poll(object):
                             %s
                          </label></br>''' % (str(row.id), row.name)
                     yield '''<button type="submit">Vote</button>'''
-    
+
     @cherrypy.expose
     def reset(self):
-        for row in session.query(Restaurant):
-            row.votes = 0
-        for place in session.query(User):
-            place.voted = 0
+        for restaurant in session.query(Restaurant):
+            restaurant.votes = 0
+        for user in session.query(User):
+            user.voted = 0
+            user.rest_id = None
+        session.commit()
         yield '''CLEARED'''
-
 
     @cherrypy.expose
     def results(self, restId):

@@ -22,7 +22,7 @@ class User(Base):
     __tablename__ = 'user'
     username = Column(String(50), primary_key=True)
     rest_id = Column(Integer, ForeignKey('restaurants.id'), nullable=False)
-    voted = Column(Integer, nullable=False)
+    voted = Column(Boolean, nullable=False)
 
 
 # Create an engine that stores data in the local directory's
