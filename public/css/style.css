@@ -156,13 +156,14 @@ a:hover {
     margin-left:auto;
     margin-right:auto;
     text-align:center;
+    background-color: thistle;
 
 }
 
 
 #sel{
-  width:250px;
-  height:35px;
+  width:275px;
+  height 50px;
   background-color:white;
   moz-border-radius:15px;
   -webkit-border-radius:15px;
