@@ -15,14 +15,16 @@ class Restaurant(Base):
     name = Column(String(50), nullable=False)
     address = Column(String(50), nullable=False)
     category = Column(String(50), nullable=False)
-    votes = Column(Integer, nullable=False)
 
 
 class User(Base):
     __tablename__ = 'user'
     username = Column(String(50), primary_key=True)
-    rest_id = Column(Integer, ForeignKey('restaurants.id'), nullable=False)
-    voted = Column(Integer, nullable=False)
+
+class Votes(Base):
+	__tablename__ = 'votes'
+    username = Column(String(50), primary_key=True)
+    vote_id = Column(Integer, ForeignKey('restaurants.id'), nullable=False)
 
 
 # Create an engine that stores data in the local directory's
