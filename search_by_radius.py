@@ -37,26 +37,26 @@ class RestaurantSearch(object):
 
         meters = float(miles) * 1609.34
         consumer = oauth2.Consumer(CONSUMER_KEY, CONSUMER_SECRET)
-        # oauth_request = oauth2.Request(method="GET", url=API_HOST, parameters=None)
+        oauth_request = oauth2.Request(method="GET", url=API_HOST, parameters=None)
 
-        # oauth_request.update(
-        #     {
-        #         'oauth_nonce': oauth2.generate_nonce(),
-        #         'oauth_timestamp': oauth2.generate_timestamp(),
-        #         'oauth_token': TOKEN,
-        #         'oauth_consumer_key': CONSUMER_KEY,
-        #         'location': location,
-        #         'category_filter': category,
-        #         'radius_filter': meters
-        #     }
-        # )
-        # token = oauth2.Token(TOKEN, TOKEN_SECRET)
-        # oauth_request.sign_request(oauth2.SignatureMethod_HMAC_SHA1(), consumer, token)
+        oauth_request.update(
+            {
+                'oauth_nonce': oauth2.generate_nonce(),
+                'oauth_timestamp': oauth2.generate_timestamp(),
+                'oauth_token': TOKEN,
+                'oauth_consumer_key': CONSUMER_KEY,
+                'location': location,
+                'category_filter': category,
+                'radius_filter': meters
+            }
+        )
+        token = oauth2.Token(TOKEN, TOKEN_SECRET)
+        oauth_request.sign_request(oauth2.SignatureMethod_HMAC_SHA1(), consumer, token)
         # url = oauth_request.to_url()
 
-        #END USING YELP API 
+        # END USING YELP API
 
-        #USING LOCAL RESULTS
+        # USING LOCAL RESULTS
 
         if category == 'bbq':
             url = 'http://localhost:5588/results?category=barbecue'
@@ -64,6 +64,8 @@ class RestaurantSearch(object):
             url = 'http://localhost:5588/results?category=burgers'
         elif category == 'burgers':
             url = 'http://localhost:5588/results?category=burgers'
+        else:
+            yield 'Please input a valid category'
 
         response = requests.get(url)
         restaurants = json.loads(response.text)['businesses']
