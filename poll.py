@@ -30,7 +30,7 @@ class Poll(object):
         yield '''
         <form action="search">
         <div id="s">User Name: <input id="un" type="text" name="uname" value="%s"></br>''' % username
-        yield '''</div><div id="o"><label for="optout" >
+        yield '''</div><div id="l"><label for="optout" >
         <input type="radio" name="opt" value="3" checked="checked"/>Take me to submit my vote.
         </label></br>
         <label for="optout">
@@ -40,7 +40,7 @@ class Poll(object):
         <input type="radio" name="opt" value="2"/>I want to go but don't want to vote.
         </label></div></br>'''
 
-        yield '''<button id="login" type="submit" >Login</button></form>'''
+        yield '''<div id = "b"><button id="login" type="submit" >Login</button></div></form>'''
 
     @cherrypy.expose
     def timer(self, time):
