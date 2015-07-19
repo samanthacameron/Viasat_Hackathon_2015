@@ -91,23 +91,24 @@ class Poll(object):
 
     @cherrypy.expose
     def results(self, restId):
-
-        objects = session.query(Restaurant)
-        objects = objects.filter(Restaurant.id == int(restId))
-        for o in objects:
+        restobjects = session.query(Restaurant)
+        restobjects = restobjects.filter(Restaurant.id == int(restId))
+        for o in restobjects:
             o.votes = o.votes + 1
         for row in session.query(Restaurant):
             percent = int(int(row.votes) / int(self.voteCount) * 100)
             yield '''<body>%s    %s      %s        %s     %s Percent </body></br>
             ''' % (row.name, row.address, row.category, str(row.votes), str(percent))
-        objects = session.query(User)
-        objects = objects.filter(User.username == self.uname)
+        userobjects = session.query(User)
+        userobjects = userobjects.filter(User.username == self.uname)
         if self.voteCount == 1:
             yield '''</br>%s Person Has Voted''' % str(self.voteCount)
         elif self.voteCount > 1:
             yield '''</br>%s People Have Voted''' % str(self.voteCount)
-        for o in objects:
-            
+        for o in userobjects:
+            for t in restobjects:
+                restaurantId = t.id
+            o.rest_id = restaurantId
             o.voted = 1
             session.commit()
 
