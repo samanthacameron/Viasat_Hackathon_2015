@@ -46,6 +46,7 @@ class Poll(object):
         self.uname = uname
 
         if opt == "3":
+            self.voteCount = self.voteCount + 1
             yield '''
             <form action="search">
             ZipCode: <input type="text" name="zip">
@@ -60,14 +61,14 @@ class Poll(object):
             '''
         elif opt=="2":
             yield '''don't vote'''
+            self.voteCount = self.voteCount + 1
 
 
         elif opt=="1":
             objects = session.query(User)
             objects = objects.filter(User.username == uname)
-            for o in objects:
-                session.delete(o)
-            yield '{} has been removed from the list'.format(uname)
+            
+            yield '{} is not going'.format(uname)
             session.commit()
             
 
@@ -101,10 +102,15 @@ class Poll(object):
         for o in objects:
             o.votes = o.votes + 1
         for row in session.query(Restaurant):
-            yield '''<body>%s    %s      %s        %s     </body></br>
-            ''' %(row.name, row.address, row.category, str(row.votes))
+            percent = int(int(row.votes)/int(self.voteCount)*100)
+            yield '''<body>%s    %s      %s        %s     %s Percent </body></br>
+            ''' %(row.name, row.address, row.category, str(row.votes),str(percent))
         objects = session.query(User)
         objects = objects.filter(User.username == self.uname)
+        if self.voteCount==1:
+            yield '''</br>%s Person Has Voted'''%str(self.voteCount)
+        elif self.voteCount>1:
+            yield '''</br>%s People Have Voted'''%str(self.voteCount)
         for o in objects:
             o.voted = 1
 
@@ -120,7 +126,7 @@ if __name__ == '__main__':
             }
     }
     cherrypy.config.update({'server.socket_port': 5588})
-    cherrypy.quickstart(Poll(), '/', conf)
+    cherrypy.quickstart(Poll(),"/",conf)
 
 
 
