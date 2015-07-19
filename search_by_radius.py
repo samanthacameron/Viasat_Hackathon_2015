@@ -13,18 +13,22 @@ CONSUMER_SECRET = 'B-Br6RdJJpyMZAwYAmoKPisv-Cw'
 TOKEN = 'ugQuBYYmoJBNcnBDpVrVO2HiPpMyahmZ'
 TOKEN_SECRET = 'ljnrQcblPl7yHbuQebRoqhvlRoI'
 
-category_names = {'bbq': 'Barbecue', 'pizza': 'Pizza', 'burgers': 'Burgers', 'cajun': 'Cajun',
-                  'mexican': 'Mexican', 'italian': 'Italian', 'japanese': 'Japanese'}
+category_names = {'bbq':'Barbecue', 'pizza':'Pizza', 'burgers':'Burgers', 'cajun':'Cajun',
+            'mexican':'Mexican','italian':'Italian', 'japanese':'Japanese'}
 
 
 class RestaurantSearch(object):
 
-    def __init__(self):
+    def  __init__(self):
         self.poll = Poll()
 
     @cherrypy.expose
     def index(self):
-        yield '<head><title>Polling App</title></head>'
+        yield '''<html>
+        <head>
+            <link href="/static/css/style.css" rel="stylesheet">
+          </head>
+        '''
         yield '''<a href="http://localhost:5588/search_entry">
                 Search for restaurants to add to the poll<a><br>'''
         yield '''<a href="http://localhost:5588/invite">
@@ -34,20 +38,18 @@ class RestaurantSearch(object):
         yield '''<a href="http://localhost:5588/poll/results">
             View current poll results<a><br>'''
 
+
     @cherrypy.expose
     def search_entry(self):
         yield '''<html>
                 <head>
                     <link href="/static/css/style.css" rel="stylesheet">
-                    <title>Search for a restaurant</title>
                 </head>
                 '''
         yield '''<body>
                 <form action="search">
                 <fieldset>
                 <legend>Polling:</legend>
-                Name (Optional):<br>
-                <input type="text" name="name" value=""> <br>
                 Location:<br>
                 <input type="text" name="location" value="Bryan, TX"> <br>
                 Radius in Miles:<br>
@@ -60,11 +62,10 @@ class RestaurantSearch(object):
                 </form></body>'''
 
     @cherrypy.expose
-    def search(self, name=None, location='Bryan, TX', miles=5, category=None):
+    def search(self, location='Bryan, TX', miles=5, category='bbq'):
         yield '''<html>
         <head>
             <link href="/static/css/style.css" rel="stylesheet">
-            <title>Search Results</title>
           </head>
         '''
         # START USING YELP API
@@ -80,20 +81,17 @@ class RestaurantSearch(object):
                 'oauth_token': TOKEN,
                 'oauth_consumer_key': CONSUMER_KEY,
                 'location': location,
+                'category_filter': category,
                 'radius_filter': meters
             }
         )
-        if category is not None:
-            oauth_request['category_filter'] = category
-        if name is not None:
-            oauth_request['term'] = name
         token = oauth2.Token(TOKEN, TOKEN_SECRET)
         oauth_request.sign_request(oauth2.SignatureMethod_HMAC_SHA1(), consumer, token)
         url = oauth_request.to_url()
 
         # END USING YELP API
 
-        # USING LOCAL RESULTS
+        # # USING LOCAL RESULTS
 
         # if category == 'bbq':
         #     url = 'http://localhost:5588/results?category=barbecue'
@@ -101,6 +99,7 @@ class RestaurantSearch(object):
         #     url = 'http://localhost:5588/results?category=burgers'
         # elif category == 'burgers':
         #     url = 'http://localhost:5588/results?category=burgers'
+            
 
         response = requests.get(url)
         restaurants = json.loads(response.text)['businesses']
@@ -116,7 +115,7 @@ class RestaurantSearch(object):
             full_address = restaurant['location']['display_address']
             address = ""
             rating = restaurant['rating_img_url']
-            yield'<div id=name>{}</div>'.format(name.encode('utf-8'))
+            yield'<div id=name>{}</div>'.format(name)
 
             yield '<div id=address>'
             for field in full_address:
@@ -124,12 +123,13 @@ class RestaurantSearch(object):
                 address += field + ' '
             yield '</div>'
 
-            yield '<a href="http://localhost:5588/add?name={}&address={}&category={}" class="addpoll">Add to Poll</a>'.format(name.encode('utf-8'), address, category)
+            yield '<a href="http://localhost:5588/add?name={}&address={}&category={}" class="addpoll">Add to Poll</a>'.format(name, address, category)
             yield '<br>'
             yield '<img src="{}"></img></br>'.format(rating)
             yield '<br>'
 
             yield '</div>'
+
 
     @cherrypy.expose
     def add(self, name, address, category):
@@ -159,16 +159,25 @@ class RestaurantSearch(object):
 
     @cherrypy.expose
     def invite(self):
+        yield '''<html>
+        <head>
+            <link href="/static/css/style.css" rel="stylesheet">
+          </head>
+        '''
+        yield '<body>'
         yield '<form action="invited">'
         for person in session.query(UserList):
             name = person.username
+            yield '<div id=user>'
             yield '''   
-             <input type="checkbox" name="person" value="%s">%s<br>
+             <input type="checkbox" name="person" value="%s">%s
             ''' % (name, name)
             yield '<br>'
+            yield '</div>'
         yield 'Other:<br><input type ="field", name="new_person" value><br><br>'
         yield '<input type="submit" value="Submit">'
         yield '</form>'
+        yield '</body>'
 
     @cherrypy.expose
     def invited(self, **args):
@@ -180,11 +189,12 @@ class RestaurantSearch(object):
                     session.add(new_person)
                     session.commit
                 if(session.query(User).get(new_name) is None):
-                    new_user = User(username=new_name, voted=0)
-                    session.add(new_user)
-                    session.commit()
+                        new_user = User(username=new_name, voted=0)
+                        session.add(new_user)
+                        session.commit()
                 yield new_name
                 yield '<br>'
+
 
         if 'person' in args:
             names = args['person']
@@ -200,11 +210,12 @@ class RestaurantSearch(object):
             yield 'Invited'
 
 
+
 def sanitize(s):
-    s = s.replace("'", "")
-    s = s.replace("&", "and")
-    s = s.replace("?", "")
-    s = s.replace("%", "")
+    s = s.replace("'","")
+    s = s.replace("&","and")
+    s = s.replace("?","")
+    s = s.replace("%","")
     return s
 
 conf = {
