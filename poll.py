@@ -107,7 +107,9 @@ class Poll(object):
         elif self.voteCount > 1:
             yield '''</br>%s People Have Voted''' % str(self.voteCount)
         for o in objects:
+            
             o.voted = 1
+            session.commit()
 
 if __name__ == '__main__':
     conf = {
