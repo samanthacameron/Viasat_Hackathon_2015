@@ -159,16 +159,17 @@ class RestaurantSearch(object):
     def invited(self, **args):
         if 'new_person' in args:
             new_name = args['new_person']
-            if(session.query(UserList).get(new_name) is None):
-                new_person = UserList(username=new_name)
-                session.add(new_person)
-                session.commit
-            if(session.query(User).get(new_name) is None):
-                    new_user = User(username=new_name, voted=0)
-                    session.add(new_user)
-                    session.commit()
-            yield new_name
-            yield '<br>'
+            if(new_name != ""):
+                if(session.query(UserList).get(new_name) is None):
+                    new_person = UserList(username=new_name)
+                    session.add(new_person)
+                    session.commit
+                if(session.query(User).get(new_name) is None):
+                        new_user = User(username=new_name, voted=0)
+                        session.add(new_user)
+                        session.commit()
+                yield new_name
+                yield '<br>'
 
 
         if 'person' in args:
