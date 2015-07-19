@@ -28,6 +28,8 @@ class RestaurantSearch(object):
                 Search for restaurants to add to the poll<a><br>'''
         yield '''<a href="http://localhost:5588/invite">
                 Invite Members<a><br>'''
+        yield '''<a href="http://localhost:5588/poll">
+                Join current poll<a><br>'''
         yield '''<a href="http://localhost:5588/poll/results">
             View current poll results<a><br>'''
 

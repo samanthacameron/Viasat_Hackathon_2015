@@ -36,28 +36,9 @@ class Poll(object):
         yield '''<label for="optout" >
                 <input type="radio" name="opt" value="3" checked="checked"/>Take me to submit my vote.
              </label></br>'''
-        yield '''<label for="optout">
-                <input type="radio" name="opt" value="4"/>Change my vote.
-             </label></br>'''
         yield '''<button type="submit">Login</button></form>'''
         yield '<a href = http://localhost:5588/poll/reset>Clear the poll.</a></html>'
 
-    # needed for colin's management
-    @cherrypy.expose
-    def poll(self, uname, opt):
-
-        yield '''
-        <form action="search">
-        ZipCode: <input type="text" name="zip">
-        <select name="radius">
-              <option value="5">5 miles</option>
-              <option value="10">10 miles</option>
-              <option value="20">20 miles</option>
-        </select>
-
-        <button type="submit">Search</button>
-        </form>
-            '''
 
     @cherrypy.expose
     def search(self, uname, opt):
@@ -112,12 +93,35 @@ class Poll(object):
             objects = objects.filter(User.username == uname)
             yield '{} is not going to lunch'.format(uname)
             yield '</br> <a href = "/">Return To Login</a>'
+        # option 3 is new person going
+        elif opt == "3":
+            self.uname = uname
+            objects = session.query(User)
+            objects = objects.filter(User.username == self.uname)
+            for o in objects:
+                if o.voted == 1:
+                    opt = "4"
+                else:
+                    self.voteCount = self.voteCount + 1
+
+                    yield'''
+                        <legend>What is your Restaurant of choice?</legend>
+
+                        <form action="submit">'''
+                    for row in session.query(Restaurant):
+
+                        yield'''<label for="restId">
+                            <input type="radio" name="restId" value="%s" id="Poll_0" />
+                            %s
+                         </label></br>''' % (str(row.id), row.name)
+                    yield '''<button type="submit">Vote</button>'''
+                    self.going = self.going + 1
         # option 4 is changed
-        elif opt == "4":
+        if opt == "4":
             yield'''
                 <legend>What is your Restaurant of choice?</legend>
 
-                <form action="results">'''
+                <form action="submit">'''
             previouslySelected = session.query(User)
             previouslySelected = previouslySelected.filter(User.username == uname)
             for o in previouslySelected:
@@ -137,29 +141,7 @@ class Poll(object):
                     self.going = self.going + 1
             yield '''<button type="submit">Vote</button>'''
 
-        # option 3 is new person going
-        elif opt == "3":
-            self.uname = uname
-            objects = session.query(User)
-            objects = objects.filter(User.username == self.uname)
-            for o in objects:
-                if o.voted == 1:
-                    yield '''YOU HAVE ALREADY VOTED XD'''
-                else:
-                    self.voteCount = self.voteCount + 1
-
-                    yield'''
-                        <legend>What is your Restaurant of choice?</legend>
-
-                        <form action="submit">'''
-                    for row in session.query(Restaurant):
-
-                        yield'''<label for="restId">
-                            <input type="radio" name="restId" value="%s" id="Poll_0" />
-                            %s
-                         </label></br>''' % (str(row.id), row.name)
-                    yield '''<button type="submit">Vote</button>'''
-                    self.going = self.going + 1
+        
 
     @cherrypy.expose
     def reset(self):
