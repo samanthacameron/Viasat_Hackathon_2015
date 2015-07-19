@@ -21,8 +21,12 @@ class Restaurant(Base):
 class User(Base):
     __tablename__ = 'user'
     username = Column(String(50), primary_key=True)
-    rest_id = Column(Integer, ForeignKey('restaurants.id'), nullable=False)
+    rest_id = Column(Integer, ForeignKey('restaurants.id'), nullable=True)
     voted = Column(Boolean, nullable=False)
+
+class UserList(Base):
+    __tablename__ = 'userlist'
+    username = Column(String(50), primary_key=True)
 
 
 # Create an engine that stores data in the local directory's

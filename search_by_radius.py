@@ -17,8 +17,10 @@ class RestaurantSearch(object):
 
     @cherrypy.expose
     def index(self):
-        yield '''<a href="http://localhost:5588/search_entry">Search for restaurants to add to the poll<a>'''
-        yield '''<br>Invite Members<br>'''
+        yield '''<a href="http://localhost:5588/search_entry">
+                Search for restaurants to add to the poll<a><br>'''
+        yield '''<a href="http://localhost:5588/invite">
+                Invite Members<a><br>'''
         yield '''View current poll results<br>'''
 
 
@@ -131,6 +133,34 @@ class RestaurantSearch(object):
             with open('pizza.json') as data_file:
                 data = json.loads(data_file.read())
             return json.dumps(data)
+
+    @cherrypy.expose
+    def invite(self):
+        yield '<form action="invited">'
+        for person in session.query(UserList):
+            name = person.username
+            yield '''   
+             <input type="checkbox" name="person" value="%s">%s<br>
+            ''' % (name, name)
+            yield '<br>'
+        yield '<input type="submit" value="Submit">'
+        yield '</form>'
+
+    @cherrypy.expose
+    def invited(self, **args):
+        names = args['person']
+        if not isinstance(names, list):
+            names = [names]
+        for name in names:
+            yield name
+            if(session.query(User).get(name) is None):
+                new_user = User(username=name, voted=0)
+                session.add(new_user)
+                session.commit()
+            yield '<br>'
+        yield 'Invited'
+
+
 
 def sanitize(s):
     s = s.replace("'","")
