@@ -1,6 +1,7 @@
 import cherrypy
 import os, os.path
 from database import session
+from sqlalchemy_declarative import Restaurant, User
 
 class Admin(object):
 
@@ -9,8 +10,25 @@ class Admin(object):
         yield 'This is the admin view'
 
     @cherrypy.expose
-    def restraunts:
-    	yield ''
+    def restaurants(self):
+        restaurants = session.query(Restaurant)
+        for rest in restaurants:
+            yield rest.name
+            yield '<br>'
+        yield ''
+
+    @cherrypy.expose
+    def createpoll(self):
+        yield ''
+
+    @cherrypy.expose
+    def blacklist(self):
+        yield ''
+
+    @cherrypy.expose
+    def favorites(self):
+        yield ''
+
 
 if __name__ == '__main__':
     conf = {
