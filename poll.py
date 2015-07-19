@@ -214,6 +214,7 @@ class Poll(object):
         # yield '''Number of People Going: %s</br>''' % str(self.going)
         # yield '''Number of Votes: %s</br>''' % str(self.voteCount)
         yield '''
+        <head><title>Poll Results</title></head>
         <table border="1" style="width:100%"> <tr>
             <th>Name</th>
             <th>Address</th>
