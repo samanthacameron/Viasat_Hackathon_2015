@@ -118,8 +118,7 @@ class RestaurantSearch(object):
                 address += field + ' '
             yield '</div>'
 
-            yield '<a href="http://localhost:5588/add?name={}&address={}&category={}">Add to poll</a>'.format(name, address, category)
-
+            yield '<a href="http://localhost:5588/add?name={}&address={}&category={}" class="addpoll">Add to Poll</a>'.format(name, address, category)
             yield '<br>'
             yield '<img src="{}"></img></br>'.format(rating)
             yield '<br>'
