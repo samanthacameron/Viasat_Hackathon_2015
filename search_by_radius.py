@@ -12,6 +12,9 @@ CONSUMER_SECRET = 'B-Br6RdJJpyMZAwYAmoKPisv-Cw'
 TOKEN = 'ugQuBYYmoJBNcnBDpVrVO2HiPpMyahmZ'
 TOKEN_SECRET = 'ljnrQcblPl7yHbuQebRoqhvlRoI'
 
+category_names = {'bbq':'Barbecue', 'pizza':'Pizza', 'burgers':'Burgers', 'cajun':'Cajun',
+            'mexican':'Mexican','italian':'Italian', 'japanese':'Japanese'}
+
 
 class RestaurantSearch(object):
 
@@ -39,11 +42,10 @@ class RestaurantSearch(object):
                 <input type="text" name="location" value="Bryan, TX"> <br>
                 Radius in Miles:<br>
                 <input type="text" name="miles" value="5"> <br>
-                Category:<br>
-                <input type="radio" name="category" value="bbq">Barbecue<br>
-                <input type="radio" name="category" value="pizza">Pizza<br>
-                <input type="radio" name="category" value="burgers">Burgers<br>
-                <br><br>
+                Category:<br>'''
+        for key in category_names:
+            yield '<input type="radio" name="category" value="%s">%s<br>' % (key, category_names[key])
+        yield '''<br><br>
                 <input type="submit" value="Submit"></fieldset>
                 </form></body>'''
 
@@ -73,7 +75,7 @@ class RestaurantSearch(object):
         )
         token = oauth2.Token(TOKEN, TOKEN_SECRET)
         oauth_request.sign_request(oauth2.SignatureMethod_HMAC_SHA1(), consumer, token)
-        # url = oauth_request.to_url()
+        url = oauth_request.to_url()
 
         # END USING YELP API
 
@@ -85,8 +87,7 @@ class RestaurantSearch(object):
             url = 'http://localhost:5588/results?category=burgers'
         elif category == 'burgers':
             url = 'http://localhost:5588/results?category=burgers'
-        else:
-            yield 'Please input a valid category'
+            
 
         response = requests.get(url)
         restaurants = json.loads(response.text)['businesses']
