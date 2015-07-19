@@ -169,8 +169,9 @@ class Poll(object):
         for row in session.query(User):
             session.delete(row)
         session.commit()
-        yield '''CLEARED'''
+        cherrypy.session['message'] = "Database cleared"
 
+        raise cherrypy.HTTPRedirect('/')
     @cherrypy.expose
     def submit(self, restId):
         yield '<head><title>Results</title></head>'
