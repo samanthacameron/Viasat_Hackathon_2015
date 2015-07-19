@@ -18,6 +18,8 @@ class RestaurantSearch(object):
         yield '''<form action="search">
                 <fieldset>
                 <legend>Polling:</legend>
+                Location:<br>
+                <input type="text" name="location" value="Bryan, TX"> <br>
                 Radius in Miles:<br>
                 <input type="text" name="miles" value="5"> <br>
                 Category:<br>
@@ -29,13 +31,12 @@ class RestaurantSearch(object):
                 </form>'''
 
     @cherrypy.expose
-    def search(self, miles=5, category='bbq'):
+    def search(self, location='Bryan, TX', miles=5, category='bbq'):
 
-        # START USING YELP API #
+        # START USING YELP API
 
-        # location = 'Bryan, TX'
-        # meters = float(miles) * 1609.34
-        # consumer = oauth2.Consumer(CONSUMER_KEY, CONSUMER_SECRET)
+        meters = float(miles) * 1609.34
+        consumer = oauth2.Consumer(CONSUMER_KEY, CONSUMER_SECRET)
         # oauth_request = oauth2.Request(method="GET", url=API_HOST, parameters=None)
 
         # oauth_request.update(
@@ -53,9 +54,9 @@ class RestaurantSearch(object):
         # oauth_request.sign_request(oauth2.SignatureMethod_HMAC_SHA1(), consumer, token)
         # url = oauth_request.to_url()
 
-        # END USING YELP API #
+        #END USING YELP API 
 
-        # USING LOCAL RESULTS
+        #USING LOCAL RESULTS
 
         if category == 'bbq':
             url = 'http://localhost:5588/results?category=barbecue'
