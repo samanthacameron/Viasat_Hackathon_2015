@@ -5,6 +5,7 @@ from database import *
 
 abbrevs = {'bbq': 'Barbecue', 'burgers': 'Burgers', 'pizza': 'Pizza'}
 
+
 class Poll(object):
 
     def __init__(self):
@@ -19,24 +20,24 @@ class Poll(object):
             <link href="/static/css/style.css" rel="stylesheet">
           </head>
         '''
-        yield '''<p>YOU HAVE BEEN INVITED TO LUNCH! </br>Enter Username and an Option</p></br>'''
+        yield '''<p>Congratulations! You have been invited to lunch!</br>Please enter a username and an option.</p></br>'''
         yield '''
         <form action="search">
-        Username: <input type="text" name="uname"></br>'''
+        User Name: <input type="text" name="uname"></br>'''
         yield '''<label for="optout">
-                <input type="radio" name="opt" value="1"/>I Don't Want To Go.
+                <input type="radio" name="opt" value="1"/>I don't want to go
              </label></br>'''
         yield '''<label for="optout">
-                <input type="radio" name="opt" value="2"/>I Want to Go but Don't Want to Vote.
+                <input type="radio" name="opt" value="2"/>I want to go but don't want to vote.
              </label></br>'''
         yield '''<label for="optout" >
-                <input type="radio" name="opt" value="3" checked="checked"/>Take me to Submit My Vote!
+                <input type="radio" name="opt" value="3" checked="checked"/>Take me to submit my vote.
              </label></br>'''
         yield '''<label for="optout">
-                <input type="radio" name="opt" value="4"/>Change My Vote
+                <input type="radio" name="opt" value="4"/>Change my vote.
              </label></br>'''
         yield '''<button type="submit">Login</button></form>'''
-        yield '<a href = http://localhost:5588/reset>Clear Out Votes and Voted</a></html>'
+        yield '<a href = http://localhost:5588/reset>Clear the poll.</a></html>'
 
     # needed for colin's management
     @cherrypy.expose
