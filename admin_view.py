@@ -1,6 +1,7 @@
 import cherrypy
 import os, os.path
 from database import session
+from sqlalchemy_declarative import Restaurant, User
 
 class Admin(object):
 
@@ -10,9 +11,10 @@ class Admin(object):
 
     @cherrypy.expose
     def restaurants(self):
-        restaurants = session.query("SELECT * FROM restaurants;")
+        restaurants = session.query(Restaurant)
         for rest in restaurants:
-            yield rest
+            yield rest.name
+            yield '<br>'
         yield ''
 
     @cherrypy.expose
