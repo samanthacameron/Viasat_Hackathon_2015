@@ -167,8 +167,9 @@ a:hover {
   background-color:white;
   moz-border-radius:15px;
   -webkit-border-radius:15px;
-  border: 2px solid black;
+  border: 2px solid darkgray;
   padding:5px;
+  background-color: whitesmoke;
 }
 
 button:hover{
