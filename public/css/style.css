@@ -172,6 +172,17 @@ a:hover {
   background-color: whitesmoke;
 }
 
+#flash{
+  text-align: center;
+  margin-left: auto;
+  padding: 2px;
+  margin-left: 500px;
+  margin-top: 10px;
+  margin-right: 500px;
+  background-color: khaki;
+  border: 1px solid crimson;
+}
+
 button:hover{
   color:red;
 
