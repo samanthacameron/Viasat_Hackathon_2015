@@ -83,7 +83,7 @@ class RestaurantSearch(object):
         restaurants = json.loads(response.text)['businesses']
         for restaurant in restaurants:
             name = restaurant['name']
-            name.replace("'", "")
+            name = sanitize(name)
             full_address = restaurant['location']['display_address']
             address = ""
             rating = restaurant['rating_img_url']
@@ -97,6 +97,7 @@ class RestaurantSearch(object):
             yield '<br>'
             yield '<img src="{}"></img></br>'.format(rating)
             yield '<br>'
+
 
     @cherrypy.expose
     def add(self, name, address, category):
@@ -123,6 +124,13 @@ class RestaurantSearch(object):
             with open('pizza.json') as data_file:
                 data = json.loads(data_file.read())
             return json.dumps(data)
+
+def sanitize(s):
+    s = s.replace("'","")
+    s = s.replace("&","and")
+    s = s.replace("?","")
+    s = s.replace("%","")
+    return s
 
 conf = {
     '/': {
