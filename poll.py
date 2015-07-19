@@ -37,8 +37,6 @@ class Poll(object):
                 <input type="radio" name="opt" value="3" checked="checked"/>Take me to submit my vote.
              </label></br>'''
         yield '''<button type="submit">Login</button></form>'''
-        yield '<a href = http://localhost:5588/poll/reset>Clear the poll.</a></html>'
-
 
     @cherrypy.expose
     def search(self, uname, opt):
@@ -129,7 +127,7 @@ class Poll(object):
             for row in session.query(Restaurant):
                 if prev == row.id:
                     yield'''<label for="restId">
-                    <input type="radio" name="restId" value="%s" id="Poll_0" checked="checked" />
+                    <input type="radio" name="restId" value="%s" id="Poll_0" />
                     %s
                     </label></br>''' % (str(row.id), row.name)
                     row.votes = row.votes - 1
@@ -140,8 +138,6 @@ class Poll(object):
                      </label></br>''' % (str(row.id), row.name)
                     self.going = self.going + 1
             yield '''<button type="submit">Vote</button>'''
-
-        
 
     @cherrypy.expose
     def reset(self):
