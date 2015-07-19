@@ -82,7 +82,7 @@ body {
   margin-bottom: 3px;
   margin-right: 999px;
 }
-button{
+#login{
   width:67px;
   height:35px;
   background-color:white;
@@ -92,7 +92,7 @@ button{
   padding:5px;
 }
 
-input{
+#un{
   -moz-border-radius:15px;
   border-radius:15px;
   border:solid 2px black;

@@ -27,7 +27,7 @@ class Poll(object):
         yield '''<h2>Please enter your username and choose an option</h2></br>'''
         yield '''
         <form action="search">
-        <div id="s">User Name: <input type="text" name="uname" value="%s"></br>''' % username
+        <div id="s">User Name: <input id="un" type="text" name="uname" value="%s"></br>''' % username
         yield '''</div><div id="o"><label for="optout" >
         <input type="radio" name="opt" value="3" checked="checked"/>Take me to submit my vote.
         </label></br>
@@ -38,7 +38,7 @@ class Poll(object):
         <input type="radio" name="opt" value="2"/>I want to go but don't want to vote.
         </label></div></br>'''
 
-        yield '''<button type="submit" >Login</button></form>'''
+        yield '''<button id="login" type="submit" >Login</button></form>'''
 
     @cherrypy.expose
     def search(self, uname, opt):
