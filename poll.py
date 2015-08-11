@@ -2,7 +2,7 @@ import cherrypy
 import os
 import os.path
 from database import *
-from svg.charts.pie import Pie
+# from svg.charts.pie import Pie
 import requests
 import datetime
 
@@ -45,10 +45,10 @@ class Poll(object):
     @cherrypy.expose
     def timer(self, time):
         time = int(time)
-        yield 'Current time: {}</br>'.format(str(datetime.datetime.now()))
+        yield 'Current time: %s</br>' % (str(datetime.datetime.now()))
         newtime = datetime.datetime.now() + datetime.timedelta(minutes=time)
         newtime = newtime.strftime('%I:%M')
-        yield 'End Time: {}'.format(str(newtime))
+        yield 'End Time: %s' % (str(newtime))
 
     @cherrypy.expose
     def search(self, uname, opt):
@@ -88,7 +88,7 @@ class Poll(object):
                     session.commit()
                 else:
                     self.going = self.going + 1
-            yield '''Vote is Not Counted But {} Is Going'''.format(uname)
+            yield '''Vote is Not Counted But %s Is Going''' % (uname)
             yield '</br> <a href = "/poll">Return To Login</a>'
 
         # not going
@@ -110,7 +110,7 @@ class Poll(object):
 
             objects = session.query(User)
             objects = objects.filter(User.username == uname)
-            yield '{} is not going to lunch'.format(uname)
+            yield '%s is not going to lunch' % (uname)
             yield '</br> <a href = "/poll">Return To Login</a>'
         # option 3 is new person going
         elif opt == "3":
@@ -207,7 +207,7 @@ class Poll(object):
             o.rest_id = restaurantId
             o.voted = 1
         session.commit()
-        yield requests.get('http://localhost:5588/poll/results').text
+        yield requests.get('http://10.0.1.209:5588/poll/results').text
 
     @cherrypy.expose
     def results(self):
@@ -234,13 +234,13 @@ class Poll(object):
         for restaurant in session.query(Restaurant):
             fields.append(restaurant.name)
             votes.append(restaurant.votes)
-        try:
-            graph = Pie(dict(
-                height=500, width=500, fields=fields))
-            graph.add_data({"data": votes, "title": "Lunch Votes"})
-            yield graph.burn()
-        except:
-            yield '</br>There is no data yet.'
+        # try:
+        #     graph = Pie(dict(
+        #         height=500, width=500, fields=fields))
+        #     graph.add_data({"data": votes, "title": "Lunch Votes"})
+        #     yield graph.burn()
+        # except:
+        #     yield '</br>There is no data yet.'
 
 if __name__ == '__main__':
     conf = {

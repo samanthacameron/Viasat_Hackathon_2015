@@ -42,7 +42,7 @@ class RestaurantSearch(object):
         yield '''<form action = "poll"><button id="sel" type="submit" >Join current poll</button></form></br>'''
         yield '''<form action = "poll/results"><button id="sel" type="submit" >View current poll results</button></form></br>'''
         yield '''<form action = "poll/reset"><button id="sel" type="submit" >Done with the poll, reset it</button></form></br>'''
-        yield '''<form action = "timer">Minutes: <input id="un" type="number" name="minutes"><button type="submit">Start Timer</button></div><div id = "e"></br>End Time: {}</form></div>'''.format(str(self.ENDTIME))
+        yield '''<form action = "timer">Minutes: <input id="un" type="number" name="minutes"><button type="submit">Start Timer</button></div><div id = "e"></br>End Time: %s</form></div>''' % (str(self.ENDTIME))
 
         if('message' in cherrypy.session):
             message = cherrypy.session['message']
@@ -57,10 +57,10 @@ class RestaurantSearch(object):
         self.ENDTIME = (datetime.datetime.now() + datetime.timedelta(minutes=self.T)).strftime('%I:%M:%S %p')
 
         # currentTime = datetime.datetime.now().strftime('%I:%M:%S %p')
-        # yield 'Current time: {}</br>'.format(str(currentTime))
+        # yield 'Current time: {}</br>'%(str(currentTime))
         # newtime = datetime.datetime.now() + datetime.timedelta(minutes=time)
         # newtime = newtime.strftime('%I:%M:%S %p')
-        # yield 'End Time: {}'.format(str(newtime))
+        # yield 'End Time: {}'%(str(newtime))
         raise cherrypy.HTTPRedirect('/')
 
     @cherrypy.expose
@@ -133,11 +133,11 @@ class RestaurantSearch(object):
         # USING LOCAL RESULTS
 
         # if category == 'bbq':
-        #     url = 'http://localhost:5588/results?category=barbecue'
+        #     url = 'http://10.0.1.209:5588/results?category=barbecue'
         # elif category == 'pizza':
-        #     url = 'http://localhost:5588/results?category=burgers'
+        #     url = 'http://10.0.1.209:5588/results?category=burgers'
         # elif category == 'burgers':
-        #     url = 'http://localhost:5588/results?category=burgers'
+        #     url = 'http://10.0.1.209:5588/results?category=burgers'
 
         response = requests.get(url)
         restaurants = json.loads(response.text)['businesses']
@@ -153,17 +153,17 @@ class RestaurantSearch(object):
             full_address = restaurant['location']['display_address']
             address = ""
             rating = restaurant['rating_img_url']
-            yield'<div id=name>{}</div>'.format(name.encode('utf-8'))
+            yield'<div id=name>%s</div>' % (name.encode('utf-8'))
 
             yield '<div id=address>'
             for field in full_address:
-                yield'{}<br>'.format(field)
+                yield'%s<br>' % (field)
                 address += field + ' '
             yield '</div>'
 
-            yield '<a href="http://localhost:5588/add?name={}&address={}&category={}" class="addpoll">Add to Poll</a>'.format(name.encode('utf-8'), address, category)
+            yield '<a href="http://10.0.1.209:5588/add?name=%s&address=%s&category=%s" class="addpoll">Add to Poll</a>' % (name.encode('utf-8'), address, category)
             yield '<br>'
-            yield '<img src="{}"></img></br>'.format(rating)
+            yield '<img src="%s"></img></br>' % (rating)
             yield '<br>'
 
             yield '</div>'
@@ -275,5 +275,5 @@ conf = {
         'tools.staticdir.dir': './public'
     }
 }
-cherrypy.config.update({'server.socket_port': 5588})
+cherrypy.config.update({'server.socket_host': '10.0.1.209', 'server.socket_port': 5588})
 cherrypy.quickstart(RestaurantSearch(), '/', conf)

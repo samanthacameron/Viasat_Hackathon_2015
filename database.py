@@ -41,7 +41,7 @@ user = 'wayne'
 password = 'password'
 database_host = '10.0.1.209'
 engine = create_engine(
-    'mysql+mysqlconnector://{}:{}@{}/hackathon'.format(user, password, database_host))
+    'mysql+mysqlconnector://%s:%s@%s/hackathon' % (user, password, database_host))
 Base.metadata.bind = engine
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
